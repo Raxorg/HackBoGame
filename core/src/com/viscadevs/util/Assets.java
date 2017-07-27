@@ -23,6 +23,6 @@ public class Assets implements Disposable {
 
     @Override
     public void dispose() {
-
+        assetManager.dispose();
     }
 }
