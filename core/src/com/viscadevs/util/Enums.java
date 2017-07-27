@@ -3,8 +3,8 @@ package com.viscadevs.util;
 public class Enums {
 
     public enum SplashState {
-        FADDING_IN,
-        FADDING_OUT,
+        FADING_IN,
+        FADING_OUT,
         WAITING_ASSETS
     }
 }

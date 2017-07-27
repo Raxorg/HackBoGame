@@ -10,13 +10,25 @@ public class Splash extends ScreenAdapter {
     private long startTime;
     private Texture splashImage;
     private Enums.SplashState state;
+    private float alpha = 0;
 
     @Override
     public void show() {
+        state = Enums.SplashState.FADING_IN;
         startTime = TimeUtils.nanoTime();
     }
 
     public void render(float delta) {
 
+        switch (state) {
+            case FADING_IN:
+                alpha += 0.05f;
+                break;
+            case FADING_OUT:
+                alpha -= 0.05f;
+                break;
+            default:
+                break;
+        }
     }
 }
