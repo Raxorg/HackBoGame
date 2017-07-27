@@ -8,4 +8,5 @@ public class Constants {
     public static final float WORLD_HEIGHT = 320;
 
     public static final int INITIAL_HEALTH = 100;
+    public static final int MAX_BAR_CAPACITY = 100;
 }
