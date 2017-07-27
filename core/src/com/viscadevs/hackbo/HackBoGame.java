@@ -3,7 +3,6 @@ package com.viscadevs.hackbo;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.viscadevs.screens.GameScreen;
 import com.viscadevs.screens.SplashScreen;
 
 public class HackBoGame extends Game {
