@@ -6,6 +6,7 @@ public class HackBoGame extends Game {
 	
 	@Override
 	public void create () {
+
 	}
 	
 	@Override
