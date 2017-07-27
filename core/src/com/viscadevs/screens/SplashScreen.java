@@ -2,14 +2,13 @@ package com.viscadevs.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.util.Enums;
 
-public class Splash extends ScreenAdapter {
+public class SplashScreen extends ScreenAdapter {
 
     private long startTime;
     private Texture splashImage;
