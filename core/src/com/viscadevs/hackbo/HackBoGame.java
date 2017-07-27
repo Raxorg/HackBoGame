@@ -3,6 +3,10 @@ package com.viscadevs.hackbo;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+<<<<<<< HEAD
+import com.viscadevs.screens.GameScreen;
+=======
+>>>>>>> origin/master
 import com.viscadevs.screens.SplashScreen;
 
 public class HackBoGame extends Game {
@@ -13,7 +17,7 @@ public class HackBoGame extends Game {
 	public void create () {
         batch = new SpriteBatch();
         font = new BitmapFont();
-		setScreen(new SplashScreen());
+		setScreen(new GameScreen(this));
 	}
 	
 	@Override
