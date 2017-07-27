@@ -13,18 +13,18 @@ public class Player {
     private String gender;
     private int money = 0;
     private int health = Constants.INITIAL_HEALTH;
-    private int friends = 0;
+    private int popularity = 0;
     private int happiness = -20;
     private Vector2 position;
 
 
-    public Player (String name, int money, String gender, int health, int friends, int happiness, Vector2 position){
+    public Player (String name, int money, String gender, int health, int popularity, int happiness, Vector2 position){
 
         this.name = name;
         this.gender = gender;
         this.money = money;
         this.health = health;
-        this.friends = friends;
+        this.popularity = popularity;
         this.happiness = happiness;
         this.position = position;
     }
@@ -62,11 +62,11 @@ public class Player {
     }
 
     public int getFriends() {
-        return friends;
+        return popularity;
     }
 
     public void setFriends(int friends) {
-        this.friends = friends;
+        this.popularity = friends;
     }
 
     public int getHappiness() {
