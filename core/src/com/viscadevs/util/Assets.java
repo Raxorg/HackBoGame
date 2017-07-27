@@ -5,10 +5,10 @@ import com.badlogic.gdx.utils.Disposable;
 
 public class Assets implements Disposable {
 
-    private Assets instance = new Assets();
+    private static Assets instance = new Assets();
     private AssetManager assetManager;
 
-    public Assets getInstance(){
+    public static final Assets getInstance(){
         return instance;
     }
 
