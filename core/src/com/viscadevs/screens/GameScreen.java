@@ -6,9 +6,9 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
@@ -17,7 +17,6 @@ import static com.viscadevs.hackbo.HackBoGame.batch;
 public class GameScreen extends ScreenAdapter {
 
     private Viewport viewport;
-    private ShapeRenderer renderer;
 
     @Override
     public void show() {
@@ -25,7 +24,6 @@ public class GameScreen extends ScreenAdapter {
         Assets.getInstance().init(am);
 
         viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
-        renderer = new ShapeRenderer();
     }
 
     @Override
@@ -35,8 +33,6 @@ public class GameScreen extends ScreenAdapter {
         viewport.apply();
         batch.begin();
         batch.end();
-
-
 
     }
 
