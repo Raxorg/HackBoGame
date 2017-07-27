@@ -7,4 +7,9 @@ public class Enums {
         FADING_OUT,
         WAITING_ASSETS
     }
+
+    public enum walkingDirection  {
+        RIGHT,
+        LEFT
+    }
 }
