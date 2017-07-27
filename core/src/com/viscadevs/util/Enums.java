@@ -8,7 +8,7 @@ public class Enums {
         WAITING_ASSETS
     }
 
-    public enum walkingDirection  {
+    public enum WalkingDirection {
         RIGHT,
         LEFT
     }

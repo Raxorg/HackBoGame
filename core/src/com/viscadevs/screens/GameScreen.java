@@ -4,11 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.viscadevs.hackbo.HackBoGame;
+import com.viscadevs.hackbo.Player;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
@@ -17,6 +15,7 @@ import static com.viscadevs.hackbo.HackBoGame.batch;
 public class GameScreen extends ScreenAdapter {
 
     private Viewport viewport;
+    private Player player;
 
     @Override
     public void show() {
@@ -33,11 +32,10 @@ public class GameScreen extends ScreenAdapter {
         viewport.apply();
         batch.begin();
         batch.end();
-
     }
 
     @Override
     public void dispose() {
-
+        player.dispose();
     }
 }
