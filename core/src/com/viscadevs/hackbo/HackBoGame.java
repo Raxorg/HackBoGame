@@ -13,7 +13,7 @@ public class HackBoGame extends Game {
 	public void create () {
         batch = new SpriteBatch();
         font = new BitmapFont();
-		setScreen(new GameScreen());
+		setScreen(new GameScreen(this));
 	}
 	
 	@Override
