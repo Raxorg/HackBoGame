@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.screens.SplashScreen;
 
 public class HackBoGame extends Game {
-	public SpriteBatch batch;
-	public BitmapFont font;
+	public static SpriteBatch batch;
+	public static BitmapFont font;
 	
 	@Override
 	public void create () {
