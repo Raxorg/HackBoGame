@@ -16,7 +16,6 @@ public class Player {
     private Texture texture;
 
     public Player(String name, int money, String gender, int health, int popularity, int happiness, Vector2 position) {
-
         this.name = name;
         this.gender = gender;
         this.money = money;
