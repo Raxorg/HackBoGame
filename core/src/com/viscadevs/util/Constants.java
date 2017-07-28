@@ -4,7 +4,8 @@ public class Constants {
 
     public static final float FADING_SPEED = 1f;
 
-    public static final float PLAYER_SPEED = 20f;
+    public static final float PLAYER_SPEED = 25f;
+    public static final float PERSON_SPEED = 15f;
 
     public static final float WORLD_WIDTH = 1200;
     public static final float WORLD_HEIGHT = 600;
@@ -25,9 +26,15 @@ public class Constants {
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 
+    // Person
+    public static final String PERSON = "/other/person.png";
+
     // HUD
     public static final float HUD_VIEWPORT_SIZE = WORLD_WIDTH * 3;
     public static final float HUD_MARGIN = 220;
     public static final float PLAYER_MOVE_SPEED = 50;
+
+    // CONTROLS
+    public static final float CONTROLS_VIEWPORT_SIZE = 2000;
 
 }

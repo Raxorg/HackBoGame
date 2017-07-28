@@ -6,15 +6,13 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
-import java.util.ArrayList;
-
 public class Assets implements Disposable {
 
     private static Assets instance = new Assets();
     private AssetManager assetManager;
     public PlayerAssets playerAssets;
 
-    public static final Assets getInstance(){
+    public static final Assets getInstance() {
         return instance;
     }
 
@@ -30,11 +28,11 @@ public class Assets implements Disposable {
         assetManager.dispose();
     }
 
-    public class PlayerAssets{
+    public class PlayerAssets {
         public final Texture standingRight, standingLeft;
         public final Animation walkingRightAnimation, walkingLeftAnimation;
 
-        public PlayerAssets(){
+        public PlayerAssets() {
             standingRight = new Texture(Constants.STANDING_RIGHT);
 
             Array<Texture> walkingRightFrames = new Array<Texture>();
@@ -52,6 +50,14 @@ public class Assets implements Disposable {
             walkingRightFrames.add(new Texture(Constants.WALKING_LEFT_3));
 
             walkingLeftAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingLeftFrames, Animation.PlayMode.LOOP_PINGPONG);
+        }
+    }
+
+    public class PersonAssets {
+        public final Texture person;
+
+        public PersonAssets() {
+            person = new Texture(Constants.PERSON);
         }
     }
 }
