@@ -15,8 +15,8 @@ public class ButtonListener extends InputAdapter {
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         screenY = Gdx.graphics.getHeight() - screenY;
 
-        for(Button b : buttons) {
-            if (b.isTouched(screenX,screenY)) {
+        for (Button b : buttons) {
+            if (b.isTouched(screenX, screenY)) {
                 b.onTouch();
             }
         }

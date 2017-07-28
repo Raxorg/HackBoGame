@@ -5,21 +5,18 @@ import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Button;
 import com.viscadevs.util.Enums;
 
-/**
- * Created by Joaco99 on 28/07/2017.
- */
 
 public class GenderSelectionScreen extends ScreenAdapter {
     private HackBoGame game;
     private Button maleButton, femaleButton;
 
-    public GenderSelectionScreen(HackBoGame game){
+    public GenderSelectionScreen(HackBoGame game) {
         this.game = game;
     }
 
     @Override
     public void show() {
-
+        game.setScreen(new GameScreen(Enums.Gender.MALE));
     }
 
 

@@ -13,7 +13,7 @@ import com.viscadevs.util.Constants;
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.util.ViscaUtils.random;
 
-public class Person implements Disposable{
+public class Person implements Disposable {
 
     private boolean movingRight;
     private Vector2 position;
@@ -24,7 +24,7 @@ public class Person implements Disposable{
 
     private GameScreen gameScreen;
 
-    public Person(GameScreen gameScreen, boolean movingRight) {
+    public Person(final GameScreen gameScreen, boolean movingRight) {
         this.gameScreen = gameScreen;
         this.movingRight = movingRight;
         position = movingRight ? new Vector2(-10, 90) : new Vector2(Gdx.graphics.getWidth(), 90);
@@ -44,7 +44,9 @@ public class Person implements Disposable{
         ) {
             @Override
             public void onTouch() {
-                // TODO STEAL
+                if (nextToPlayer) {
+                    gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 30);
+                }
             }
         };
         buttons[1] = new Button(
@@ -57,7 +59,9 @@ public class Person implements Disposable{
         ) {
             @Override
             public void onTouch() {
-                // TODO BEG
+                if (nextToPlayer) {
+                    gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 10);
+                }
             }
         };
     }
@@ -108,11 +112,18 @@ public class Person implements Disposable{
         }
     }
 
+    public Button getStealButton() {
+        return buttons[0];
+    }
+
+    public Button getBegButton() {
+        return buttons[1];
+    }
 
     @Override
     public void dispose() {
         texture.dispose();
-        for(Button b : buttons){
+        for (Button b : buttons) {
             b.dispose();
         }
     }

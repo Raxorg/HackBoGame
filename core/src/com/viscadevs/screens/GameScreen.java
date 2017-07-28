@@ -14,6 +14,7 @@ import com.viscadevs.hud.Upgrade;
 import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Button;
+import com.viscadevs.util.ButtonListener;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
@@ -33,7 +34,7 @@ public class GameScreen extends ScreenAdapter {
     private Color cloudsColor;
     private Enums.Gender gender;
 
-    public GameScreen(Enums.Gender gender){
+    public GameScreen(Enums.Gender gender) {
         this.gender = gender;
     }
 
@@ -79,6 +80,8 @@ public class GameScreen extends ScreenAdapter {
             spawnPerson();
             startTime = TimeUtils.nanoTime();
         }
+
+        updateButtons();
 
         batch.begin();
 
@@ -131,6 +134,15 @@ public class GameScreen extends ScreenAdapter {
         batch.end();
     }
 
+    private void updateButtons() {
+        Button[] buttons = new Button[people.size * 2];
+        for (int i = 0; i < people.size; i++) {
+            buttons[2 * i] = people.get(i).getStealButton();
+            buttons[2 * i + 1] = people.get(i).getBegButton();
+        }
+        Gdx.input.setInputProcessor(new ButtonListener(buttons));
+    }
+
     /**
      * This method spawns an NPC the player can interact with
      */
@@ -151,11 +163,11 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void dispose() {
-        for(Person p : people){
+        for (Person p : people) {
             p.dispose();
         }
 
-        for(Button b : buttons){
+        for (Button b : buttons) {
             b.dispose();
         }
     }
