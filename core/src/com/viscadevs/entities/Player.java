@@ -29,12 +29,12 @@ public class Player {
 
     private long walkStartTime = 0;
 
-    public Player(String name, Enums.Gender gender, int popularity, int happiness, Vector2 position) {
+    public Player(String name, Enums.Gender gender, int popularity, int happiness) {
         this.name = name;
         this.gender = gender;
         this.popularity = popularity;
         this.happiness = happiness;
-        this.position = position;
+        position = new Vector2(Constants.PLAYER_SPAWN_X, Constants.PLAYER_SPAWN_Y);
 
         state = Enums.State.STANDARD;
         money = Constants.INITIAL_MONEY;

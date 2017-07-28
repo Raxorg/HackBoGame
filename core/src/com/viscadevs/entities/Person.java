@@ -7,11 +7,13 @@ import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
+import static com.viscadevs.util.ViscaUtils.random;
 
 public class Person {
 
     private boolean movingRight;
     private Vector2 position;
+    private float bonusSpeed;
 
     private GameScreen gameScreen;
 
@@ -19,13 +21,14 @@ public class Person {
         this.gameScreen = gameScreen;
         this.movingRight = movingRight;
         position = movingRight ? new Vector2(-10, 90) : new Vector2(Gdx.graphics.getWidth(), 90);
+        bonusSpeed = Constants.PERSON_MAX_BONUS_SPEED * random.nextFloat();
     }
 
     public void update(float delta) {
         position.set(
                 movingRight ?
-                        position.x + Constants.PERSON_SPEED * delta :
-                        position.x - Constants.PERSON_SPEED * delta,
+                        position.x + bonusSpeed * delta + Constants.PERSON_SPEED * delta :
+                        position.x - bonusSpeed * delta - Constants.PERSON_SPEED * delta,
                 position.y
         );
         if (position.x > Gdx.graphics.getWidth() + Constants.HUMAN_WIDTH || position.x < -Constants.HUMAN_WIDTH) {

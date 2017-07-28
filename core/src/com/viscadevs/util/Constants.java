@@ -8,15 +8,19 @@ public class Constants {
     public static final float FADING_SPEED = 0.5f;
 
     // Player and Person
-    public static final float HUMAN_WIDTH = 60;
-    public static final float HUMAN_HEIGHT = 96;
+    public static final float HUMAN_WIDTH = 60f;
+    public static final float HUMAN_HEIGHT = 96f;
 
     // Player
     public static final float PLAYER_SPEED = 150f;
-    public static final float PLAYER_Y = 100f;
+    public static final float PLAYER_SPAWN_X = 400f;
+    public static final float PLAYER_SPAWN_Y = 100f;
 
     // Person
-    public static final float PERSON_SPEED = 75f;
+    public static final String PERSON = "other/person.png";
+    public static final float PERSON_SPEED = 25f;
+    public static final float PERSON_MAX_BONUS_SPEED = 150f;
+    public static final float PERSON_SPAWN_RATE = 1f;
 
     // World
     public static final float WORLD_WIDTH = 1000;
@@ -57,27 +61,18 @@ public class Constants {
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 
-    // Person
-    public static final String PERSON = "other/person.png";
-    public static final float PERSON_SPAWN_RATE = 4f;
+    public static final Vector2 HOME_POSITION = new Vector2(400, 100);
+    public static final Vector2 HOME_DIMENTIONS = new Vector2(150, 100);
 
-    // HUD
-    public static final float HUD_VIEWPORT_SIZE = 100;
-    public static final float HUD_MARGIN = 220;
-
+    // Bars
     public static final String BAR_LEFT = "bar/left.png";
     public static final String BAR_MID = "bar/mid.png";
     public static final String BAR_RIGHT = "bar/right.png";
     public static final String BAR_LEFT_F = "bar/leftF.png";
     public static final String BAR_MID_F = "bar/midF.png";
     public static final String BAR_RIGHT_F = "bar/rightF.png";
-
-    public static final Vector2 HOME_POSITION = new Vector2(400, 100);
-    public static final Vector2 HOME_DIMENTIONS = new Vector2(150, 100);
-
-    // Bars
-    public static final float BAR_HEIGHT = 25f;
     public static final float BAR_WIDTH = 200f;
+    public static final float BAR_HEIGHT = 25f;
 
     // Buttons
     public static final String BUTTONS_START = "other/start.png";

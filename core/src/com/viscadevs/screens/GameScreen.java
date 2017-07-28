@@ -36,14 +36,23 @@ public class GameScreen extends ScreenAdapter {
     public void show() {
         gameHUD = new GameHUD(this);
         // TODO GET THE NAME AND GENDER FROM MENU
-        player = new Player("BOB", Enums.Gender.MALE, 0, 100, new Vector2(0, Constants.PLAYER_Y));
+        player = new Player("BOB", Enums.Gender.MALE, 0, 100);
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
 
         home = new Home();
 
         buttons = new Button[1];
-        buttons[0] = new Upgrade(new Texture("other/pixel.png"), 0, 0, 0, 0, Color.CORAL) {
+        buttons[0] = new Upgrade(
+                new Texture("other/pixel.png"),
+                0,
+                0,
+                200,
+                200,
+                Color.CORAL,
+                500,
+                10
+        ) {
             @Override
             public void onTouch() {
 
