@@ -22,6 +22,7 @@ public class Constants {
     public static final float PERSON_SPEED = 25f;
     public static final float PERSON_MAX_BONUS_SPEED = 150f;
     public static final float PERSON_SPAWN_RATE = 1f;
+    public static final float BUTTON_SIZE = 50f;
 
     // World
     public static final float WORLD_WIDTH = 1000;
@@ -125,7 +126,7 @@ public class Constants {
     public static final float BUTTON_WIDTH = 200;
     public static final float BUTTON_HEIGHT = BUTTON_WIDTH / 4;
     public static final float START_BUTTON_X = Gdx.graphics.getWidth() / 2 - BUTTON_WIDTH / 2;
-    public static final float START_BUTTON_Y = Gdx.graphics.getHeight() * 0.7f;
+    public static final float START_BUTTON_Y = Gdx.graphics.getHeight() * 0.8f;
     public static final float INSTRUCTIONS_BUTTON_X = START_BUTTON_X;
     public static final float INSTRUCTIONS_BUTTON_Y = START_BUTTON_Y - BUTTON_HEIGHT * 2;
     public static final float CREDITS_BUTTON_X = START_BUTTON_X;

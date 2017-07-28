@@ -41,7 +41,7 @@ public class GameHUD {
         );
         font.setColor(Color.BLUE);
         font.getData().setScale(1);
-        font.draw(batch, money + "", 0, 0);
+        font.draw(batch, money + "", 0, 50);
 
         for (Bar bar : bars) {
             bar.render();

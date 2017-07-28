@@ -45,7 +45,7 @@ public class MenuScreen extends ScreenAdapter {
                 Constants.INSTRUCTIONS_BUTTON_Y,
                 Constants.BUTTON_WIDTH,
                 Constants.BUTTON_HEIGHT,
-                Color.BLUE
+                Color.RED
         ) {
             @Override
             public void onTouch() {
@@ -59,7 +59,7 @@ public class MenuScreen extends ScreenAdapter {
                 Constants.CREDITS_BUTTON_Y,
                 Constants.BUTTON_WIDTH,
                 Constants.BUTTON_HEIGHT,
-                Color.GREEN
+                Color.RED
         ) {
             @Override
             public void onTouch() {
