@@ -23,6 +23,7 @@ public class Constants {
     public static final String WALKING_LEFT_1 = "player/walking_left_1.png";
     public static final String WALKING_LEFT_2 = "player/standing_left.png";
     public static final String WALKING_LEFT_3 = "player/walking_left_2.png";
+    public static final String FRONT = "player/front.png";
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 

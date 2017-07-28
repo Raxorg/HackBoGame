@@ -38,6 +38,7 @@ public class Assets implements Disposable {
         assetManager.load(Constants.WALKING_RIGHT_1, Texture.class);
         assetManager.load(Constants.WALKING_RIGHT_2, Texture.class);
         assetManager.load(Constants.WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.FRONT, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
 
@@ -55,7 +56,7 @@ public class Assets implements Disposable {
         public Animation<Texture> walkingLeftAnimation;
 
         public void init() {
-            standingRight = assetManager.get(Constants.STANDING_RIGHT, Texture.class);
+            standingRight = assetManager.get(Constants.FRONT, Texture.class);
 
             Texture[] walkingRightFrames = new Texture[3];
             walkingRightFrames[0] = assetManager.get(Constants.WALKING_RIGHT_1, Texture.class);
@@ -65,7 +66,7 @@ public class Assets implements Disposable {
             walkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, walkingRightFrames);
             walkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            standingLeft = assetManager.get(Constants.STANDING_LEFT, Texture.class);
+            standingLeft = assetManager.get(Constants.FRONT, Texture.class);
 
             Texture[] walkingLeftFrames = new Texture[3];
             walkingLeftFrames[0] = assetManager.get(Constants.WALKING_LEFT_1, Texture.class);

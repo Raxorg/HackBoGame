@@ -119,8 +119,8 @@ public class MenuScreen extends ScreenAdapter {
         batch.setProjectionMatrix(viewport.getCamera().combined);
 
         stage.act();
-        stage.draw();
 
+        stage.draw();
     }
 
     @Override
