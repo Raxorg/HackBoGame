@@ -30,6 +30,7 @@ public class GameScreen extends ScreenAdapter {
     private DelayedRemovalArray<Person> people;
     private GameHUD gameHUD;
     private long startTime;
+    private Viewport viewport;
 
     @Override
     public void show() {
