@@ -1,6 +1,5 @@
 package com.viscadevs.entities;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.viscadevs.util.Constants;
 
@@ -13,7 +12,6 @@ public class Player {
     private int popularity = 0;
     private int happiness = -20;
     private Vector2 position;
-    private Texture texture;
 
     public Player(String name, int money, String gender, int health, int popularity, int happiness, Vector2 position) {
         this.name = name;
@@ -23,10 +21,6 @@ public class Player {
         this.popularity = popularity;
         this.happiness = happiness;
         this.position = position;
-    }
-
-    public void dispose() {
-        texture.dispose();
     }
 
     public String getName() {

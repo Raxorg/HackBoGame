@@ -38,7 +38,7 @@ public class Assets implements Disposable {
             walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_2));
             walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_3));
 
-            walkingRightAnimation = new Animation()
+            walkingRightAnimation = new Animation();
         }
     }
 }

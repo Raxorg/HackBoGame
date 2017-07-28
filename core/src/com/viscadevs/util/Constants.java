@@ -4,6 +4,8 @@ public class Constants {
 
     public static final float FADING_SPEED = 1f;
 
+    public static final float PLAYER_SPEED = 20f;
+
     public static final float WORLD_WIDTH = 1200;
     public static final float WORLD_HEIGHT = 600;
 
