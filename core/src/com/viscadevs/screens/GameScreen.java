@@ -28,7 +28,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        gameHUD = new GameHUD();
+        gameHUD = new GameHUD(this);
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", Enums.Gender.MALE, 0, 100, new Vector2(0, Constants.PLAYER_Y));
         people = new DelayedRemovalArray<Person>();
