@@ -49,8 +49,7 @@ public class MenuScreen extends ScreenAdapter {
         ) {
             @Override
             public void onTouch() {
-                // TODO START
-                // TODO
+                game.setScreen(new InstructionsScreen(game));
             }
         };
 
@@ -64,7 +63,7 @@ public class MenuScreen extends ScreenAdapter {
         ) {
             @Override
             public void onTouch() {
-                // TODO START
+                game.setScreen(new CreditsScreen(game));
             }
         };
 
