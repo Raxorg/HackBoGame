@@ -1,7 +1,10 @@
 package com.viscadevs.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
+
+import static com.viscadevs.hackbo.HackBoGame.batch;
 
 public class Person {
 
@@ -23,6 +26,10 @@ public class Person {
     }
 
     public void render() {
-
+        batch.draw(
+                Assets.getInstance().personAssets.person,
+                position.x,
+                position.y
+        );
     }
 }
