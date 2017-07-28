@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Button;
+import com.viscadevs.util.ButtonListener;
 import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
@@ -38,6 +39,11 @@ public class GenderSelectionScreen extends ScreenAdapter {
                 game.setScreen(new GameScreen(Enums.Gender.FEMALE));
             }
         };
+
+        Button[] buttons = new Button[2];
+        buttons[0] = maleButton;
+        buttons[1] = femaleButton;
+        Gdx.input.setInputProcessor(new ButtonListener(buttons));
     }
 
 
