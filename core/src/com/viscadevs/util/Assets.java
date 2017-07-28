@@ -281,7 +281,7 @@ public class Assets implements Disposable {
         public void init() {
             street = assetManager.get(Constants.STREET);
             clouds = assetManager.get(Constants.CLOUDS);
-            clouds = assetManager.get(Constants.CREDITS);
+            credits = assetManager.get(Constants.CREDITS);
         }
     }
 
