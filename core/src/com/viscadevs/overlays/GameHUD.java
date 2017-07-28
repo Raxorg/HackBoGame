@@ -32,6 +32,7 @@ public class GameHUD {
     }
 
     public void render(int money) {
+        batch.setColor(Color.YELLOW);
         batch.draw(
                 Assets.getInstance().hudAssets.moneyBar,
                 0,
@@ -39,9 +40,9 @@ public class GameHUD {
                 Constants.MONEY_BAR_WIDTH,
                 Constants.MONEY_BAR_HEIGHT
         );
-        font.setColor(Color.BLUE);
+        font.setColor(Color.BLACK);
         font.getData().setScale(1);
-        font.draw(batch, money + "", 0, 0);
+        font.draw(batch, money + "", 0 + Constants.MONEY_BAR_WIDTH / 4, Gdx.graphics.getHeight() - (Constants.MONEY_BAR_HEIGHT / 4));
 
         for (Bar bar : bars) {
             bar.render();
