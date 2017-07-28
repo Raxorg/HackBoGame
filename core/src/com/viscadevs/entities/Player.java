@@ -22,7 +22,7 @@ public class Player {
     private Vector2 position;
     private Enums.Facing facing = Enums.Facing.RIGHT;
     private Enums.WalkState walkState = Enums.WalkState.STANDING;
-    private long walkStartTime;
+    private long walkStartTime = 0;
 
     public Player(String name, int money, Enums.Gender gender, int health, int popularity, int happiness, Vector2 position) {
         this.name = name;

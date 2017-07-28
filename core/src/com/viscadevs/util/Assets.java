@@ -64,7 +64,7 @@ public class Assets implements Disposable {
             walkingRightFrames.add(assetManager.get(Constants.WALKING_RIGHT_2, Texture.class));
             walkingRightFrames.add(assetManager.get(Constants.WALKING_RIGHT_3, Texture.class));
 
-            walkingRightAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingRightFrames, Animation.PlayMode.NORMAL);
+            walkingRightAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingRightFrames, Animation.PlayMode.LOOP_PINGPONG);
 
             standingLeft = assetManager.get(Constants.STANDING_LEFT, Texture.class);
 
@@ -73,7 +73,7 @@ public class Assets implements Disposable {
             walkingRightFrames.add(assetManager.get(Constants.WALKING_LEFT_2, Texture.class));
             walkingRightFrames.add(assetManager.get(Constants.WALKING_LEFT_3, Texture.class));
 
-            walkingLeftAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingLeftFrames, Animation.PlayMode.NORMAL);
+            walkingLeftAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingLeftFrames, Animation.PlayMode.LOOP_PINGPONG);
         }
     }
 
