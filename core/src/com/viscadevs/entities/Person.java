@@ -1,5 +1,6 @@
 package com.viscadevs.entities;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
@@ -13,7 +14,7 @@ public class Person {
 
     public Person(boolean movingRight) {
         this.movingRight = movingRight;
-        position = movingRight ? new Vector2(0, 0) : new Vector2(0, 0);
+        position = movingRight ? new Vector2(-10, 0) : new Vector2(Gdx.graphics.getWidth(), 0);
     }
 
     public void update(float delta) {

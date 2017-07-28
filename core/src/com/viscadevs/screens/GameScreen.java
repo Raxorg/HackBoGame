@@ -17,6 +17,7 @@ import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
+import static com.viscadevs.util.ViscaUtils.random;
 
 
 public class GameScreen extends ScreenAdapter {
@@ -50,7 +51,20 @@ public class GameScreen extends ScreenAdapter {
 
         batch.begin();
         batch.draw(Assets.getInstance().playerAssets.standingRight, 00, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+        // Update stuff
+        for (Person p : people) {
+            people.begin();
+            p.update(delta);
+            people.end();
+        }
         player.update(delta);
+
+        // Draw stuff
+        for (Person p : people) {
+            p.render();
+        }
+
         player.render(batch);
         // TODO RENDER THE BACKGROUND
         // TODO RENDER THE PLAYER
@@ -62,7 +76,8 @@ public class GameScreen extends ScreenAdapter {
      * This method spawns an NPC the player can interact with
      */
     private void spawnPerson() {
-        people.add(new Person(true));
+        people.add(new Person(random.nextFloat() > 0.5f));
+
     }
 
     public Player getPlayer() {
