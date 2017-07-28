@@ -76,10 +76,10 @@ public class Player {
             region = Assets.getInstance().playerAssets.standingLeft;
         } else if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = Assets.getInstance().playerAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
+            region = Assets.getInstance().playerAssets.standardWalkingRightAnimation.getKeyFrame(walkTimeSeconds);
         } else if (facing == Enums.Facing.LEFT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+            region = Assets.getInstance().playerAssets.standardWalkingLeftAnimation.getKeyFrame(walkTimeSeconds);
         }
 
         batch.draw(region, position.x, position.y, Constants.HUMAN_WIDTH, Constants.HUMAN_HEIGHT);

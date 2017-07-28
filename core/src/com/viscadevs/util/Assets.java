@@ -30,8 +30,6 @@ public class Assets implements Disposable {
 
     private void load() {
         // Player
-        assetManager.load(Constants.STANDARD_STANDING_LEFT, Texture.class);
-        assetManager.load(Constants.STANDING_RIGHT, Texture.class);
         assetManager.load(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
         assetManager.load(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
         assetManager.load(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
@@ -39,6 +37,13 @@ public class Assets implements Disposable {
         assetManager.load(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
         assetManager.load(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
         assetManager.load(Constants.STANDARD_FRONT, Texture.class);
+        assetManager.load(Constants.HOMELESS_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.HOMELESS_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.HOMELESS_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.HOMELESS_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.HOMELESS_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.HOMELESS_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.HOMELESS_FRONT, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
 
@@ -51,30 +56,45 @@ public class Assets implements Disposable {
     }
 
     public class PlayerAssets {
-        public Texture standingRight, standingLeft;
-        public Animation<Texture> walkingRightAnimation;
-        public Animation<Texture> walkingLeftAnimation;
+        public Animation<Texture> standardWalkingRightAnimation;
+        public Animation<Texture> standardWalkingLeftAnimation;
+        public Animation<Texture> homelessWalkingRightAnimation;
+        public Animation<Texture> homelessWalkingLeftAnimation;
+
+        public Texture standardFront, homelessFront;
 
         public void init() {
-            standingRight = assetManager.get(Constants.STANDARD_FRONT, Texture.class);
+            standardFront = assetManager.get(Constants.STANDARD_FRONT);
+            homelessFront = assetManager.get(Constants.HOMELESS_FRONT);
 
-            Texture[] walkingRightFrames = new Texture[3];
-            walkingRightFrames[0] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_1, Texture.class);
-            walkingRightFrames[1] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
-            walkingRightFrames[2] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
+            Texture[] standardWalkingRightFrames = new Texture[3];
+            standardWalkingRightFrames[0] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_1, Texture.class);
+            standardWalkingRightFrames[1] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
+            standardWalkingRightFrames[2] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
+            standardWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, standardWalkingRightFrames);
+            standardWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            walkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, walkingRightFrames);
-            walkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            standingLeft = assetManager.get(Constants.STANDARD_FRONT, Texture.class);
+            Texture[] standardWalkingLeftFrames = new Texture[3];
+            standardWalkingLeftFrames[0] = assetManager.get(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
+            standardWalkingLeftFrames[1] = assetManager.get(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
+            standardWalkingLeftFrames[2] = assetManager.get(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
+            standardWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, standardWalkingLeftFrames);
+            standardWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            Texture[] walkingLeftFrames = new Texture[3];
-            walkingLeftFrames[0] = assetManager.get(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
-            walkingLeftFrames[1] = assetManager.get(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
-            walkingLeftFrames[2] = assetManager.get(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
+            Texture[] homelessWalkingRightFrames = new Texture[3];
+            homelessWalkingRightFrames[0] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_1, Texture.class);
+            homelessWalkingRightFrames[1] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_2, Texture.class);
+            homelessWalkingRightFrames[2] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_3, Texture.class);
+            standardWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingRightFrames);
+            standardWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            walkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, walkingLeftFrames);
-            walkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            Texture[] homelessWalkingLeftFrames = new Texture[3];
+            homelessWalkingLeftFrames[0] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_1, Texture.class);
+            homelessWalkingLeftFrames[1] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_2, Texture.class);
+            homelessWalkingLeftFrames[2] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_3, Texture.class);
+            standardWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingLeftFrames);
+            standardWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
         }
     }
 
