@@ -1,7 +1,6 @@
 package com.viscadevs.entities;
 
 import com.badlogic.gdx.math.Vector2;
-import com.viscadevs.util.Assets;
 import com.viscadevs.util.Assets2;
 import com.viscadevs.util.Constants;
 
