@@ -72,6 +72,13 @@ public class MenuScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         batch.begin();
+        batch.draw(
+                Assets.getInstance().landScapeAssets.street,
+                0,
+                0,
+                Gdx.graphics.getWidth(),
+                Gdx.graphics.getHeight()
+        );
         for (Button b : buttons) {
             b.render();
         }
