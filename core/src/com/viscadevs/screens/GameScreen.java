@@ -15,6 +15,7 @@ import com.viscadevs.hud.Upgrade;
 import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Button;
+import com.viscadevs.util.ButtonListener;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
@@ -31,6 +32,7 @@ public class GameScreen extends ScreenAdapter {
     private long startTime;
     private Button[] buttons;
     private Home home;
+    private ButtonListener listener;
 
     @Override
     public void show() {

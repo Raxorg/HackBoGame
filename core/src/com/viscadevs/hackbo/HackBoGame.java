@@ -6,10 +6,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.screens.MenuScreen;
 import com.viscadevs.screens.SplashScreen;
 import com.viscadevs.util.Assets;
+import com.viscadevs.util.Button;
+import com.viscadevs.util.ButtonListener;
 
 public class HackBoGame extends Game {
     public static SpriteBatch batch;
     public static BitmapFont font;
+    public static ButtonListener listener;
 
     @Override
     public void create() {
