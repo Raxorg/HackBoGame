@@ -35,7 +35,7 @@ public class Constants {
     // HUD
     public static final float HUD_VIEWPORT_SIZE = WORLD_WIDTH * 3;
     public static final float HUD_MARGIN = 220;
-    public static final float PLAYER_MOVE_SPEED = 50;
+    public static final float PLAYER_MOVE_SPEED = 20;
 
     // CONTROLS
     public static final float CONTROLS_VIEWPORT_SIZE = 2000;

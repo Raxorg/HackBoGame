@@ -80,4 +80,10 @@ public class SplashScreen extends ScreenAdapter {
     private void endOfSplash() {
         game.endOfSplash();
     }
+
+    @Override
+    public void dispose() {
+        black.dispose();
+        splash.dispose();
+    }
 }

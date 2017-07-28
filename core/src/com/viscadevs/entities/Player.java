@@ -67,7 +67,7 @@ public class Player {
     }
 
     public void render(SpriteBatch batch) {
-        Texture region = Assets.getInstance().playerAssets.standingRight;
+        Texture region = Assets.getInstance().playerAssets.standingLeft;
 
         if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.STANDING) {
             region = Assets.getInstance().playerAssets.standingRight;

@@ -54,4 +54,8 @@ public class GameScreen extends ScreenAdapter {
         // TODO stuff
     }
 
+    @Override
+    public void dispose() {
+
+    }
 }
