@@ -34,11 +34,11 @@ public class Person {
 
         buttons = new Button[2];
         buttons[0] = new Button(
-                new Texture("STEAL BUTTON"),
-                0,
-                0,
-                0,
-                0,
+                Assets.getInstance().personAssets.stealButton,
+                position.x - Constants.BUTTON_SIZE,
+                position.y + Constants.HUMAN_HEIGHT,
+                Constants.BUTTON_SIZE,
+                Constants.BUTTON_SIZE,
                 Color.CORAL
         ) {
             @Override
@@ -47,11 +47,11 @@ public class Person {
             }
         };
         buttons[1] = new Button(
-                new Texture("BEG BUTTON"),
-                0,
-                0,
-                0,
-                0,
+                Assets.getInstance().personAssets.begButton,
+                position.x + Constants.BUTTON_SIZE,
+                position.y + Constants.HUMAN_HEIGHT,
+                Constants.BUTTON_SIZE,
+                Constants.BUTTON_SIZE,
                 Color.SALMON
         ) {
             @Override

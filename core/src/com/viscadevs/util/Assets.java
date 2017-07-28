@@ -95,6 +95,8 @@ public class Assets implements Disposable {
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
         assetManager.load(Constants.PERSON2, Texture.class);
+        assetManager.load(Constants.STEAL_BUTTON, Texture.class);
+        assetManager.load(Constants.BEG_BUTTON, Texture.class);
         // HUD
         assetManager.load(Constants.BAR_LEFT, Texture.class);
         assetManager.load(Constants.BAR_MID, Texture.class);
@@ -245,11 +247,13 @@ public class Assets implements Disposable {
     }
 
     public class PersonAssets {
-        public Texture person, person2;
+        public Texture person, person2, stealButton, begButton;
 
         public void init() {
             person = assetManager.get(Constants.PERSON, Texture.class);
             person2 = assetManager.get(Constants.PERSON2, Texture.class);
+            stealButton = assetManager.get(Constants.STEAL_BUTTON, Texture.class);
+            begButton = assetManager.get(Constants.BEG_BUTTON, Texture.class);
         }
     }
 
