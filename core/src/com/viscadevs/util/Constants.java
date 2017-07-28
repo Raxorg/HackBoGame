@@ -140,6 +140,13 @@ public class Constants {
     public static final String FEMALE_BUTTON = "other/female.png";
     public static final String SLEEP_BUTTON = "other/sleep.png";
 
+    public static final String BACKGROUND_MUSIC = "audio/background.mp3";
+    public static final String DISASTER_MUSIC = "audio/disaster.mp3";
+    public static final String COIN_SOUND = "audio/coin.mp3";
+    public static final String CLICK_SOUND = "audio/click.mp3";
+
+
+
     public static final float BUTTON_WIDTH = 200;
     public static final float BUTTON_HEIGHT = BUTTON_WIDTH / 4;
     public static final float START_BUTTON_X = Gdx.graphics.getWidth() / 2 - BUTTON_WIDTH / 2;

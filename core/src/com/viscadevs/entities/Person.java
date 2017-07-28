@@ -52,6 +52,8 @@ public class Person implements Disposable {
                     }
                 }
             }
+
+
         };
         buttons[1] = new Button(
                 Assets.getInstance().personAssets.begButton,
@@ -70,7 +72,11 @@ public class Person implements Disposable {
                     }
                 }
             }
+
         };
+
+        buttons[0].setSound(Assets.getInstance().soundAssets.coin);
+        buttons[1].setSound(Assets.getInstance().soundAssets.coin);
     }
 
     public void update(float delta) {

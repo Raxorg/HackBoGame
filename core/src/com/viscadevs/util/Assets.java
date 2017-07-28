@@ -1,6 +1,8 @@
 package com.viscadevs.util;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.utils.Disposable;
@@ -17,6 +19,7 @@ public class Assets implements Disposable {
     public UpgradeAssets upgradeAssets;
     public ButtonAssets buttonAssets;
     public HUDAssets hudAssets;
+    public SoundAssets soundAssets;
 
     public static Assets getInstance() {
         return instance;
@@ -41,6 +44,8 @@ public class Assets implements Disposable {
         buttonAssets.init();
         hudAssets = new HUDAssets();
         hudAssets.init();
+        soundAssets = new SoundAssets();
+        soundAssets.init();
     }
 
     private void load() {
@@ -125,6 +130,11 @@ public class Assets implements Disposable {
         assetManager.load(Constants.MALE_BUTTON, Texture.class);
         assetManager.load(Constants.FEMALE_BUTTON, Texture.class);
         assetManager.load(Constants.SLEEP_BUTTON, Texture.class);
+
+        //Sound
+        assetManager.load(Constants.BACKGROUND_MUSIC, Music.class);
+        assetManager.load(Constants.CLICK_SOUND, Sound.class);
+        assetManager.load(Constants.COIN_SOUND, Sound.class);
 
         assetManager.finishLoading();
     }
@@ -324,6 +334,17 @@ public class Assets implements Disposable {
 
         public void init() {
             moneyBar = assetManager.get(Constants.HUD_MONEY_BAR);
+        }
+    }
+
+    public class SoundAssets{
+        public Sound coin, click;
+        public Music background;
+
+        public void init(){
+            coin = assetManager.get(Constants.COIN_SOUND);
+            click = assetManager.get(Constants.CLICK_SOUND);
+            background = assetManager.get(Constants.BACKGROUND_MUSIC);
         }
     }
 }

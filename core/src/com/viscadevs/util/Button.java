@@ -1,5 +1,6 @@
 package com.viscadevs.util;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,12 +15,22 @@ public abstract class Button implements Disposable {
     protected Texture texture;
     protected Rectangle rectangle;
     protected Color color;
+    private Sound click;
 
     public Button(Texture texture, float x, float y, float width, float height, Color color) {
         this.texture = texture;
         rectangle = new Rectangle();
         rectangle.set(x, y, width, height);
         this.color = color;
+        click = Assets.getInstance().soundAssets.click;
+    }
+
+    public void setSound(Sound click){
+        this.click = click;
+    }
+
+    public Sound getSound(){
+        return click;
     }
 
     public boolean isTouched(float x, float y) {

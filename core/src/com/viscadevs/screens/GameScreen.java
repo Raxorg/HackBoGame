@@ -49,6 +49,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void show() {
+
         cloudsColor = Color.SALMON;
 
         gameHUD = new GameHUD(this);
