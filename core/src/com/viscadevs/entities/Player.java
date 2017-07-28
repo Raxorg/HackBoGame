@@ -20,7 +20,6 @@ public class Player {
     private int popularity = 0;
     private int happiness = -20;
     private Vector2 position;
-    private Texture texture;
     private Enums.Facing facing = Enums.Facing.RIGHT;
     private Enums.WalkState walkState = Enums.WalkState.STANDING;
     private long walkStartTime;
@@ -83,10 +82,6 @@ public class Player {
         }
 
         batch.draw(region, position.x, position.y);
-    }
-
-    public void dispose() {
-        texture.dispose();
     }
 
     public String getName() {
