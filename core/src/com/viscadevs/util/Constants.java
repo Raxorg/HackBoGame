@@ -146,6 +146,6 @@ public class Constants {
     public static final float CREDITS_BUTTON_Y = INSTRUCTIONS_BUTTON_Y - BUTTON_HEIGHT * 2;
     public static final float EXIT_BUTTON_X = START_BUTTON_X;
     public static final float EXIT_BUTTON_Y = CREDITS_BUTTON_Y - BUTTON_HEIGHT * 2;
-    public static final float EXIT_ARROW_BUTTON_X = 10;
-    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight() - BUTTON_WIDTH + 10;
+    public static final float EXIT_ARROW_BUTTON_X =  0;
+    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight()-BUTTON_WIDTH/4;
 }

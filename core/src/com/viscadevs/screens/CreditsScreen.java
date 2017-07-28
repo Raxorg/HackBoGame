@@ -51,9 +51,7 @@ public class CreditsScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        if(Assets.getInstance().landScapeAssets.credits == null){
-            System.out.print("derp");
-        }
+
         batch.draw(
                 Assets.getInstance().landScapeAssets.credits,
                 0,
@@ -70,6 +68,8 @@ public class CreditsScreen extends ScreenAdapter {
 
     @Override
     public void dispose() {
-        buttons[0].dispose();
+        for (Button b : buttons) {
+            b.dispose();
+        }
     }
 }
