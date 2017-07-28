@@ -27,5 +27,5 @@ public abstract class Button implements Disposable {
         texture.dispose();
     }
 
-    abstract void onTouch();
+    protected abstract void onTouch();
 }
