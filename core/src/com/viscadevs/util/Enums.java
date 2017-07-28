@@ -22,4 +22,10 @@ public class Enums {
         MALE,
         FEMALE
     }
+
+    public enum PlayerState {
+        HOMELESS,
+        STANDARD,
+        RICH
+    }
 }
