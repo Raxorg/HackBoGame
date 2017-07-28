@@ -28,7 +28,7 @@ public class Assets implements Disposable {
 
     public class PlayerAssets{
         Texture standingRight, standingLeft;
-        public final Animation walkingRightAnimation; // walkingLeftAnimation;
+        public final Animation walkingRightAnimation;
 
         public PlayerAssets(){
             standingRight = new Texture("player/perfil2");
