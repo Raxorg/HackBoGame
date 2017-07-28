@@ -13,12 +13,12 @@ public class Button {
     Rectangle rectangle;
 
     public Button(Texture texture, Vector2 position, Vector2 bounds){
-        this.texture = texture;
-        rectangle.set(position.x, position.y, bounds.x, bounds.y);
+        this(texture, position.x, position.y, bounds.x, bounds.y);
     }
 
     public Button(Texture texture, float x, float y, float width, float height){
-        this(texture, new Vector2(x, y), new Vector2(width, height));
+        this.texture = texture;
+        rectangle.set(x, y, width, height);
     }
 
     public boolean isTouched(Vector2 positionTouched){
