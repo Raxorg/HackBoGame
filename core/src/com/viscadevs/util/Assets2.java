@@ -13,12 +13,14 @@ public class Assets2 {
     // Player
 
     // Person
+    public static Texture person;
 
     private static boolean loaded = false;
 
     public static void load() {
         if (!loaded) {
             splash = new Texture(Gdx.files.internal("other/splash.jpg"));
+            person = new Texture(Gdx.files.internal("other/person.png"));
             loaded = true;
         }
     }
