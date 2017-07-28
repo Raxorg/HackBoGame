@@ -50,7 +50,7 @@ public class GameScreen extends ScreenAdapter {
     @Override
     public void show() {
 
-        cloudsColor = Color.SALMON;
+        cloudsColor = Color.WHITE;
 
         gameHUD = new GameHUD(this);
         // TODO GET THE NAME AND GENDER FROM MENU
@@ -95,6 +95,7 @@ public class GameScreen extends ScreenAdapter {
                     home.upgrade();
                     player.setMoney(player.getMoney() - 2500);
                 }
+                player.setLevel(home.getLevel());
             }
         };
 

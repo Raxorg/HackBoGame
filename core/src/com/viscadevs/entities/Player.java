@@ -83,7 +83,7 @@ public class Player {
                     standing = Assets.getInstance().playerAssets.malePoorFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.malePoorWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.malePoorWalkingLeftAnimation;
-                } else {
+                } else  if(gender == Enums.Gender.FEMALE){
                     standing = Assets.getInstance().playerAssets.femalePoorFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.femalePoorWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.femalePoorWalkingLeftAnimation;
@@ -94,7 +94,7 @@ public class Player {
                     standing = Assets.getInstance().playerAssets.maleMediumFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.maleMediumWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.maleMediumWalkingLeftAnimation;
-                } else {
+                } else if(gender == Enums.Gender.FEMALE){
                     standing = Assets.getInstance().playerAssets.femaleMediumFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.femaleMediumWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.femaleMediumWalkingLeftAnimation;
@@ -105,7 +105,7 @@ public class Player {
                     standing = Assets.getInstance().playerAssets.maleRichFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.maleRichWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.maleRichWalkingLeftAnimation;
-                } else {
+                } else if(gender == Enums.Gender.FEMALE) {
                     standing = Assets.getInstance().playerAssets.femaleRichFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.femaleRichWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.femaleRichWalkingLeftAnimation;
@@ -212,5 +212,9 @@ public class Player {
 
     public void setEnergy(int energy) {
         this.energy = energy;
+    }
+
+    public void setLevel(Enums.Level level) {
+        this.level = level;
     }
 }
