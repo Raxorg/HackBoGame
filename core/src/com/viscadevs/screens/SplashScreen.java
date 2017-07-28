@@ -15,7 +15,6 @@ public class SplashScreen extends ScreenAdapter {
 
     private HackBoGame game;
 
-    private Texture black;
     private Enums.SplashState state;
     private float alpha = 0;
 
@@ -30,7 +29,6 @@ public class SplashScreen extends ScreenAdapter {
     @Override
     public void show() {
         state = Enums.SplashState.FADING_IN;
-        black = new Texture(Gdx.files.internal("other/pixel.png"));
     }
 
     public void render(float delta) {
@@ -48,7 +46,7 @@ public class SplashScreen extends ScreenAdapter {
         );
         batch.setColor(0, 0, 0, 1 - alpha);
         batch.draw(
-                black,
+                AssetManager.pixel,
                 0,
                 0,
                 Gdx.graphics.getWidth(),

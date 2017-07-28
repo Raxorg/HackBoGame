@@ -19,6 +19,9 @@ public class AssetManager {
     // Person
     public static Texture person;
 
+    // Other
+    public static Texture pixel;
+
     private static boolean loaded = false;
 
     private SplashScreen splashScreen;
@@ -27,6 +30,7 @@ public class AssetManager {
         if (!loaded) {
             splash = new Texture(Gdx.files.internal("other/splash.jpg"));
             person = new Texture(Gdx.files.internal("other/person.png"));
+            pixel = new Texture(Gdx.files.internal("other/pixel.png"));
             splashScreen.doneLoadingAssets();
             loaded = true;
         }
