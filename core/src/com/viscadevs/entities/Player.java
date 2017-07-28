@@ -75,10 +75,10 @@ public class Player {
 
     public void render(SpriteBatch batch) {
         batch.setColor(1, 1, 1, 1);
-        Texture region = Assets.getInstance().playerAssets.mediumFront;
+        Texture region = Assets.getInstance().playerAssets.maleMediumFront;
 
         if (walkState == Enums.WalkState.STANDING) {
-            region = Assets.getInstance().playerAssets.mediumFront;
+            region = Assets.getInstance().playerAssets.maleMediumFront;
         } else if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
             region = Assets.getInstance().playerAssets.maleMediumWalkingRightAnimation.getKeyFrame(walkTimeSeconds);
