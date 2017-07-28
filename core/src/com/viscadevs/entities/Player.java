@@ -1,4 +1,4 @@
-package com.viscadevs.hackbo;
+package com.viscadevs.entities;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
