@@ -12,6 +12,7 @@ public class Assets implements Disposable {
 
     public PlayerAssets playerAssets;
     public PersonAssets personAssets;
+    public BarAssets barAssets;
 
     public static Assets getInstance() {
         return instance;
@@ -103,6 +104,19 @@ public class Assets implements Disposable {
 
         public void init() {
             person = assetManager.get(Constants.PERSON, Texture.class);
+        }
+    }
+
+    public class BarAssets {
+        public Texture left, mid, right, leftF, midF, rightF;
+
+        public void init(){
+            left = assetManager.get(Constants.BAR_LEFT);
+            mid = assetManager.get(Constants.BAR_MID);
+            right = assetManager.get(Constants.BAR_RIGHT);
+            leftF = assetManager.get(Constants.BAR_LEFT_F);
+            midF = assetManager.get(Constants.BAR_MID_F);
+            rightF = assetManager.get(Constants.BAR_RIGHT_F);
         }
     }
 }

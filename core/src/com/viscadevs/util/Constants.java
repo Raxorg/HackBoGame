@@ -48,4 +48,10 @@ public class Constants {
     public static final float HUD_MARGIN = 220;
     public static final float PLAYER_MOVE_SPEED = 20;
 
+    public static final String BAR_LEFT = "bar/left";
+    public static final String BAR_MID = "bar/left";
+    public static final String BAR_RIGHT = "bar/left";
+    public static final String BAR_LEFT_F = "bar/left";
+    public static final String BAR_MID_F = "bar/left";
+    public static final String BAR_RIGHT_F = "bar/left";
 }
