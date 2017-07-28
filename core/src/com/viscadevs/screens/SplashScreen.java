@@ -6,10 +6,12 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.hackbo.HackBoGame;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
+import static com.viscadevs.hackbo.HackBoGame.manager;
 
 public class SplashScreen extends ScreenAdapter {
 
@@ -48,6 +50,7 @@ public class SplashScreen extends ScreenAdapter {
                     alpha = 1;
                     state = Enums.SplashState.WAITING_ASSETS;
                     // AQUI QUE SE CARGUEN LOS ASSETS
+                    Assets.getInstance().init(manager);
                     // TEMPORALMENTE VAMOS AL FADE OUT (POR AHORA)
                     state = Enums.SplashState.FADING_OUT;
                 }

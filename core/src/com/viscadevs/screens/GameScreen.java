@@ -19,8 +19,6 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        AssetManager am = new AssetManager();
-        Assets.getInstance().init(am);
 
         viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
     }

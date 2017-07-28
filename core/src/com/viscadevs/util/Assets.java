@@ -1,7 +1,11 @@
 package com.viscadevs.util;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.utils.Disposable;
+
+import java.util.ArrayList;
 
 public class Assets implements Disposable {
 
@@ -20,5 +24,21 @@ public class Assets implements Disposable {
     @Override
     public void dispose() {
         assetManager.dispose();
+    }
+
+    public class PlayerAssets{
+        Texture standingRight, standingLeft;
+        Animation walkingRightAnimation, walkingLeftAnimation;
+
+        public PlayerAssets(){
+            standingRight = new Texture("player/perfil2");
+
+            ArrayList<Texture> walkingRightFrames = new ArrayList<Texture>();
+            walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_1));
+            walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_2));
+            walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_3));
+
+            walkingRightAnimation = new Animation()
+        }
     }
 }

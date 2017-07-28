@@ -10,4 +10,10 @@ public class Constants {
     public static final int INITIAL_HEALTH = 100;
     public static final int MAX_BAR_CAPACITY = 100;
     public static final int INITIAL_MONEY = 100;
+
+    public static final String STANDING_RIGHT = "/player/perfil.2.pdn";
+    public static final String WALKING_RIGHT_1 = "/player/perfil.1";
+    public static final String WALKING_RIGHT_2 = "/player/perfil.2";
+    public static final String WALKING_RIGHT_3 = "/player/perfil.3";
+
 }
