@@ -20,8 +20,14 @@ public class GameHUD {
     public GameHUD(final GameScreen screen) {
         this.screen = screen;
         bars = new Bar[2];
-        bars[0] = new Bar(new Vector2(0, Gdx.graphics.getHeight()- Constants.BAR_HEIGHT), Color.RED);
-        bars[1] = new Bar(new Vector2(200, 0), Color.BLUE);
+        bars[0] = new Bar(
+                new Vector2(0, Gdx.graphics.getHeight() - Constants.BAR_HEIGHT),
+                Color.RED
+        );
+        bars[1] = new Bar(
+                new Vector2(200, 0),
+                Color.BLUE
+        );
 
         upgrades = new Upgrade[1];
 
