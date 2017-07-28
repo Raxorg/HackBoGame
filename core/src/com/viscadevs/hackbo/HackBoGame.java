@@ -1,7 +1,6 @@
 package com.viscadevs.hackbo;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.screens.MenuScreen;
@@ -30,7 +29,6 @@ public class HackBoGame extends Game {
     }
 
     public void endOfSplash() {
-        // DERP
         setScreen(new MenuScreen(this));
     }
 }

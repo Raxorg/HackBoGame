@@ -26,7 +26,6 @@ import static com.viscadevs.util.ViscaUtils.random;
 
 public class GameScreen extends ScreenAdapter {
 
-    private Viewport viewport;
     private Player player;
     private DelayedRemovalArray<Person> people;
     private GameHUD gameHUD;
@@ -64,6 +63,13 @@ public class GameScreen extends ScreenAdapter {
         }
 
         batch.begin();
+        batch.draw(
+                Assets.getInstance().playerAssets.standingRight,
+                0,
+                0,
+                Gdx.graphics.getWidth(),
+                Gdx.graphics.getHeight()
+        );
 
         // Update stuff
         for (Person p : people) {

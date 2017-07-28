@@ -3,7 +3,6 @@ package com.viscadevs.util;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
 public class Assets implements Disposable {
@@ -41,8 +40,6 @@ public class Assets implements Disposable {
         assetManager.load(Constants.WALKING_RIGHT_3, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
-        // Splash
-        assetManager.load(Constants.SPLASH, Texture.class);
 
         assetManager.finishLoading();
     }
