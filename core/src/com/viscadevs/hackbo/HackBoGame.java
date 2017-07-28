@@ -40,6 +40,6 @@ public class HackBoGame extends Game {
     }
 
     public void gameOver() {
-        // TODO WHAT HAPPENS
+        setScreen(new MenuScreen(this));
     }
 }

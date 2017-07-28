@@ -55,6 +55,26 @@ public class GameHUD implements Disposable {
                 2,
                 Color.BLACK
         );
+        ViscaUtils.drawCenteredFont(
+                font,
+                Constants.MONEY_BAR_WIDTH,
+                Constants.MONEY_BAR_HEIGHT,
+                0,
+                Constants.MONEY_BAR_HEIGHT / 2,
+                "ENERGIA",
+                2,
+                Color.BLUE
+        );
+        ViscaUtils.drawCenteredFont(
+                font,
+                Constants.MONEY_BAR_WIDTH,
+                Constants.MONEY_BAR_HEIGHT,
+                280,
+                Constants.MONEY_BAR_HEIGHT / 2,
+                "VIDA",
+                2,
+                Color.RED
+        );
 
         bars[0].render(gameScreen.getPlayer().getEnergy());
         bars[1].render(gameScreen.getPlayer().getHealth());
