@@ -14,7 +14,6 @@ import com.viscadevs.hud.Upgrade;
 import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Button;
-import com.viscadevs.util.ButtonListener;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
@@ -31,11 +30,10 @@ public class GameScreen extends ScreenAdapter {
     private long startTime;
     private Button[] buttons;
     private Home home;
-    private ButtonListener listener;
 
     @Override
     public void show() {
-        gameHUD = new GameHUD(this);
+        gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", Enums.Gender.MALE, 0, 100);
         people = new DelayedRemovalArray<Person>();
@@ -75,7 +73,6 @@ public class GameScreen extends ScreenAdapter {
 
         batch.begin();
 
-
         // Update the people
         for (Person p : people) {
             people.begin();
@@ -87,7 +84,21 @@ public class GameScreen extends ScreenAdapter {
         player.update(delta);
 
         // Draw the city
-        batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
+        batch.draw(
+                Assets.getInstance().landScapeAssets.street,
+                0,
+                0,
+                Constants.WORLD_WIDTH,
+                Constants.WORLD_HEIGHT
+        );
+        batch.draw(
+                Assets.getInstance().landScapeAssets.street,
+                0,
+                0,
+                Constants.WORLD_WIDTH,
+                Constants.WORLD_HEIGHT
+        );
+
         batch.setColor(1, 1, 1, 1);
 
         home.render(batch);

@@ -5,27 +5,25 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
-import com.viscadevs.screens.GameScreen;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
 
 public class GameHUD {
-    GameScreen screen;
 
     private Bar[] bars;
     private Upgrade[] upgrades;
 
-    public GameHUD(final GameScreen screen) {
-        this.screen = screen;
+    public GameHUD() {
         bars = new Bar[2];
         bars[0] = new Bar(
-                new Vector2(0, Gdx.graphics.getHeight() - Constants.BAR_HEIGHT),
+                new Vector2(400, Gdx.graphics.getHeight() - Constants.BAR_HEIGHT),
                 Color.RED
         );
         bars[1] = new Bar(
-                new Vector2(200, 0),
+                new Vector2(400, 0),
                 Color.BLUE
         );
 
@@ -33,11 +31,14 @@ public class GameHUD {
 
     }
 
-    // TODO MONEY
-    // TODO STATS
-    // TODO BUTTONS
-
     public void render(int money) {
+        batch.draw(
+                Assets.getInstance().hudAssets.moneyBar,
+                0,
+                Gdx.graphics.getHeight() - Constants.MONEY_BAR_HEIGHT,
+                Constants.MONEY_BAR_WIDTH,
+                Constants.MONEY_BAR_HEIGHT
+        );
         font.setColor(Color.WHITE);
         font.getData().setScale(1);
         font.draw(batch, money + "", 0, 0);

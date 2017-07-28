@@ -16,6 +16,7 @@ public class Assets implements Disposable {
     public LandScapeAssets landScapeAssets;
     public UpgradeAssets upgradeAssets;
     public ButtonAssets buttonAssets;
+    public HUDAssets hudAssets;
 
     public static Assets getInstance() {
         return instance;
@@ -38,11 +39,14 @@ public class Assets implements Disposable {
         upgradeAssets.init();
         buttonAssets = new ButtonAssets();
         buttonAssets.init();
+        hudAssets = new HUDAssets();
+        hudAssets.init();
     }
 
     private void load() {
-        //LandScape
+        // City
         assetManager.load(Constants.STREET, Texture.class);
+        assetManager.load(Constants.CLOUDS, Texture.class);
         // Player
         assetManager.load(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
         assetManager.load(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
@@ -60,13 +64,15 @@ public class Assets implements Disposable {
         assetManager.load(Constants.HOMELESS_FRONT, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
-        // Bars
+        assetManager.load(Constants.PERSON2, Texture.class);
+        // HUD
         assetManager.load(Constants.BAR_LEFT, Texture.class);
         assetManager.load(Constants.BAR_MID, Texture.class);
         assetManager.load(Constants.BAR_RIGHT, Texture.class);
         assetManager.load(Constants.BAR_LEFT_F, Texture.class);
         assetManager.load(Constants.BAR_MID_F, Texture.class);
         assetManager.load(Constants.BAR_RIGHT_F, Texture.class);
+        assetManager.load(Constants.HUD_MONEY_BAR, Texture.class);
         //Upgrades
         assetManager.load(Constants.POOR_HOME, Texture.class);
         assetManager.load(Constants.MEDIUM_HOME, Texture.class);
@@ -131,10 +137,11 @@ public class Assets implements Disposable {
     }
 
     public class PersonAssets {
-        public Texture person;
+        public Texture person, person2;
 
         public void init() {
             person = assetManager.get(Constants.PERSON, Texture.class);
+            person2 = assetManager.get(Constants.PERSON2, Texture.class);
         }
     }
 
@@ -152,10 +159,11 @@ public class Assets implements Disposable {
     }
 
     public class LandScapeAssets {
-        public Texture street;
+        public Texture street, clouds;
 
         public void init() {
             street = assetManager.get(Constants.STREET);
+            clouds = assetManager.get(Constants.CLOUDS);
         }
     }
 
@@ -181,6 +189,14 @@ public class Assets implements Disposable {
             instructions = assetManager.get(Constants.BUTTONS_INSTRUCTIONS);
             credits = assetManager.get(Constants.BUTTONS_CREDITS);
 
+        }
+    }
+
+    public class HUDAssets {
+        public Texture moneyBar;
+
+        public void init() {
+            moneyBar = assetManager.get(Constants.HUD_MONEY_BAR);
         }
     }
 }

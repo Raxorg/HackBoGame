@@ -18,6 +18,7 @@ public class Constants {
 
     // Person
     public static final String PERSON = "other/person.png";
+    public static final String PERSON2 = "other/person2.png";
     public static final float PERSON_SPEED = 25f;
     public static final float PERSON_MAX_BONUS_SPEED = 150f;
     public static final float PERSON_SPAWN_RATE = 1f;
@@ -57,14 +58,16 @@ public class Constants {
     public static final String HOME_UPGRADE = "upgrades/home_upgrade.png";
     public static final String MONEY_UPGRADE = "upgrades/money_upgrade.png";
 
+    // City
     public static final String STREET = "scene/street.png";
+    public static final String CLOUDS = "scene/clouds.png";
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 
     public static final Vector2 HOME_POSITION = new Vector2(400, 100);
     public static final Vector2 HOME_DIMENTIONS = new Vector2(150, 100);
 
-    // Bars
+    // HUD
     public static final String BAR_LEFT = "bar/left.png";
     public static final String BAR_MID = "bar/mid.png";
     public static final String BAR_RIGHT = "bar/right.png";
@@ -73,6 +76,9 @@ public class Constants {
     public static final String BAR_RIGHT_F = "bar/rightF.png";
     public static final float BAR_WIDTH = 200f;
     public static final float BAR_HEIGHT = 25f;
+    public static final String HUD_MONEY_BAR = "other/moneyBar.png";
+    public static final float MONEY_BAR_WIDTH = 250f;
+    public static final float MONEY_BAR_HEIGHT = MONEY_BAR_WIDTH / 8f;
 
     // Buttons
     public static final String BUTTONS_START = "other/start.png";
