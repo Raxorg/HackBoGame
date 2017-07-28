@@ -67,7 +67,7 @@ public class StartScreen extends ScreenAdapter {
                     alpha = 1;
                     state = Enums.SplashState.WAITING_ASSETS;
                     // AQUI QUE SE CARGUEN LOS ASSETS
-                    Assets.getInstance().init();
+
                     // TEMPORALMENTE VAMOS AL FADE OUT (POR AHORA)
                     state = Enums.SplashState.FADING_OUT;
                 }
