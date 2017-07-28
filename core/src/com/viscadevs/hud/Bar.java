@@ -17,7 +17,7 @@ public class Bar {
         this.position = position;
     }
 
-    public void render() {
+    public void render(float porcentage) {
         batch.setColor(1, 1, 1, 1);
         batch.draw(
                 Assets.getInstance().barAssets.left,
@@ -52,7 +52,7 @@ public class Bar {
                 Assets.getInstance().barAssets.midF,
                 position.x + Constants.BAR_HEIGHT,
                 position.y,
-                Constants.BAR_WIDTH,
+                Constants.BAR_WIDTH * porcentage / 100,
                 Constants.BAR_HEIGHT
         );
         batch.draw(

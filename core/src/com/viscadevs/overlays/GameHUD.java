@@ -46,7 +46,7 @@ public class GameHUD {
         font.draw(batch, money + "", 0, 0);
 
         for (Bar bar : bars) {
-            bar.render();
+            bar.render(25);
         }
     }
 

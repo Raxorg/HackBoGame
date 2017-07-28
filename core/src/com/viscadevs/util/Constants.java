@@ -117,7 +117,7 @@ public class Constants {
     public static final float BAR_HEIGHT = 25f;
     public static final String HUD_MONEY_BAR = "other/moneyBar.png";
     public static final float MONEY_BAR_WIDTH = 300f;
-    public static final float MONEY_BAR_HEIGHT = MONEY_BAR_WIDTH / 8f;
+    public static final float MONEY_BAR_HEIGHT = MONEY_BAR_WIDTH / 6;
 
     // Buttons
     public static final String BUTTONS_START = "other/start.png";
