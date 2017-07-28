@@ -11,10 +11,12 @@ public class Bar {
 
     private Color color;
     private Vector2 position;
+    private float percentage;
 
     public Bar(Vector2 position, Color color) {
         this.color = color;
         this.position = position;
+        percentage = 0;
     }
 
     public void render(float porcentage) {
