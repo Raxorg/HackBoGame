@@ -2,18 +2,19 @@ package com.viscadevs.entities;
 
 import com.badlogic.gdx.math.Vector2;
 import com.viscadevs.util.Constants;
+import com.viscadevs.util.Enums;
 
 public class Player {
 
     private String name;
-    private String gender;
-    private int money = 0;
+    private Enums.Gender gender;
+    private int money = 20;
     private int health = Constants.INITIAL_HEALTH;
     private int popularity = 0;
     private int happiness = -20;
     private Vector2 position;
 
-    public Player(String name, int money, String gender, int health, int popularity, int happiness, Vector2 position) {
+    public Player(String name, int money, Enums.Gender gender, int health, int popularity, int happiness, Vector2 position) {
         this.name = name;
         this.gender = gender;
         this.money = money;
@@ -31,11 +32,11 @@ public class Player {
         this.name = name;
     }
 
-    public String getGender() {
+    public Enums.Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Enums.Gender gender) {
         this.gender = gender;
     }
 

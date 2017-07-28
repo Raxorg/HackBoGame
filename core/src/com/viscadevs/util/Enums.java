@@ -12,4 +12,9 @@ public class Enums {
         RIGHT,
         LEFT
     }
+
+    public enum Gender {
+        MALE,
+        FEMALE
+    }
 }

@@ -22,11 +22,9 @@ public class GameHUD {
     public void render(int money) {
         viewport.apply();
         batch.setProjectionMatrix(viewport.getCamera().combined);
-        batch.begin();
         font.setColor(Color.WHITE);
         font.getData().setScale(1);
-        font.draw(batch, money + "", Constants.HUD_MARGIN, viewport.getWorldHeight()- Constants.HUD_MARGIN);
-        batch.end();
+        font.draw(batch, money + "", Constants.HUD_MARGIN, viewport.getWorldHeight() - Constants.HUD_MARGIN);
     }
 
 }
