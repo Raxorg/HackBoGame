@@ -27,7 +27,7 @@ public class GameScreen extends ScreenAdapter {
         viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
-        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(0, 0));
+        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(50, 50));
     }
 
     @Override
