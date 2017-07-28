@@ -8,6 +8,7 @@ import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Button;
 import com.viscadevs.util.ButtonListener;
+import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
@@ -15,7 +16,7 @@ import static com.viscadevs.hackbo.HackBoGame.batch;
 
 public class GenderSelectionScreen extends ScreenAdapter {
     private HackBoGame game;
-    private Button maleButton, femaleButton;
+    private Button maleButton, femaleButton, exitButton;
 
     public GenderSelectionScreen(HackBoGame game) {
         this.game = game;
@@ -39,10 +40,24 @@ public class GenderSelectionScreen extends ScreenAdapter {
                 game.setScreen(new GameScreen(Enums.Gender.FEMALE));
             }
         };
+        exitButton = new Button(
+                Assets.getInstance().buttonAssets.exit_arrow,
+                Constants.EXIT_ARROW_BUTTON_X,
+                Constants.EXIT_ARROW_BUTTON_Y,
+                Constants.BUTTON_HEIGHT,
+                Constants.BUTTON_HEIGHT,
+                Color.RED
+        ) {
+            @Override
+            public void onTouch() {
+                game.setScreen(new MenuScreen(game));
+            }
+        };
 
-        Button[] buttons = new Button[2];
+        Button[] buttons = new Button[3];
         buttons[0] = maleButton;
         buttons[1] = femaleButton;
+        buttons[2] = exitButton;
         Gdx.input.setInputProcessor(new ButtonListener(buttons));
     }
 
@@ -56,6 +71,7 @@ public class GenderSelectionScreen extends ScreenAdapter {
 
         maleButton.render();
         femaleButton.render();
+        exitButton.render();
 
         batch.end();
     }
@@ -64,5 +80,6 @@ public class GenderSelectionScreen extends ScreenAdapter {
     public void dispose() {
         maleButton.dispose();
         femaleButton.dispose();
+        exitButton.dispose();
     }
 }
