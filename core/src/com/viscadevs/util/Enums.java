@@ -17,4 +17,9 @@ public class Enums {
         WALKING,
         STANDING
     }
+
+    public enum Gender {
+        MALE,
+        FEMALE
+    }
 }

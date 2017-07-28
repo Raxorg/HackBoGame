@@ -1,5 +1,6 @@
 package com.viscadevs.entities;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.util.Assets;
@@ -54,10 +55,10 @@ public class Player {
     }
 
     public void render(float delta) {
-        Texture region = Assets.getInstance().PlayerAssets.
+        Texture region = Assets.getInstance().PlayerAssets
 
-        if (facing == Direction.RIGHT && jumpState != Enums.JumpState.GROUNDED) {
-            region = Assets.instance.gigaGalAssets.jumpingRight;
+        if (facing == Enums.Facing.RIGHT) {
+            region = Assets.getInstance().PlayerAssets.
         } else if (facing == Direction.RIGHT && walkState == Enums.WalkState.NOT_WALKING) {
             region = Assets.instance.gigaGalAssets.standingRight;
         } else if (facing == Direction.RIGHT && walkState == Enums.WalkState.WALKING) {
