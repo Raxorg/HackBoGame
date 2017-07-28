@@ -15,8 +15,8 @@ public class Player {
 
     private String name;
     private Enums.Gender gender;
-    private int money = 20;
-    private int health = Constants.INITIAL_HEALTH;
+    private int money;
+    private int health;
     private int popularity = 0;
     private int happiness = -20;
     private Vector2 position;
@@ -24,11 +24,11 @@ public class Player {
     private Enums.WalkState walkState = Enums.WalkState.STANDING;
     private long walkStartTime = 0;
 
-    public Player(String name, int money, Enums.Gender gender, int health, int popularity, int happiness, Vector2 position) {
+    public Player(String name, Enums.Gender gender, int popularity, int happiness, Vector2 position) {
         this.name = name;
         this.gender = gender;
-        this.money = money;
-        this.health = health;
+        money = Constants.INITIAL_MONEY;
+        health = Constants.INITIAL_HEALTH;
         this.popularity = popularity;
         this.happiness = happiness;
         this.position = position;

@@ -30,7 +30,7 @@ public class GameScreen extends ScreenAdapter {
     public void show() {
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
-        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 100, new Vector2(0, 50));
+        player = new Player("BOB", Enums.Gender.MALE, 0, 100, new Vector2(0, Constants.PLAYER_Y));
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
     }
