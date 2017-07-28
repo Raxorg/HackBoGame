@@ -49,25 +49,27 @@ public class GameScreen extends ScreenAdapter {
 
         batch.begin();
 
-        // Update stuff
+        // Update the people
         for (Person p : people) {
             people.begin();
             p.update(delta);
             people.end();
         }
+        // Update the player
         player.update(delta);
 
-        // Draw stuff
+        // Draw the city
+        batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
+        // Draw the people
         for (Person p : people) {
             p.render();
         }
         batch.setColor(1, 1, 1, 1);
-        // Draw the city
-        batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
-        // TODO RENDER THE PLAYER
+        // Draw the player
         player.render(batch);
-        // TODO RENDER THE HUD
+        // Draw the HUD
         gameHUD.render(player.getMoney());
+
         batch.end();
     }
 

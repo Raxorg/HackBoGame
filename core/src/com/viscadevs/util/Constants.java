@@ -5,8 +5,8 @@ public class Constants {
     public static final float FADING_SPEED = 0.5f;
 
     // Player and Person
-    public static final float HUMAN_WIDTH = 30;
-    public static final float HUMAN_HEIGHT = 64;
+    public static final float HUMAN_WIDTH = 60;
+    public static final float HUMAN_HEIGHT = 96;
 
     // Player
     public static final float PLAYER_SPEED = 25f;
