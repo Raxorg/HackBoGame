@@ -131,6 +131,8 @@ public class Constants {
     public static final String BUTTONS_CREDITS = "other/credits.png";
     public static final String BUTTONS_EXIT = "other/exit.png";
     public static final String BUTTONS_ARROW_EXIT = "other/arrow.png";
+    public static final String MALE_BUTTON = "other/male.png";
+    public static final String FEMALE_BUTTON = "other/female.png";
 
 
     public static final float BUTTON_WIDTH = 200;

@@ -120,6 +120,8 @@ public class Assets implements Disposable {
         assetManager.load(Constants.BUTTONS_CREDITS, Texture.class);
         assetManager.load(Constants.BUTTONS_EXIT, Texture.class);
         assetManager.load(Constants.BUTTONS_ARROW_EXIT, Texture.class);
+        assetManager.load(Constants.MALE_BUTTON, Texture.class);
+        assetManager.load(Constants.FEMALE_BUTTON, Texture.class);
 
 
         assetManager.finishLoading();
@@ -300,7 +302,7 @@ public class Assets implements Disposable {
     }
 
     public class ButtonAssets {
-        public Texture start, instructions, credits, exit, exit_arrow;
+        public Texture start, instructions, credits, exit, exit_arrow, male, female;
 
         public void init() {
             start = assetManager.get(Constants.BUTTONS_START);
@@ -308,7 +310,8 @@ public class Assets implements Disposable {
             credits = assetManager.get(Constants.BUTTONS_CREDITS);
             exit = assetManager.get(Constants.BUTTONS_EXIT);
             exit_arrow = assetManager.get(Constants.BUTTONS_ARROW_EXIT);
-
+            male = assetManager.get(Constants.MALE_BUTTON);
+            female = assetManager.get(Constants.FEMALE_BUTTON);
         }
     }
 
