@@ -88,7 +88,7 @@ public class Assets implements Disposable {
         }
     }
 
-    private class PersonAssets {
+    public class PersonAssets {
         public final Texture person;
 
         PersonAssets() {
