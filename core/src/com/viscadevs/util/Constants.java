@@ -60,7 +60,7 @@ public class Constants {
 
     // City
     public static final String STREET = "scene/street.png";
-    public static final String CLOUDS = "scene/clouds.png";
+    public static final String CLOUDS = "scene/sky/clouds.png";
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 
