@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Disposable;
 import com.viscadevs.screens.GameScreen;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Button;
@@ -12,7 +13,7 @@ import com.viscadevs.util.Constants;
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.util.ViscaUtils.random;
 
-public class Person {
+public class Person implements Disposable{
 
     private boolean movingRight;
     private Vector2 position;
@@ -90,6 +91,15 @@ public class Person {
             for (Button b : buttons) {
                 b.render();
             }
+        }
+    }
+
+
+    @Override
+    public void dispose() {
+        texture.dispose();
+        for(Button b : buttons){
+            b.dispose();
         }
     }
 }

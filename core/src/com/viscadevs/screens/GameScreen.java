@@ -31,6 +31,11 @@ public class GameScreen extends ScreenAdapter {
     private Button[] buttons;
     private Home home;
     private Color cloudsColor;
+    private Enums.Gender gender;
+
+    public GameScreen(Enums.Gender gender){
+        this.gender = gender;
+    }
 
     @Override
     public void show() {
@@ -39,6 +44,7 @@ public class GameScreen extends ScreenAdapter {
         gameHUD = new GameHUD(this);
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", Enums.Gender.MALE, 0, 100);
+        player.setGender(gender);
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
 
@@ -140,5 +146,17 @@ public class GameScreen extends ScreenAdapter {
     public void removePerson(Person person) {
         people.removeValue(person, true);
         System.out.println(people.size);
+    }
+
+
+    @Override
+    public void dispose() {
+        for(Person p : people){
+            p.dispose();
+        }
+
+        for(Button b : buttons){
+            b.dispose();
+        }
     }
 }

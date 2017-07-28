@@ -3,17 +3,19 @@ package com.viscadevs.overlays;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Disposable;
 import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.screens.GameScreen;
 import com.viscadevs.util.Assets;
+import com.viscadevs.util.Button;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
 
-public class GameHUD {
+public class GameHUD implements Disposable{
 
     private Bar[] bars;
     private Upgrade[] upgrades;
@@ -51,4 +53,10 @@ public class GameHUD {
         bars[1].render(gameScreen.getPlayer().getHealth());
     }
 
+    @Override
+    public void dispose() {
+        for(Upgrade u : upgrades){
+            u.dispose();
+        }
+    }
 }

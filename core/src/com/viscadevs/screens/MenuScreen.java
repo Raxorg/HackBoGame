@@ -35,7 +35,7 @@ public class MenuScreen extends ScreenAdapter {
         ) {
             @Override
             public void onTouch() {
-                game.setScreen(new GameScreen());
+                game.setScreen(new GenderSelectionScreen(game));
             }
         };
 
@@ -90,4 +90,10 @@ public class MenuScreen extends ScreenAdapter {
         batch.end();
     }
 
+    @Override
+    public void dispose() {
+        for(Button b : buttons){
+            b.dispose();
+        }
+    }
 }
