@@ -20,6 +20,8 @@ public class Assets implements Disposable {
         this.assetManager = assetManager;
         assetManager.finishLoading();
 
+        load();
+
         playerAssets = new PlayerAssets();
     }
 
