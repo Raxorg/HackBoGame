@@ -37,6 +37,7 @@ public class GameScreen extends ScreenAdapter {
         batch.setProjectionMatrix(viewport.getCamera().combined);
         viewport.apply();
         batch.begin();
+        player.render(batch);
         gameHUD.render(player.getMoney());
         // TODO RENDER THE BACKGROUND
         // TODO RENDER THE PLAYER
