@@ -1,4 +1,4 @@
 package com.viscadevs.overlays;
 
-public class Stats {
+public class UpgradeMenu {
 }

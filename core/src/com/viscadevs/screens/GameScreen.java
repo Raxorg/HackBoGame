@@ -70,7 +70,6 @@ public class GameScreen extends ScreenAdapter {
         }
 
         player.render(batch);
-        gameHUD.render(player.getMoney());
         // TODO RENDER THE BACKGROUND
         // TODO RENDER THE PLAYER
         // TODO RENDER THE HUD

@@ -34,7 +34,7 @@ public class Constants {
     public static final String SPLASH = "other/splash.jpg";
 
     // HUD
-    public static final float HUD_VIEWPORT_SIZE = WORLD_WIDTH;
+    public static final float HUD_VIEWPORT_SIZE = 400;
     public static final float HUD_MARGIN = 220;
     public static final float PLAYER_MOVE_SPEED = 20;
 

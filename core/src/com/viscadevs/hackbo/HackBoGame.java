@@ -30,7 +30,6 @@ public class HackBoGame extends Game {
     }
 
     public void endOfSplash() {
-        // DERP
         setScreen(new MenuScreen(this));
     }
 }
