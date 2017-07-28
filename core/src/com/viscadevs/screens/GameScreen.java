@@ -14,6 +14,7 @@ import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 
+
 public class GameScreen extends ScreenAdapter {
 
     private Viewport viewport;

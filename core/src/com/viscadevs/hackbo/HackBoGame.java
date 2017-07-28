@@ -1,10 +1,12 @@
 package com.viscadevs.hackbo;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.screens.GameScreen;
+import com.viscadevs.screens.MenuScreen;
 import com.viscadevs.screens.SplashScreen;
 
 public class HackBoGame extends Game {
@@ -12,12 +14,20 @@ public class HackBoGame extends Game {
     public static BitmapFont font;
 	public static AssetManager manager;
 
+    public final ScreenAdapter SPLASH, MENU, GAME;
+
+    public HackBoGame() {
+        SPLASH = new SplashScreen(this);
+        MENU = new MenuScreen(this);
+        GAME = new GameScreen();
+    }
+
     @Override
     public void create() {
         batch = new SpriteBatch();
         font = new BitmapFont();
 		manager = new AssetManager();
-        setScreen(new GameScreen());
+        setScreen(SPLASH);
     }
 
     @Override
@@ -28,6 +38,6 @@ public class HackBoGame extends Game {
     }
 
     public void endOfSplash() {
-        setScreen(new GameScreen());
+        setScreen(MENU);
     }
 }
