@@ -48,7 +48,7 @@ public class Person implements Disposable {
                     if (gameScreen.getPlayer().getEnergy() >= 10) {
                         gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 30);
                         gameScreen.getPlayer().setEnergy(gameScreen.getPlayer().getEnergy() - 10);
-
+                        getSound().play(100);
                     }
                 }
             }
@@ -69,6 +69,7 @@ public class Person implements Disposable {
                     if (gameScreen.getPlayer().getEnergy() >= 5) {
                         gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 10);
                         gameScreen.getPlayer().setEnergy(gameScreen.getPlayer().getEnergy() - 5);
+                        getSound().play(100);
                     }
                 }
             }
