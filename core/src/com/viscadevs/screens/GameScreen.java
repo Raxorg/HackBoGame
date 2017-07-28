@@ -3,11 +3,15 @@ package com.viscadevs.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.sun.glass.ui.View;
+import com.sun.prism.image.ViewPort;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
 import com.viscadevs.overlays.GameHUD;
@@ -30,18 +34,28 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
+        viewport = new ExtendViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
+        viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
-        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(50, 50));
+        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(0, 0));
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        viewport.update(width, height, true );
     }
 
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        viewport.apply();
+        batch.setProjectionMatrix(viewport.getCamera().combined);
+
 
         float timeElapsed = ViscaUtils.secondsSince(startTime);
         if (timeElapsed >= Constants.PERSON_SPAWN_RATE) {
@@ -50,7 +64,6 @@ public class GameScreen extends ScreenAdapter {
         }
 
         batch.begin();
-        batch.draw(Assets.getInstance().playerAssets.standingRight, 00, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         // Update stuff
         for (Person p : people) {
