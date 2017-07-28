@@ -107,6 +107,9 @@ public class Constants {
     // Credits
     public static final String CREDITS = "other/credits_screen.jpg";
 
+    // Instructions
+    public static final String INSTRUCTIONS = "other/instructions_screen.jpg";
+
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 

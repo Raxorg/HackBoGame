@@ -52,7 +52,7 @@ public class InstructionsScreen extends ScreenAdapter {
         batch.begin();
 
         batch.draw(
-                Assets.getInstance().landScapeAssets.street,
+                Assets.getInstance().landScapeAssets.instructions,
                 0,
                 0,
                 Gdx.graphics.getWidth(),
