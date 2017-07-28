@@ -33,6 +33,7 @@ public class GameScreen extends ScreenAdapter {
     private Home home;
     private Color cloudsColor;
     private Enums.Gender gender;
+    private Button upgradeHomeButton;
 
     public GameScreen(Enums.Gender gender) {
         this.gender = gender;
@@ -67,35 +68,78 @@ public class GameScreen extends ScreenAdapter {
 
             }
         };
+
+        upgradeHomeButton = new Button(
+                Assets.getInstance().upgradeAssets.homeUpgrade,
+                Gdx.graphics.getWidth() - 75f,
+                Gdx.graphics.getHeight() - 75f,
+                75f,
+                75f,
+                Color.BLUE
+        ) {
+            @Override
+            public void onTouch() {
+                if (player.getMoney() >= 1000) {
+                    home.upgrade();
+                }
+            }
+        };
     }
 
 
     @Override
     public void render(float delta) {
+        clearScreen();
+
+        calculateSpawnPerson();
+
+        updateButtons();
+
+        updatePeople(delta);
+
+        player.update(delta);
+
+        batch.begin();
+
+        drawCity();
+
+        home.render(batch);
+
+        player.render(batch);
+
+        for (Person p : people) {
+            p.render();
+        }
+
+        gameHUD.render(player.getMoney());
+
+        batch.setColor(1, 1, 1, 1);
+
+        batch.end();
+    }
+
+    private void clearScreen() {
         Gdx.gl.glClearColor(Color.SKY.r, Color.SKY.g, Color.SKY.b, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+    }
 
+    private void calculateSpawnPerson() {
         float timeElapsed = ViscaUtils.secondsSince(startTime);
         if (timeElapsed >= Constants.PERSON_SPAWN_RATE) {
             spawnPerson();
             startTime = TimeUtils.nanoTime();
         }
+    }
 
-        updateButtons();
-
-        batch.begin();
-
-        // Update the people
+    private void updatePeople(float delta) {
         for (Person p : people) {
             people.begin();
             p.update(delta);
             people.end();
         }
+    }
 
-        // Update the player
-        player.update(delta);
-
-        // Draw the city
+    private void drawCity() {
         batch.setColor(cloudsColor);
         batch.draw(
                 Assets.getInstance().landScapeAssets.clouds,
@@ -112,34 +156,15 @@ public class GameScreen extends ScreenAdapter {
                 Constants.WORLD_WIDTH,
                 Constants.WORLD_HEIGHT
         );
-
-        batch.setColor(1, 1, 1, 1);
-
-        home.render(batch);
-
-        // Draw the player
-        player.render(batch);
-        batch.setColor(1, 1, 1, 1);
-
-        // Draw the people
-        for (Person p : people) {
-            p.render();
-        }
-        batch.setColor(1, 1, 1, 1);
-
-        // Draw the HUD
-        gameHUD.render(player.getMoney());
-        batch.setColor(1, 1, 1, 1);
-
-        batch.end();
     }
 
     private void updateButtons() {
-        Button[] buttons = new Button[people.size * 2];
+        Button[] buttons = new Button[1 + people.size * 2];
         for (int i = 0; i < people.size; i++) {
             buttons[2 * i] = people.get(i).getStealButton();
             buttons[2 * i + 1] = people.get(i).getBegButton();
         }
+        buttons[people.size * 2] = upgradeHomeButton;
         Gdx.input.setInputProcessor(new ButtonListener(buttons));
     }
 

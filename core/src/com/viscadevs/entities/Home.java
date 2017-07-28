@@ -45,4 +45,17 @@ public class Home {
                 break;
         }
     }
+
+    public void upgrade() {
+        switch (level) {
+            case POOR:
+                level = Enums.Level.MEDIUM;
+                break;
+            case MEDIUM:
+                level = Enums.Level.RICH;
+                break;
+            default:
+                break;
+        }
+    }
 }
