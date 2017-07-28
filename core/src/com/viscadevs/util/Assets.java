@@ -30,15 +30,15 @@ public class Assets implements Disposable {
 
     private void load() {
         // Player
-        assetManager.load(Constants.STANDING_LEFT, Texture.class);
+        assetManager.load(Constants.STANDARD_STANDING_LEFT, Texture.class);
         assetManager.load(Constants.STANDING_RIGHT, Texture.class);
-        assetManager.load(Constants.WALKING_LEFT_1, Texture.class);
-        assetManager.load(Constants.WALKING_LEFT_2, Texture.class);
-        assetManager.load(Constants.WALKING_LEFT_3, Texture.class);
-        assetManager.load(Constants.WALKING_RIGHT_1, Texture.class);
-        assetManager.load(Constants.WALKING_RIGHT_2, Texture.class);
-        assetManager.load(Constants.WALKING_RIGHT_3, Texture.class);
-        assetManager.load(Constants.FRONT, Texture.class);
+        assetManager.load(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.STANDARD_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.STANDARD_FRONT, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
 
@@ -56,22 +56,22 @@ public class Assets implements Disposable {
         public Animation<Texture> walkingLeftAnimation;
 
         public void init() {
-            standingRight = assetManager.get(Constants.FRONT, Texture.class);
+            standingRight = assetManager.get(Constants.STANDARD_FRONT, Texture.class);
 
             Texture[] walkingRightFrames = new Texture[3];
-            walkingRightFrames[0] = assetManager.get(Constants.WALKING_RIGHT_1, Texture.class);
-            walkingRightFrames[1] = assetManager.get(Constants.WALKING_RIGHT_2, Texture.class);
-            walkingRightFrames[2] = assetManager.get(Constants.WALKING_RIGHT_3, Texture.class);
+            walkingRightFrames[0] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_1, Texture.class);
+            walkingRightFrames[1] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
+            walkingRightFrames[2] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
 
             walkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, walkingRightFrames);
             walkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            standingLeft = assetManager.get(Constants.FRONT, Texture.class);
+            standingLeft = assetManager.get(Constants.STANDARD_FRONT, Texture.class);
 
             Texture[] walkingLeftFrames = new Texture[3];
-            walkingLeftFrames[0] = assetManager.get(Constants.WALKING_LEFT_1, Texture.class);
-            walkingLeftFrames[1] = assetManager.get(Constants.WALKING_LEFT_2, Texture.class);
-            walkingLeftFrames[2] = assetManager.get(Constants.WALKING_LEFT_3, Texture.class);
+            walkingLeftFrames[0] = assetManager.get(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
+            walkingLeftFrames[1] = assetManager.get(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
+            walkingLeftFrames[2] = assetManager.get(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
 
             walkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, walkingLeftFrames);
             walkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);

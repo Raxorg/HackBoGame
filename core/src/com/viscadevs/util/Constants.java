@@ -19,16 +19,23 @@ public class Constants {
     public static final int MAX_BAR_CAPACITY = 100;
     public static final int INITIAL_MONEY = 100;
 
-    public static final String STANDING_RIGHT = "player/standing_right.png";
-    public static final String WALKING_RIGHT_1 = "player/walking_right_1.png";
-    public static final String WALKING_RIGHT_2 = "player/standing_right.png";
-    public static final String WALKING_RIGHT_3 = "player/walking_right_2.png";
+    public static final String STANDARD_WALKING_RIGHT_1 = "player/standard_walking_right_1.png";
+    public static final String STANDARD_WALKING_RIGHT_2 = "player/standard_walking_right_2.png";
+    public static final String STANDARD_WALKING_RIGHT_3 = "player/standard_walking_right_3.png";
 
-    public static final String STANDING_LEFT = "player/standing_left.png";
-    public static final String WALKING_LEFT_1 = "player/walking_left_1.png";
-    public static final String WALKING_LEFT_2 = "player/standing_left.png";
-    public static final String WALKING_LEFT_3 = "player/walking_left_2.png";
-    public static final String FRONT = "player/front.png";
+    public static final String STANDARD_WALKING_LEFT_1 = "player/standard_walking_left_1.png";
+    public static final String STANDARD_WALKING_LEFT_2 = "player/standard_walking_left_2.png";
+    public static final String STANDARD_WALKING_LEFT_3 = "player/standard_walking_left_3.png";
+    public static final String STANDARD_FRONT = "player/standard_front.png";
+
+    public static final String HOMELESS_WALKING_RIGHT_1 = "player/homeless_walking_right_1.png";
+    public static final String HOMELESS_WALKING_RIGHT_2 = "player/homeless_walking_right_2.png";
+    public static final String HOMELESS_WALKING_RIGHT_3 = "player/homeless_walking_right_3.png";
+
+    public static final String HOMELESS_WALKING_LEFT_1 = "player/homeless_walking_left_1.png";
+    public static final String HOMELESS_WALKING_LEFT_2 = "player/homeless_walking_left_2.png";
+    public static final String HOMELESS_WALKING_LEFT_3 = "player/homeless_walking_left_3.png";
+    public static final String HOMELESS_FRONT = "player/homeless_front.png";
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 
