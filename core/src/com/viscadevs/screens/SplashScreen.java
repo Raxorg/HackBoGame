@@ -28,8 +28,8 @@ public class SplashScreen extends ScreenAdapter {
     @Override
     public void show() {
         state = Enums.SplashState.FADING_IN;
-        splash = new Texture(Gdx.files.internal("splash.jpg"));
-        black = new Texture(Gdx.files.internal("pixel.png"));
+        splash = new Texture(Gdx.files.internal("other/splash.jpg"));
+        black = new Texture(Gdx.files.internal("other/pixel.png"));
     }
 
     public void render(float delta) {
