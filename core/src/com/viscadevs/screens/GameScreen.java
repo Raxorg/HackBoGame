@@ -7,6 +7,7 @@ import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.entities.Player;
+import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
@@ -16,18 +17,23 @@ public class GameScreen extends ScreenAdapter {
     private Viewport viewport;
     private Player player;
     private DelayedRemovalArray people;
+    private GameHUD gameHUD;
 
     @Override
     public void show() {
         viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
+        gameHUD = new GameHUD();
     }
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         batch.setProjectionMatrix(viewport.getCamera().combined);
         viewport.apply();
         batch.begin();
+        gameHUD.render(player.getMoney());
         // TODO RENDER THE BACKGROUND
         // TODO RENDER THE PLAYER
         // TODO RENDER THE HUD

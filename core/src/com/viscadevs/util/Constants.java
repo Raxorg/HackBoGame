@@ -19,4 +19,7 @@ public class Constants {
     public static final String WALKING_RIGHT_3 = "/player/perfil.3";
     public static final float WALK_LOOP_DURATION = 0.25f;
 
+    // HUD
+    public static final float HUD_VIEWPORT_SIZE = WORLD_WIDTH * 3;
+    public static final float HUD_MARGIN = 220;
 }
