@@ -30,9 +30,12 @@ public class GameScreen extends ScreenAdapter {
     private long startTime;
     private Button[] buttons;
     private Home home;
+    private Color cloudsColor;
 
     @Override
     public void show() {
+        cloudsColor = Color.SALMON;
+
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", Enums.Gender.MALE, 0, 100);
@@ -84,13 +87,15 @@ public class GameScreen extends ScreenAdapter {
         player.update(delta);
 
         // Draw the city
+        batch.setColor(cloudsColor);
         batch.draw(
-                Assets.getInstance().landScapeAssets.street,
+                Assets.getInstance().landScapeAssets.clouds,
                 0,
                 0,
                 Constants.WORLD_WIDTH,
                 Constants.WORLD_HEIGHT
         );
+        batch.setColor(1, 1, 1, 1);
         batch.draw(
                 Assets.getInstance().landScapeAssets.street,
                 0,

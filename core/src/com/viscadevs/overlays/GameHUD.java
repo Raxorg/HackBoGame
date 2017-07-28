@@ -23,7 +23,7 @@ public class GameHUD {
                 Color.RED
         );
         bars[1] = new Bar(
-                new Vector2(Constants.BAR_WIDTH + Constants.BAR_HEIGHT, 0),
+                new Vector2(Constants.BAR_WIDTH + Constants.BAR_HEIGHT * 2, 0),
                 Color.BLUE
         );
 
