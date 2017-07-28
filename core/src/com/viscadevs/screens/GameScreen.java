@@ -6,7 +6,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.viscadevs.hackbo.Player;
+import com.viscadevs.entities.Player;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
