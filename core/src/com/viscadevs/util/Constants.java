@@ -30,9 +30,6 @@ public class Constants {
     public static final String PERSON = "other/person.png";
     public static final float PERSON_SPAWN_RATE = 4f;
 
-    // Splash
-    public static final String SPLASH = "other/splash.jpg";
-
     // HUD
     public static final float HUD_VIEWPORT_SIZE = 400;
     public static final float HUD_MARGIN = 220;
