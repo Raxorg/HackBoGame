@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
-import java.util.ArrayList;
-
 public class Assets implements Disposable {
 
     private static Assets instance = new Assets();
