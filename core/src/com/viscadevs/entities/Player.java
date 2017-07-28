@@ -69,9 +69,9 @@ public class Player {
         walkState = Enums.WalkState.WALKING;
         facing = Enums.Facing.RIGHT;
         position.x += delta * Constants.PLAYER_SPEED;
-        if(position.x + standing.getWidth() * 2>= Gdx.graphics.getWidth()){
+        if(position.x + Constants.HUMAN_WIDTH / 2>= Gdx.graphics.getWidth()){
             walkState = Enums.WalkState.STANDING;
-            position.x = Gdx.graphics.getWidth() - standing.getWidth() * 2;
+            position.x = Gdx.graphics.getWidth() - Constants.HUMAN_WIDTH / 2;
         }
     }
 
