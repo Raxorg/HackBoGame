@@ -3,7 +3,7 @@ package com.viscadevs.util;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
-public class Assets2 {
+public class AssetManager {
 
     // Splash
     public static Texture splash;

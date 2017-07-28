@@ -5,7 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.viscadevs.hackbo.HackBoGame;
-import com.viscadevs.util.Assets2;
+import com.viscadevs.util.AssetManager;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
@@ -37,7 +37,7 @@ public class SplashScreen extends ScreenAdapter {
         batch.begin();
         batch.setColor(1, 1, 1, 1);
         batch.draw(
-                Assets2.splash,
+                AssetManager.splash,
                 0,
                 0,
                 Gdx.graphics.getWidth(),
