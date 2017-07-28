@@ -4,11 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-/**
- * Created by Joaco99 on 28/07/2017.
- */
-
-public class Button {
+public abstract class Button {
     Texture texture;
     Rectangle rectangle;
 
@@ -21,7 +17,9 @@ public class Button {
         rectangle.set(x, y, width, height);
     }
 
-    public boolean isTouched(Vector2 positionTouched){
-        return rectangle.contains(positionTouched.x, positionTouched.y);
+    public boolean isTouched(float x, float y) {
+        return rectangle.contains(x, y);
     }
+
+    abstract void onTouch();
 }
