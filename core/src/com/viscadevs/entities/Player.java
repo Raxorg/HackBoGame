@@ -34,7 +34,7 @@ public class Player {
         this.position = position;
     }
 
-    public void moveLeft(float delta) {
+    private void moveLeft(float delta) {
         if (walkState != Enums.WalkState.WALKING) {
             walkStartTime = TimeUtils.nanoTime();
         }
@@ -43,7 +43,7 @@ public class Player {
         position.x -= delta * Constants.PLAYER_MOVE_SPEED;
     }
 
-    public void moveRight(float delta) {
+    private void moveRight(float delta) {
         if (walkState != Enums.WalkState.WALKING) {
             walkStartTime = TimeUtils.nanoTime();
         }
