@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.entities.Home;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
+import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Assets;
@@ -37,9 +38,13 @@ public class GameScreen extends ScreenAdapter {
     private Enums.Gender gender;
     private Button upgradeHomeButton, sleepButton;
     private boolean canUpgrade;
+    private float light;
+    private boolean dayToNight;
+    private HackBoGame game;
 
-    public GameScreen(Enums.Gender gender) {
+    public GameScreen(Enums.Gender gender, HackBoGame game) {
         this.gender = gender;
+        this.game = game;
     }
 
     @Override
@@ -107,12 +112,14 @@ public class GameScreen extends ScreenAdapter {
         };
 
         canUpgrade = false;
+        light = 1;
+        dayToNight = true;
     }
 
 
     @Override
     public void render(float delta) {
-        clearScreen();
+        clearScreen(delta);
 
         calculateSpawnPerson();
 
@@ -139,6 +146,7 @@ public class GameScreen extends ScreenAdapter {
         gameHUD.render(player.getMoney());
 
         if (canUpgrade) {
+            upgradeHomeButton.setColor(new Color(0, 0, 1, 1));
             upgradeHomeButton.render();
         } else {
             upgradeHomeButton.setColor(new Color(0.5f, 0.5f, 0.5f, 1));
@@ -151,10 +159,29 @@ public class GameScreen extends ScreenAdapter {
         batch.setColor(1, 1, 1, 1);
 
         batch.end();
+
+        if (player.getHealth() <= 0) {
+            game.gameOver();
+        }
     }
 
-    private void clearScreen() {
-        Gdx.gl.glClearColor(Color.SKY.r, Color.SKY.g, Color.SKY.b, 1);
+    private void clearScreen(float delta) {
+        if (dayToNight) {
+            light -= delta * Constants.DAY_SPEED;
+            if (light <= 0) {
+                light = 0;
+                dayToNight = false;
+                player.setHealth(player.getHealth() - 20);
+            }
+        } else {
+            light += delta * Constants.DAY_SPEED;
+            if (light >= 1) {
+                light = 1;
+                dayToNight = true;
+                player.setHealth(player.getHealth() - 20);
+            }
+        }
+        Gdx.gl.glClearColor(Color.SKY.r * light, Color.SKY.g * light, Color.SKY.b * light, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     }
 

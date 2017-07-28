@@ -29,15 +29,15 @@ public class GenderSelectionScreen extends ScreenAdapter {
                 Gdx.graphics.getWidth() / 7, Gdx.graphics.getHeight() / 3, Color.WHITE) {
             @Override
             public void onTouch() {
-                game.setScreen(new GameScreen(Enums.Gender.MALE));
+                game.setScreen(new GameScreen(Enums.Gender.MALE, game));
             }
         };
         femaleButton = new Button(Assets.getInstance().buttonAssets.female,
-                Gdx.graphics.getWidth() * 5/ 7, Gdx.graphics.getHeight() / 3,
-                Gdx.graphics.getWidth()/ 7, Gdx.graphics.getHeight() / 3, Color.WHITE) {
+                Gdx.graphics.getWidth() * 5 / 7, Gdx.graphics.getHeight() / 3,
+                Gdx.graphics.getWidth() / 7, Gdx.graphics.getHeight() / 3, Color.WHITE) {
             @Override
             public void onTouch() {
-                game.setScreen(new GameScreen(Enums.Gender.FEMALE));
+                game.setScreen(new GameScreen(Enums.Gender.FEMALE, game));
             }
         };
         exitButton = new Button(

@@ -14,7 +14,7 @@ import com.viscadevs.util.ViscaUtils;
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
 
-public class GameHUD implements Disposable{
+public class GameHUD implements Disposable {
 
     private Bar[] bars;
     private Upgrade[] upgrades;
@@ -25,11 +25,11 @@ public class GameHUD implements Disposable{
         bars = new Bar[2];
         bars[0] = new Bar(
                 new Vector2(0, 0),
-                Color.RED
+                Color.BLUE
         );
         bars[1] = new Bar(
                 new Vector2(Constants.BAR_WIDTH + Constants.BAR_HEIGHT * 2, 0),
-                Color.BLUE
+                Color.RED
         );
 
         upgrades = new Upgrade[1];
@@ -54,7 +54,7 @@ public class GameHUD implements Disposable{
 
     @Override
     public void dispose() {
-        for(Upgrade u : upgrades){
+        for (Upgrade u : upgrades) {
             u.dispose();
         }
     }

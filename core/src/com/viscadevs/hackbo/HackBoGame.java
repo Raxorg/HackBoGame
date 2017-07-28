@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.screens.MenuScreen;
 import com.viscadevs.screens.SplashScreen;
 import com.viscadevs.util.Assets;
-import com.viscadevs.util.Button;
 import com.viscadevs.util.ButtonListener;
 
 public class HackBoGame extends Game {
@@ -33,5 +32,9 @@ public class HackBoGame extends Game {
 
     public void endOfSplash() {
         setScreen(new MenuScreen(this));
+    }
+
+    public void gameOver() {
+        // TODO WHAT HAPPENS
     }
 }

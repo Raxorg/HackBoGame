@@ -30,9 +30,9 @@ public class Constants {
     public static final float WORLD_WIDTH = 1000;
     public static final float WORLD_HEIGHT = 500;
 
-    public static final int INITIAL_HEALTH = 70;
-    public static final int INITIAL_ENERGY = 50;
     public static final int MAX_BAR_CAPACITY = 100;
+    public static final int INITIAL_HEALTH = MAX_BAR_CAPACITY;
+    public static final int INITIAL_ENERGY = 50;
     public static final int INITIAL_MONEY = 100;
 
     //MALE
@@ -103,6 +103,7 @@ public class Constants {
     // City
     public static final String STREET = "scene/street.png";
     public static final String CLOUDS = "scene/sky/clouds.png";
+    public static final float DAY_SPEED = 0.05f;
 
     // Credits
     public static final String CREDITS = "other/credits_screen.jpg";
@@ -138,7 +139,6 @@ public class Constants {
     public static final String MALE_BUTTON = "other/male.png";
     public static final String FEMALE_BUTTON = "other/female.png";
     public static final String SLEEP_BUTTON = "other/sleep.png";
-
 
     public static final float BUTTON_WIDTH = 200;
     public static final float BUTTON_HEIGHT = BUTTON_WIDTH / 4;
