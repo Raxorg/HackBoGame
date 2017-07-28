@@ -28,4 +28,7 @@ public class HackBoGame extends Game {
         assetManager.dispose();
     }
 
+    public void endOfSplash() {
+        setScreen(MENU);
+    }
 }

@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.entities.Player;
 import com.viscadevs.overlays.GameHUD;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
@@ -32,14 +33,14 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        batch.setProjectionMatrix(viewport.getCamera().combined);
-        viewport.apply();
+
         batch.begin();
+        batch.draw(Assets.getInstance().playerAssets.standingRight, 00, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        player.update(delta);
         player.render(batch);
-        gameHUD.render(player.getMoney());
         // TODO RENDER THE BACKGROUND
         // TODO RENDER THE PLAYER
         // TODO RENDER THE HUD
