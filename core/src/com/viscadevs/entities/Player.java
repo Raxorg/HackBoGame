@@ -34,7 +34,7 @@ public class Player {
         this.position = position;
     }
 
-    private void moveLeft(float delta) {
+    public void moveLeft(float delta) {
         if (walkState != Enums.WalkState.WALKING) {
             walkStartTime = TimeUtils.nanoTime();
         }
@@ -43,7 +43,7 @@ public class Player {
         position.x -= delta * Constants.PLAYER_MOVE_SPEED;
     }
 
-    private void moveRight(float delta) {
+    public void moveRight(float delta) {
         if (walkState != Enums.WalkState.WALKING) {
             walkStartTime = TimeUtils.nanoTime();
         }
@@ -75,10 +75,10 @@ public class Player {
             region = Assets.getInstance().playerAssets.standingLeft;
         } else if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = (Texture) Assets.getInstance().playerAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
+            region = Assets.getInstance().playerAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
         } else if (facing == Enums.Facing.LEFT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = (Texture) Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+            region = Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
         }
 
         batch.draw(region, position.x, position.y);

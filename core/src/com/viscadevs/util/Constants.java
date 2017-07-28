@@ -28,6 +28,7 @@ public class Constants {
 
     // Person
     public static final String PERSON = "other/person.png";
+    public static final float PERSON_SPAWN_RATE = 0.3f;
 
     // Splash
     public static final String SPLASH = "other/splash.jpg";
