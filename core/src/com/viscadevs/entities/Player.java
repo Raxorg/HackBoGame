@@ -1,5 +1,7 @@
 package com.viscadevs.entities;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -53,7 +55,16 @@ public class Player {
 
 
     public void update(float delta) {
+        boolean left = Gdx.input.isKeyPressed(Input.Keys.LEFT);
+        boolean right = Gdx.input.isKeyPressed(Input.Keys.RIGHT);
 
+        if (left && !right) {
+            moveLeft(delta);
+        } else if (right && !left) {
+            moveRight(delta);
+        } else {
+            walkState = Enums.WalkState.STANDING;
+        }
     }
 
     public void render(SpriteBatch batch) {

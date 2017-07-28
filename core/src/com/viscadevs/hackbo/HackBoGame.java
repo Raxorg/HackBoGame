@@ -17,7 +17,7 @@ public class HackBoGame extends Game {
         batch = new SpriteBatch();
         font = new BitmapFont();
 		manager = new AssetManager();
-        setScreen(new SplashScreen(this));
+        setScreen(new GameScreen());
     }
 
     @Override
