@@ -46,7 +46,7 @@ public class GenderSelectionScreen extends ScreenAdapter {
                 Constants.EXIT_ARROW_BUTTON_Y,
                 Constants.BUTTON_HEIGHT,
                 Constants.BUTTON_HEIGHT,
-                Color.RED
+                Color.BLUE
         ) {
             @Override
             public void onTouch() {
