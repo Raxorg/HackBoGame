@@ -15,6 +15,7 @@ public class Assets implements Disposable {
     public BarAssets barAssets;
     public LandScapeAssets landScapeAssets;
     public UpgradeAssets upgradeAssets;
+    public ButtonAssets buttonAssets;
 
     public static Assets getInstance() {
         return instance;
@@ -35,6 +36,8 @@ public class Assets implements Disposable {
         barAssets.init();
         upgradeAssets = new UpgradeAssets();
         upgradeAssets.init();
+        buttonAssets = new ButtonAssets();
+        buttonAssets.init();
     }
 
     private void load() {
@@ -71,6 +74,10 @@ public class Assets implements Disposable {
         assetManager.load(Constants.GUN_UPGRADE, Texture.class);
         assetManager.load(Constants.HOME_UPGRADE, Texture.class);
         assetManager.load(Constants.MONEY_UPGRADE, Texture.class);
+        // Buttons
+        assetManager.load(Constants.BUTTONS_START, Texture.class);
+        assetManager.load(Constants.BUTTONS_INSTRUCTIONS, Texture.class);
+        assetManager.load(Constants.BUTTONS_CREDITS, Texture.class);
 
         assetManager.finishLoading();
     }
@@ -144,10 +151,10 @@ public class Assets implements Disposable {
         }
     }
 
-    public class LandScapeAssets{
+    public class LandScapeAssets {
         public Texture street;
 
-        public void init(){
+        public void init() {
             street = assetManager.get(Constants.STREET);
         }
     }
@@ -156,13 +163,24 @@ public class Assets implements Disposable {
         public Texture homelessHome, standard_home, rich_home;
         public Texture gunUpgrade, homeUpgrade, moneyUpgrade;
 
-        public void init(){
+        public void init() {
             homelessHome = assetManager.get(Constants.HOMELESS_HOME);
             standard_home = assetManager.get(Constants.STANDARD_HOME);
             rich_home = assetManager.get(Constants.RICH_HOME);
             gunUpgrade = assetManager.get(Constants.GUN_UPGRADE);
             homeUpgrade = assetManager.get(Constants.HOME_UPGRADE);
             moneyUpgrade = assetManager.get(Constants.MONEY_UPGRADE);
+        }
+    }
+
+    public class ButtonAssets {
+        public Texture start, instructions, credits;
+
+        public void init() {
+            start = assetManager.get(Constants.BUTTONS_START);
+            instructions = assetManager.get(Constants.BUTTONS_INSTRUCTIONS);
+            credits = assetManager.get(Constants.BUTTONS_CREDITS);
+
         }
     }
 }

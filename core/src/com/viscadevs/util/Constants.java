@@ -1,5 +1,6 @@
 package com.viscadevs.util;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 
 public class Constants {
@@ -77,4 +78,17 @@ public class Constants {
     // Bars
     public static final float BAR_HEIGHT = 25f;
     public static final float BAR_WIDTH = 200f;
+
+    // Buttons
+    public static final String BUTTONS_START = "other/start.png";
+    public static final String BUTTONS_INSTRUCTIONS = "other/instructions.png";
+    public static final String BUTTONS_CREDITS = "other/credits.png";
+    public static final float BUTTON_WIDTH = 200;
+    public static final float BUTTON_HEIGHT = BUTTON_WIDTH / 4;
+    public static final float START_BUTTON_X = Gdx.graphics.getWidth() / 2 - BUTTON_WIDTH / 2;
+    public static final float START_BUTTON_Y = Gdx.graphics.getHeight() * 0.7f;
+    public static final float INSTRUCTIONS_BUTTON_X = START_BUTTON_X;
+    public static final float INSTRUCTIONS_BUTTON_Y = START_BUTTON_Y - BUTTON_HEIGHT * 2;
+    public static final float CREDITS_BUTTON_X = START_BUTTON_X;
+    public static final float CREDITS_BUTTON_Y = INSTRUCTIONS_BUTTON_Y - BUTTON_HEIGHT * 2;
 }

@@ -1,26 +1,32 @@
 package com.viscadevs.util;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Disposable;
 
-public abstract class Button implements Disposable {
-    Texture texture;
-    Rectangle rectangle;
+import static com.viscadevs.hackbo.HackBoGame.batch;
 
-    public Button(Texture texture, float x, float y, float width, float height) {
+public abstract class Button implements Disposable {
+    protected Texture texture;
+    protected Rectangle rectangle;
+    protected Color color;
+
+    public Button(Texture texture, float x, float y, float width, float height, Color color) {
+        this.texture = texture;
         rectangle = new Rectangle();
         rectangle.set(x, y, width, height);
-        this.texture = texture;
+        this.color = color;
     }
 
     public boolean isTouched(float x, float y) {
         return rectangle.contains(x, y);
     }
 
-    public void render(SpriteBatch batch) {
-        batch.draw(texture, rectangle.getX(), rectangle.getY());
+    public void render() {
+        batch.setColor(color);
+        batch.draw(texture, rectangle.getX(), rectangle.getY(), rectangle.width, rectangle.height);
     }
 
     @Override

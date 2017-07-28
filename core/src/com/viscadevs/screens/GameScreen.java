@@ -43,7 +43,7 @@ public class GameScreen extends ScreenAdapter {
         home = new Home();
 
         buttons = new Button[1];
-        buttons[0] = new Upgrade(new Texture("other/pixel.png"), 0, 0, 0, 0) {
+        buttons[0] = new Upgrade(new Texture("other/pixel.png"), 0, 0, 0, 0, Color.CORAL) {
             @Override
             public void onTouch() {
 
@@ -64,7 +64,6 @@ public class GameScreen extends ScreenAdapter {
         }
 
         batch.begin();
-
 
 
         // Update the people

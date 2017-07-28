@@ -1,5 +1,6 @@
 package com.viscadevs.entities;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.hud.Upgrade;
@@ -11,7 +12,7 @@ public class Home {
     Texture homeTexture;
 
     public Home() {
-        upgrade = new Upgrade(new Texture("other/pixel.png"), 400, 400, 200, 200) {
+        upgrade = new Upgrade(new Texture("other/pixel.png"), 400, 400, 200, 200, Color.BLUE) {
             @Override
             public void onTouch() {
                 upgrade();
@@ -22,7 +23,7 @@ public class Home {
     }
 
     public void render(SpriteBatch batch) {
-        upgrade.render(batch);
+        upgrade.render();
         switch (upgrade.getState()) {
             case HOMELESS:
                 homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
