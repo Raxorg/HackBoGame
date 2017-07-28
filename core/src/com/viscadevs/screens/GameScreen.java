@@ -175,12 +175,10 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void updateUpgradeButton() {
-        if (player.getMoney() >= 1000 && home.getLevel() == POOR) {
-            canUpgrade = true;
-        } else if (player.getMoney() >= 2500 && home.getLevel() == MEDIUM) {
-            canUpgrade = true;
-        }
-
+        canUpgrade = player.getMoney() >= 1000 &&
+                home.getLevel() == POOR ||
+                player.getMoney() >= 2500 &&
+                        home.getLevel() == MEDIUM;
     }
 
     private void drawCity() {
