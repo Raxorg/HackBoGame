@@ -20,6 +20,8 @@ import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
+import static com.viscadevs.util.Enums.Level.MEDIUM;
+import static com.viscadevs.util.Enums.Level.POOR;
 import static com.viscadevs.util.ViscaUtils.random;
 
 
@@ -79,8 +81,12 @@ public class GameScreen extends ScreenAdapter {
         ) {
             @Override
             public void onTouch() {
-                if (player.getMoney() >= 1000) {
+                if (player.getMoney() >= 1000 && home.getLevel() == POOR) {
                     home.upgrade();
+                    player.setMoney(player.getMoney() - 1000);
+                } else if (player.getMoney() >= 2500 && home.getLevel() == MEDIUM) {
+                    home.upgrade();
+                    player.setMoney(player.getMoney() - 2500);
                 }
             }
         };

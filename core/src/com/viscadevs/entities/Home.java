@@ -46,6 +46,10 @@ public class Home {
         }
     }
 
+    public Enums.Level getLevel() {
+        return level;
+    }
+
     public void upgrade() {
         switch (level) {
             case POOR:
