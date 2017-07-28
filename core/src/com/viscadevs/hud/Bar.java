@@ -10,14 +10,11 @@ public class Bar {
 
     private Color color;
     private Vector2 position;
-    private float width, height;
+    private float width = 50, height = 16;
 
-    public Bar(Color color) {
+    public Bar(Vector2 position, Color color) {
         this.color = color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
+        this.position = position;
     }
 
     public void render() {
