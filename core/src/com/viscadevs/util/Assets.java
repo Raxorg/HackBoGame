@@ -86,15 +86,15 @@ public class Assets implements Disposable {
             homelessWalkingRightFrames[0] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_1, Texture.class);
             homelessWalkingRightFrames[1] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_2, Texture.class);
             homelessWalkingRightFrames[2] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_3, Texture.class);
-            standardWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingRightFrames);
-            standardWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            homelessWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingRightFrames);
+            homelessWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
             Texture[] homelessWalkingLeftFrames = new Texture[3];
             homelessWalkingLeftFrames[0] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_1, Texture.class);
             homelessWalkingLeftFrames[1] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_2, Texture.class);
             homelessWalkingLeftFrames[2] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_3, Texture.class);
-            standardWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingLeftFrames);
-            standardWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            homelessWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingLeftFrames);
+            homelessWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
         }
     }
 
