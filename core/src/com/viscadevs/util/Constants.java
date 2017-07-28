@@ -17,5 +17,6 @@ public class Constants {
     public static final String WALKING_RIGHT_1 = "/player/perfil.1";
     public static final String WALKING_RIGHT_2 = "/player/perfil.2";
     public static final String WALKING_RIGHT_3 = "/player/perfil.3";
+    public static final float WALK_LOOP_DURATION = 0.25f;
 
 }
