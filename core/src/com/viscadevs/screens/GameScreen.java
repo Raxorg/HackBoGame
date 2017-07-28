@@ -32,6 +32,13 @@ public class GameScreen extends ScreenAdapter {
         batch.end();
     }
 
+    /**
+     * This method spawns an NPC the player can interact with
+     */
+    private void spawnPerson() {
+        // TODO stuff
+    }
+
     @Override
     public void dispose() {
         player.dispose();
