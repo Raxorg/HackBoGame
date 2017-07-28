@@ -40,7 +40,7 @@ public class Player {
         }
         walkState = Enums.WalkState.WALKING;
         facing = Enums.Facing.LEFT;
-        position.x -= delta * Constants.PLAYER_MOVE_SPEED;
+        position.x -= delta * Constants.PLAYER_SPEED;
     }
 
     private void moveRight(float delta) {
@@ -49,7 +49,7 @@ public class Player {
         }
         walkState = Enums.WalkState.WALKING;
         facing = Enums.Facing.RIGHT;
-        position.x += delta * Constants.PLAYER_MOVE_SPEED;
+        position.x += delta * Constants.PLAYER_SPEED;
     }
 
 

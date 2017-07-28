@@ -13,10 +13,6 @@ public abstract class Button implements Disposable{
     Texture texture;
     Rectangle rectangle;
 
-    public Button(Texture texture, Vector2 position, Vector2 bounds){
-        this(texture, position.x, position.y, bounds.x, bounds.y);
-    }
-
     public Button(Texture texture, float x, float y, float width, float height){
         this.texture = texture;
         rectangle.set(x, y, width, height);

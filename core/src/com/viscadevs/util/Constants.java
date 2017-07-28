@@ -9,8 +9,8 @@ public class Constants {
     public static final float HUMAN_HEIGHT = 96;
 
     // Player
-    public static final float PLAYER_SPEED = 25f;
-    public static final float PERSON_SPEED = 10f;
+    public static final float PLAYER_SPEED = 55f;
+    public static final float PERSON_SPEED = 30f;
 
     public static final float WORLD_WIDTH = 1000;
     public static final float WORLD_HEIGHT = 500;
@@ -48,7 +48,6 @@ public class Constants {
     // HUD
     public static final float HUD_VIEWPORT_SIZE = 100;
     public static final float HUD_MARGIN = 220;
-    public static final float PLAYER_MOVE_SPEED = 20;
 
     public static final String BAR_LEFT = "bar/left.png";
     public static final String BAR_MID = "bar/mid.png";
