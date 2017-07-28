@@ -6,6 +6,7 @@ import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Constants;
 
 public class DesktopLauncher {
+
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.width = (int) Constants.WORLD_WIDTH;
