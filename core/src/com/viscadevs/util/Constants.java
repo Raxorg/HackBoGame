@@ -103,7 +103,7 @@ public class Constants {
     // City
     public static final String STREET = "scene/street.png";
     public static final String CLOUDS = "scene/sky/clouds.png";
-    public static final float DAY_SPEED = 0.05f;
+    public static final float DAY_SPEED = 0.1f;
 
     // Credits
     public static final String CREDITS = "other/credits_screen.jpg";
@@ -144,7 +144,6 @@ public class Constants {
     public static final String DISASTER_MUSIC = "audio/disaster.mp3";
     public static final String COIN_SOUND = "audio/coin.wav";
     public static final String CLICK_SOUND = "audio/click.mp3";
-
 
 
     public static final float BUTTON_WIDTH = 200;

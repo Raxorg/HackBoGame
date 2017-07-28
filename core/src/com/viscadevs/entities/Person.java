@@ -49,14 +49,9 @@ public class Person implements Disposable {
                         gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 30);
                         gameScreen.getPlayer().setEnergy(gameScreen.getPlayer().getEnergy() - 10);
                         getSound().play(100);
-
-
-
                     }
                 }
             }
-
-
         };
         buttons[1] = new Button(
                 Assets.getInstance().personAssets.begButton,

@@ -173,14 +173,14 @@ public class GameScreen extends ScreenAdapter {
             if (light <= 0) {
                 light = 0;
                 dayToNight = false;
-                player.setHealth(player.getHealth() - 20);
+                player.setHealth(player.getHealth() - 25);
             }
         } else {
             light += delta * Constants.DAY_SPEED;
             if (light >= 1) {
                 light = 1;
                 dayToNight = true;
-                player.setHealth(player.getHealth() - 20);
+                player.setHealth(player.getHealth() - 25);
             }
         }
         Gdx.gl.glClearColor(Color.SKY.r * light, Color.SKY.g * light, Color.SKY.b * light, 1);
