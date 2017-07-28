@@ -27,12 +27,13 @@ public class Person {
     }
 
     public void render() {
+        batch.setColor(1, 1, 1, 1);
         batch.draw(
                 Assets.getInstance().personAssets.person,
                 position.x,
                 position.y,
-                Constants.PLAYER_WIDTH,
-                Constants.PLAYER_HEIGHT
+                Constants.HUMAN_WIDTH,
+                Constants.HUMAN_HEIGHT
         );
     }
 }

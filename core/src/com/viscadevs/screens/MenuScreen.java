@@ -7,19 +7,13 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Constants;
-
-import static com.viscadevs.hackbo.HackBoGame.batch;
 
 
 public class MenuScreen extends ScreenAdapter {
 
     private HackBoGame game;
-    private Viewport viewport;
     private Image play_btn;
     private Image instructions_btn;
     private Image credits_btn;
@@ -33,11 +27,9 @@ public class MenuScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        viewport = new ExtendViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
-
         Texture button = new Texture(Gdx.files.internal("other/pixel.png"));
 
-        stage = new Stage(viewport, batch);
+        stage = new Stage();
         play_btn = new Image(button);
         play_btn.setBounds(10, 100, 300, 75);
         play_btn.setPosition(Constants.WORLD_HEIGHT / 6, Constants.WORLD_WIDTH / 3);
@@ -115,17 +107,9 @@ public class MenuScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        viewport.apply();
-        batch.setProjectionMatrix(viewport.getCamera().combined);
-
         stage.act();
 
         stage.draw();
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        viewport.update(width, height, true);
     }
 
     @Override

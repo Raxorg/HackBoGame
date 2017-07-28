@@ -2,13 +2,15 @@ package com.viscadevs.util;
 
 public class Constants {
 
-    public static final float FADING_SPEED = 1f;
+    public static final float FADING_SPEED = 0.5f;
+
+    // Player and Person
+    public static final float HUMAN_WIDTH = 30;
+    public static final float HUMAN_HEIGHT = 64;
 
     // Player
     public static final float PLAYER_SPEED = 25f;
-    public static final float PERSON_SPEED = 15f;
-    public static final float PLAYER_WIDTH = 45;
-    public static final float PLAYER_HEIGHT = 96;
+    public static final float PERSON_SPEED = 10f;
 
     public static final float WORLD_WIDTH = 1000;
     public static final float WORLD_HEIGHT = 500;

@@ -67,6 +67,7 @@ public class Player {
     }
 
     public void render(SpriteBatch batch) {
+        batch.setColor(1, 1, 1, 1);
         Texture region = Assets.getInstance().playerAssets.standingLeft;
 
         if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.STANDING) {
@@ -81,7 +82,7 @@ public class Player {
             region = Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
         }
 
-        batch.draw(region, position.x, position.y, Constants.PLAYER_WIDTH, Constants.PLAYER_HEIGHT);
+        batch.draw(region, position.x, position.y, Constants.HUMAN_WIDTH, Constants.HUMAN_HEIGHT);
     }
 
     public String getName() {

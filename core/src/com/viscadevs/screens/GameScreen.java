@@ -11,7 +11,6 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
 import com.viscadevs.overlays.GameHUD;
-import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
