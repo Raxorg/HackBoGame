@@ -103,6 +103,10 @@ public class Constants {
     public static final String STREET = "scene/street.png";
     public static final String CLOUDS = "scene/sky/clouds.png";
 
+    // Credits
+    public static final String CREDITS = "other/credits_screen.jpg";
+
+
     public static final float WALK_LOOP_DURATION = 0.25f;
 
     public static final Vector2 HOME_POSITION = new Vector2(400, 100);
@@ -125,6 +129,10 @@ public class Constants {
     public static final String BUTTONS_START = "other/start.png";
     public static final String BUTTONS_INSTRUCTIONS = "other/instructions.png";
     public static final String BUTTONS_CREDITS = "other/credits.png";
+    public static final String BUTTONS_EXIT = "other/exit.png";
+    public static final String BUTTONS_ARROW_EXIT = "other/arrow.png";
+
+
     public static final float BUTTON_WIDTH = 200;
     public static final float BUTTON_HEIGHT = BUTTON_WIDTH / 4;
     public static final float START_BUTTON_X = Gdx.graphics.getWidth() / 2 - BUTTON_WIDTH / 2;
@@ -133,4 +141,8 @@ public class Constants {
     public static final float INSTRUCTIONS_BUTTON_Y = START_BUTTON_Y - BUTTON_HEIGHT * 2;
     public static final float CREDITS_BUTTON_X = START_BUTTON_X;
     public static final float CREDITS_BUTTON_Y = INSTRUCTIONS_BUTTON_Y - BUTTON_HEIGHT * 2;
+    public static final float EXIT_BUTTON_X = START_BUTTON_X;
+    public static final float EXIT_BUTTON_Y = CREDITS_BUTTON_Y - BUTTON_HEIGHT * 2;
+    public static final float EXIT_ARROW_BUTTON_X =  10;
+    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight()-BUTTON_WIDTH+10;
 }

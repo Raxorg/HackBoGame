@@ -28,7 +28,13 @@ public abstract class Button implements Disposable {
 
     public void render() {
         batch.setColor(color);
-        batch.draw(texture, rectangle.getX(), rectangle.getY(), rectangle.width, rectangle.height);
+        batch.draw(
+                texture,
+                rectangle.getX(),
+                rectangle.getY(),
+                rectangle.width,
+                rectangle.height
+        );
     }
 
     @Override

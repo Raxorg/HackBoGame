@@ -20,7 +20,7 @@ public class MenuScreen extends ScreenAdapter {
 
     public MenuScreen(HackBoGame game) {
         this.game = game;
-        buttons = new Button[3];
+        buttons = new Button[4];
     }
 
     @Override
@@ -64,6 +64,20 @@ public class MenuScreen extends ScreenAdapter {
             @Override
             public void onTouch() {
                 game.setScreen(new CreditsScreen(game));
+            }
+        };
+
+        buttons[3] = new Button(
+                Assets.getInstance().buttonAssets.exit,
+                Constants.EXIT_BUTTON_X,
+                Constants.EXIT_BUTTON_Y,
+                Constants.BUTTON_WIDTH,
+                Constants.BUTTON_HEIGHT,
+                Color.RED
+        ) {
+            @Override
+            public void onTouch() {
+                Gdx.app.exit();
             }
         };
 

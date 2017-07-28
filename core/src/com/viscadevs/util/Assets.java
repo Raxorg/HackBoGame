@@ -47,6 +47,8 @@ public class Assets implements Disposable {
         // City
         assetManager.load(Constants.STREET, Texture.class);
         assetManager.load(Constants.CLOUDS, Texture.class);
+        // Credits
+        assetManager.load(Constants.CREDITS, Texture.class);
         // Player
         //MALE
         assetManager.load(Constants.MALE_MEDIUM_WALKING_LEFT_1, Texture.class);
@@ -116,6 +118,9 @@ public class Assets implements Disposable {
         assetManager.load(Constants.BUTTONS_START, Texture.class);
         assetManager.load(Constants.BUTTONS_INSTRUCTIONS, Texture.class);
         assetManager.load(Constants.BUTTONS_CREDITS, Texture.class);
+        assetManager.load(Constants.BUTTONS_EXIT, Texture.class);
+        assetManager.load(Constants.BUTTONS_ARROW_EXIT, Texture.class);
+
 
         assetManager.finishLoading();
     }
@@ -271,11 +276,12 @@ public class Assets implements Disposable {
     }
 
     public class LandScapeAssets {
-        public Texture street, clouds;
+        public Texture street, clouds, credits;
 
         public void init() {
             street = assetManager.get(Constants.STREET);
             clouds = assetManager.get(Constants.CLOUDS);
+            clouds = assetManager.get(Constants.CREDITS);
         }
     }
 
@@ -294,12 +300,14 @@ public class Assets implements Disposable {
     }
 
     public class ButtonAssets {
-        public Texture start, instructions, credits;
+        public Texture start, instructions, credits, exit, exit_arrow;
 
         public void init() {
             start = assetManager.get(Constants.BUTTONS_START);
             instructions = assetManager.get(Constants.BUTTONS_INSTRUCTIONS);
             credits = assetManager.get(Constants.BUTTONS_CREDITS);
+            exit = assetManager.get(Constants.BUTTONS_EXIT);
+            exit_arrow = assetManager.get(Constants.BUTTONS_ARROW_EXIT);
 
         }
     }
