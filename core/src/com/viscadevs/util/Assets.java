@@ -11,7 +11,6 @@ public class Assets implements Disposable {
     private static Assets instance = new Assets();
     private AssetManager assetManager;
 
-    public SplashAssets splashAssets;
     public PlayerAssets playerAssets;
     public PersonAssets personAssets;
 
@@ -19,20 +18,19 @@ public class Assets implements Disposable {
         return instance;
     }
 
-    public void init(AssetManager assetManager) {
-        this.assetManager = assetManager;
+    public void init() {
+        assetManager = new AssetManager();
 
         load();
 
         playerAssets = new PlayerAssets();
-        personAssets = new PersonAssets();
-        splashAssets = new SplashAssets();
         playerAssets.init();
+        personAssets = new PersonAssets();
+        personAssets.init();
     }
 
     private void load() {
-        assetManager.load(Constants.PERSON, Texture.class);
-        assetManager.load(Constants.SPLASH, Texture.class);
+        // Player
         assetManager.load(Constants.STANDING_LEFT, Texture.class);
         assetManager.load(Constants.STANDING_RIGHT, Texture.class);
         assetManager.load(Constants.WALKING_LEFT_1, Texture.class);
@@ -41,6 +39,11 @@ public class Assets implements Disposable {
         assetManager.load(Constants.WALKING_RIGHT_1, Texture.class);
         assetManager.load(Constants.WALKING_RIGHT_2, Texture.class);
         assetManager.load(Constants.WALKING_RIGHT_3, Texture.class);
+        // Person
+        assetManager.load(Constants.PERSON, Texture.class);
+        // Splash
+        assetManager.load(Constants.SPLASH, Texture.class);
+
         assetManager.finishLoading();
     }
 
@@ -52,10 +55,6 @@ public class Assets implements Disposable {
     public class PlayerAssets {
         public Texture standingRight, standingLeft;
         public Animation walkingRightAnimation, walkingLeftAnimation;
-
-        public PlayerAssets() {
-
-        }
 
         public void init() {
             standingRight = assetManager.get(Constants.STANDING_RIGHT, Texture.class);
@@ -76,32 +75,13 @@ public class Assets implements Disposable {
 
             walkingLeftAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingLeftFrames, Animation.PlayMode.NORMAL);
         }
-
-        public void load() {
-            assetManager.load(Constants.STANDING_LEFT, Texture.class);
-            assetManager.load(Constants.STANDING_RIGHT, Texture.class);
-            assetManager.load(Constants.WALKING_LEFT_1, Texture.class);
-            assetManager.load(Constants.WALKING_LEFT_2, Texture.class);
-            assetManager.load(Constants.WALKING_LEFT_3, Texture.class);
-            assetManager.load(Constants.WALKING_RIGHT_1, Texture.class);
-            assetManager.load(Constants.WALKING_RIGHT_2, Texture.class);
-            assetManager.load(Constants.WALKING_RIGHT_3, Texture.class);
-        }
     }
 
     public class PersonAssets {
-        public final Texture person;
+        public Texture person;
 
-        PersonAssets() {
+        public void init() {
             person = assetManager.get(Constants.PERSON, Texture.class);
-        }
-    }
-
-    public class SplashAssets {
-        public final Texture splash;
-
-        SplashAssets() {
-            splash = assetManager.get(Constants.SPLASH, Texture.class);
         }
     }
 }

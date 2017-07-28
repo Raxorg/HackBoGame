@@ -4,20 +4,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
-import static com.viscadevs.hackbo.HackBoGame.assetManager;
 
 public class SplashScreen extends ScreenAdapter {
 
     private HackBoGame game;
 
-    private Texture black;
+    private Texture black, splash;
     private Enums.SplashState state;
     private float alpha = 0;
 
@@ -29,6 +27,7 @@ public class SplashScreen extends ScreenAdapter {
     public void show() {
         state = Enums.SplashState.FADING_IN;
         black = new Texture(Gdx.files.internal("other/pixel.png"));
+        splash = new Texture(Gdx.files.internal("other/splash.jpg"));
     }
 
     public void render(float delta) {
@@ -38,7 +37,7 @@ public class SplashScreen extends ScreenAdapter {
         batch.begin();
         batch.setColor(1, 1, 1, 1);
         batch.draw(
-                Assets.getInstance().splashAssets.splash,
+                splash,
                 0,
                 0,
                 Gdx.graphics.getWidth(),
@@ -61,7 +60,7 @@ public class SplashScreen extends ScreenAdapter {
                     alpha = 1;
                     state = Enums.SplashState.WAITING_ASSETS;
                     // AQUI QUE SE CARGUEN LOS ASSETS
-                    Assets.getInstance().init(assetManager);
+                    Assets.getInstance().init();
                     // TEMPORALMENTE VAMOS AL FADE OUT (POR AHORA)
                     state = Enums.SplashState.FADING_OUT;
                 }

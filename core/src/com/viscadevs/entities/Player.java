@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.TimeUtils;
-import com.viscadevs.util.AssetManager;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
@@ -68,18 +68,18 @@ public class Player {
     }
 
     public void render(SpriteBatch batch) {
-        Texture region = AssetManager.standingRight;
+        Texture region = Assets.getInstance().playerAssets.standingRight;
 
         if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.STANDING) {
-            region = AssetManager.standingRight;
-        }else if(facing == Enums.Facing.LEFT && walkState == Enums.WalkState.STANDING){
-            region = AssetManager.standingLeft;
-        }else if(facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING){
+            region = Assets.getInstance().playerAssets.standingRight;
+        } else if (facing == Enums.Facing.LEFT && walkState == Enums.WalkState.STANDING) {
+            region = Assets.getInstance().playerAssets.standingLeft;
+        } else if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = (Texture) AssetManager.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
-        }else if(facing == Enums.Facing.LEFT && walkState == Enums.WalkState.WALKING){
+            region = (Texture) Assets.getInstance().playerAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
+        } else if (facing == Enums.Facing.LEFT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = (Texture) AssetManager.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+            region = (Texture) Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
         }
 
         batch.draw(region, position.x, position.y);
