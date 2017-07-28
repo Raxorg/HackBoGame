@@ -1,11 +1,13 @@
 package com.viscadevs.entities;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
+import com.viscadevs.util.ViscaUtils;
 
 public class Player {
 
@@ -54,23 +56,22 @@ public class Player {
 
     }
 
-    public void render(float delta) {
-        Texture region = Assets.getInstance().PlayerAssets
+    public void render(SpriteBatch batch) {
+        Texture region = Assets.getInstance().playerAssets.standingRight;
 
-        if (facing == Enums.Facing.RIGHT) {
-            region = Assets.getInstance().PlayerAssets.
-        } else if (facing == Direction.RIGHT && walkState == Enums.WalkState.NOT_WALKING) {
-            region = Assets.instance.gigaGalAssets.standingRight;
-        } else if (facing == Direction.RIGHT && walkState == Enums.WalkState.WALKING) {
-            float walkTimeSeconds = Utils.secondsSince(walkStartTime);
-            region = Assets.instance.gigaGalAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
-        } else if (facing == Direction.LEFT && jumpState != Enums.JumpState.GROUNDED) {
-            region = Assets.instance.gigaGalAssets.jumpingLeft;
-        } else if (facing == Direction.LEFT && walkState == Enums.WalkState.NOT_WALKING) {
-            region = Assets.instance.gigaGalAssets.standingLeft;
-        } else if (facing == Direction.LEFT && walkState == Enums.WalkState.WALKING) {
-            float walkTimeSeconds = Utils.secondsSince(walkStartTime);
-            regio
+        if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.STANDING) {
+            region = Assets.getInstance().playerAssets.standingRight;
+        }else if(facing == Enums.Facing.LEFT && walkState == Enums.WalkState.STANDING){
+            region = Assets.getInstance().playerAssets.standingLeft;
+        }else if(facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING){
+            float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
+            region = (Texture) Assets.getInstance().playerAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
+        }else if(facing == Enums.Facing.LEFT && walkState == Enums.WalkState.WALKING){
+            float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
+            region = (Texture) Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+        }
+
+        batch.draw(region, position.x, position.y);
     }
 
     public void dispose() {
