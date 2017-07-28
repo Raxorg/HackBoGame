@@ -39,7 +39,7 @@ public class GameHUD {
                 Constants.MONEY_BAR_WIDTH,
                 Constants.MONEY_BAR_HEIGHT
         );
-        font.setColor(Color.WHITE);
+        font.setColor(Color.BLUE);
         font.getData().setScale(1);
         font.draw(batch, money + "", 0, 0);
 
