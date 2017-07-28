@@ -7,7 +7,6 @@ import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
-import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
