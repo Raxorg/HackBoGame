@@ -14,26 +14,31 @@ import com.viscadevs.util.ViscaUtils;
 public class Player {
 
     private String name;
-    private Enums.Gender gender;
+
     private int money;
     private int health;
     private int popularity = 0;
     private int happiness = -20;
-    private Vector2 position;
+
+    private Enums.Gender gender;
     private Enums.Facing facing = Enums.Facing.RIGHT;
     private Enums.WalkState walkState = Enums.WalkState.STANDING;
-    private long walkStartTime = 0;
     private Enums.State state;
+
+    private Vector2 position;
+
+    private long walkStartTime = 0;
 
     public Player(String name, Enums.Gender gender, int popularity, int happiness, Vector2 position) {
         this.name = name;
         this.gender = gender;
-        this.state = Enums.State.STANDARD;
-        money = Constants.INITIAL_MONEY;
-        health = Constants.INITIAL_HEALTH;
         this.popularity = popularity;
         this.happiness = happiness;
         this.position = position;
+
+        state = Enums.State.STANDARD;
+        money = Constants.INITIAL_MONEY;
+        health = Constants.INITIAL_HEALTH;
     }
 
     private void moveLeft(float delta) {

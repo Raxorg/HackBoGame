@@ -22,14 +22,14 @@ public class Home {
             }
         };
 
-        homeTexture = Assets.getInstance().upgradeAssets.homeless_home;
+        homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
     }
 
     public void render(SpriteBatch batch){
         upgrade.render(batch);
         switch (upgrade.getState()){
             case HOMELESS:
-                homeTexture = Assets.getInstance().upgradeAssets.homeless_home;
+                homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
                 break;
             case STANDARD:
                 homeTexture = Assets.getInstance().upgradeAssets.standard_home;
