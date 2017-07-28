@@ -22,7 +22,6 @@ import static com.viscadevs.util.ViscaUtils.random;
 
 public class GameScreen extends ScreenAdapter {
 
-    private Viewport viewport;
     private Player player;
     private DelayedRemovalArray<Person> people;
     private GameHUD gameHUD;
@@ -30,7 +29,6 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(50, 50));
