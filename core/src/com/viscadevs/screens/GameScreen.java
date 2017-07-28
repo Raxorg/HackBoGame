@@ -84,11 +84,16 @@ public class GameScreen extends ScreenAdapter {
      * This method spawns an NPC the player can interact with
      */
     private void spawnPerson() {
-        people.add(new Person(random.nextFloat() > 0.5f));
+        people.add(new Person(this, random.nextFloat() > 0.5f));
 
     }
 
     public Player getPlayer() {
         return player;
+    }
+
+    public void removePerson(Person person) {
+        people.removeValue(person, true);
+        System.out.println(people.size);
     }
 }
