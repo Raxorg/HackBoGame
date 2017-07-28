@@ -7,6 +7,7 @@ import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
+import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
@@ -40,9 +41,9 @@ public class GameHUD {
                 Constants.MONEY_BAR_WIDTH,
                 Constants.MONEY_BAR_HEIGHT
         );
-        font.setColor(Color.BLACK);
-        font.getData().setScale(1);
-        font.draw(batch, money + "", 0 + Constants.MONEY_BAR_WIDTH / 4, Gdx.graphics.getHeight() - (Constants.MONEY_BAR_HEIGHT / 4));
+
+        ViscaUtils.drawCenteredFont(font, Constants.MONEY_BAR_WIDTH, Constants.MONEY_BAR_HEIGHT,
+                0, Gdx.graphics.getHeight() - Constants.MONEY_BAR_HEIGHT, money + "", 1, Color.BLACK);
 
         for (Bar bar : bars) {
             bar.render();
