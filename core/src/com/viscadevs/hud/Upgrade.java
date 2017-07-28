@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.util.Button;
 import com.viscadevs.util.Enums;
 
+
 public abstract class Upgrade extends Button{
     public Enums.State state = Enums.State.HOMELESS;
 
@@ -30,4 +31,7 @@ public abstract class Upgrade extends Button{
         super.render(batch);
     }
 
+    public Enums.State getState() {
+        return state;
+    }
 }

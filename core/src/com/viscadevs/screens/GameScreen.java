@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.viscadevs.entities.Home;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
 import com.viscadevs.hud.Upgrade;
@@ -29,6 +30,7 @@ public class GameScreen extends ScreenAdapter {
     private GameHUD gameHUD;
     private long startTime;
     private Button[] buttons;
+    private Home home;
 
     @Override
     public void show() {
@@ -38,8 +40,10 @@ public class GameScreen extends ScreenAdapter {
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
 
+        home = new Home();
+
         buttons = new Button[1];
-        buttons[0] = new Upgrade(new Texture("lol"), 0, 0, 0, 0) {
+        buttons[0] = new Upgrade(new Texture("other/pixel.png"), 0, 0, 0, 0) {
             @Override
             public void onTouch() {
 
@@ -61,6 +65,8 @@ public class GameScreen extends ScreenAdapter {
 
         batch.begin();
 
+
+
         // Update the people
         for (Person p : people) {
             people.begin();
@@ -74,6 +80,8 @@ public class GameScreen extends ScreenAdapter {
         // Draw the city
         batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
         batch.setColor(1, 1, 1, 1);
+
+        home.render(batch);
 
         // Draw the player
         player.render(batch);

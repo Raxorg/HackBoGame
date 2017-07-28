@@ -10,6 +10,7 @@ public abstract class Button implements Disposable {
     Rectangle rectangle;
 
     public Button(Texture texture, float x, float y, float width, float height) {
+        rectangle = new Rectangle();
         rectangle.set(x, y, width, height);
         this.texture = texture;
     }

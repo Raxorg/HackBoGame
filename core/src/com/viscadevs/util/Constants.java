@@ -1,5 +1,7 @@
 package com.viscadevs.util;
 
+import com.badlogic.gdx.math.Vector2;
+
 public class Constants {
 
     public static final float FADING_SPEED = 0.5f;
@@ -41,9 +43,9 @@ public class Constants {
     public static final String HOMELESS_WALKING_LEFT_3 = "player/homeless_walking_left_3.png";
     public static final String HOMELESS_FRONT = "player/homeless_front.png";
 
-    public static final String HOMELESS_HOME = "upgrades/homeless_home";
-    public static final String STANDARD_HOME = "upgrades/standard_home";
-    public static final String RICH_HOME = "upgrades/rich_home";
+    public static final String HOMELESS_HOME = "upgrades/homeless_home.png";
+    public static final String STANDARD_HOME = "upgrades/standard_home.png";
+    public static final String RICH_HOME = "upgrades/rich_home.png";
 
     public static final String STREET = "scene/street.png";
 
@@ -63,4 +65,7 @@ public class Constants {
     public static final String BAR_LEFT_F = "bar/leftF.png";
     public static final String BAR_MID_F = "bar/midF.png";
     public static final String BAR_RIGHT_F = "bar/rightF.png";
+
+    public static final Vector2 HOME_POSITION = new Vector2(400, 100);
+    public static final Vector2 HOME_DIMENTIONS = new Vector2(150, 100);
 }
