@@ -240,6 +240,7 @@ public class Assets implements Disposable {
             femaleRichWalkingLeftFrames[2] = assetManager.get(Constants.FEMALE_RICH_WALKING_LEFT_3);
             femaleRichWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femaleRichWalkingLeftFrames);
             femaleRichWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
         }
     }
 
