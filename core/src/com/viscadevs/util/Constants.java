@@ -30,7 +30,8 @@ public class Constants {
     public static final float WORLD_WIDTH = 1000;
     public static final float WORLD_HEIGHT = 500;
 
-    public static final int INITIAL_HEALTH = 100;
+    public static final int INITIAL_HEALTH = 70;
+    public static final int INITIAL_ENERGY = 50;
     public static final int MAX_BAR_CAPACITY = 100;
     public static final int INITIAL_MONEY = 100;
 
@@ -145,6 +146,6 @@ public class Constants {
     public static final float CREDITS_BUTTON_Y = INSTRUCTIONS_BUTTON_Y - BUTTON_HEIGHT * 2;
     public static final float EXIT_BUTTON_X = START_BUTTON_X;
     public static final float EXIT_BUTTON_Y = CREDITS_BUTTON_Y - BUTTON_HEIGHT * 2;
-    public static final float EXIT_ARROW_BUTTON_X =  10;
-    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight()-BUTTON_WIDTH+10;
+    public static final float EXIT_ARROW_BUTTON_X = 10;
+    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight() - BUTTON_WIDTH + 10;
 }

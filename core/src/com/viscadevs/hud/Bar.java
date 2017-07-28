@@ -16,10 +16,18 @@ public class Bar {
     public Bar(Vector2 position, Color color) {
         this.color = color;
         this.position = position;
-        percentage = 0;
+        percentage = 20;
     }
 
-    public void render(float porcentage) {
+    public float getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(float percentage) {
+        this.percentage = Math.max(percentage, 100f);
+    }
+
+    public void render(float percentage) {
         batch.setColor(1, 1, 1, 1);
         batch.draw(
                 Assets.getInstance().barAssets.left,
@@ -54,10 +62,10 @@ public class Bar {
                 Assets.getInstance().barAssets.midF,
                 position.x + Constants.BAR_HEIGHT,
                 position.y,
-                Constants.BAR_WIDTH * porcentage / 100,
+                Constants.BAR_WIDTH * percentage / 100f,
                 Constants.BAR_HEIGHT
         );
-        if(porcentage == 100) {
+        if (percentage == 100f) {
             batch.draw(
                     Assets.getInstance().barAssets.rightF,
                     position.x + Constants.BAR_HEIGHT + Constants.BAR_WIDTH,

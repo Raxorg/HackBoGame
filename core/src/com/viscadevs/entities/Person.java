@@ -45,7 +45,11 @@ public class Person implements Disposable {
             @Override
             public void onTouch() {
                 if (nextToPlayer) {
-                    gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 30);
+                    if (gameScreen.getPlayer().getEnergy() >= 10) {
+                        gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 30);
+                        gameScreen.getPlayer().setEnergy(gameScreen.getPlayer().getEnergy() - 10);
+
+                    }
                 }
             }
         };
@@ -60,7 +64,10 @@ public class Person implements Disposable {
             @Override
             public void onTouch() {
                 if (nextToPlayer) {
-                    gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 10);
+                    if (gameScreen.getPlayer().getEnergy() >= 5) {
+                        gameScreen.getPlayer().setMoney(gameScreen.getPlayer().getMoney() + 10);
+                        gameScreen.getPlayer().setEnergy(gameScreen.getPlayer().getEnergy() - 5);
+                    }
                 }
             }
         };

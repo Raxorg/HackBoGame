@@ -23,7 +23,7 @@ public class Player {
     private int health;
     private int popularity = 0;
     private int happiness = -20;
-    private int energy = 50;
+    private int energy;
 
     private Enums.Gender gender;
     private Enums.Facing facing = Enums.Facing.RIGHT;
@@ -44,6 +44,7 @@ public class Player {
         level = Enums.Level.POOR;
         money = Constants.INITIAL_MONEY;
         health = Constants.INITIAL_HEALTH;
+        energy = Constants.INITIAL_ENERGY;
 
         updateDrawing();
     }
@@ -74,7 +75,7 @@ public class Player {
                     standing = Assets.getInstance().playerAssets.malePoorFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.malePoorWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.malePoorWalkingLeftAnimation;
-                }else{
+                } else {
                     standing = Assets.getInstance().playerAssets.femalePoorFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.femalePoorWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.femalePoorWalkingLeftAnimation;
@@ -85,7 +86,7 @@ public class Player {
                     standing = Assets.getInstance().playerAssets.maleMediumFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.maleMediumWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.maleMediumWalkingLeftAnimation;
-                }else{
+                } else {
                     standing = Assets.getInstance().playerAssets.femaleMediumFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.femaleMediumWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.femaleMediumWalkingLeftAnimation;
@@ -96,7 +97,7 @@ public class Player {
                     standing = Assets.getInstance().playerAssets.maleRichFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.maleRichWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.maleRichWalkingLeftAnimation;
-                }else{
+                } else {
                     standing = Assets.getInstance().playerAssets.femaleRichFront;
                     walkingRightAnimation = Assets.getInstance().playerAssets.femaleRichWalkingRightAnimation;
                     walkingLeftAnimation = Assets.getInstance().playerAssets.femaleRichWalkingLeftAnimation;
@@ -200,5 +201,9 @@ public class Player {
 
     public int getEnergy() {
         return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
     }
 }

@@ -8,7 +8,6 @@ import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.screens.GameScreen;
 import com.viscadevs.util.Assets;
-import com.viscadevs.util.Button;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.ViscaUtils;
 
