@@ -11,6 +11,7 @@ public class Assets implements Disposable {
     private static Assets instance = new Assets();
     private AssetManager assetManager;
 
+    public SplashAssets splashAssets;
     public PlayerAssets playerAssets;
     public PersonAssets personAssets;
 
@@ -21,17 +22,16 @@ public class Assets implements Disposable {
     public void init(AssetManager assetManager) {
         this.assetManager = assetManager;
 
-        playerAssets = new PlayerAssets();
         load();
-        assetManager.finishLoading();
 
-        playerAssets.init();
+        playerAssets = new PlayerAssets();
         personAssets = new PersonAssets();
     }
 
     private void load() {
         assetManager.load(Constants.PERSON, Texture.class);
-        playerAssets.load();
+        assetManager.load(Constants.SPLASH, Texture.class);
+
         assetManager.finishLoading();
     }
 
@@ -48,7 +48,7 @@ public class Assets implements Disposable {
 
         }
 
-        public void init(){
+        public void init() {
             standingRight = assetManager.get(Constants.STANDING_RIGHT, Texture.class);
 
             Array<Texture> walkingRightFrames = new Array<Texture>();
@@ -68,7 +68,7 @@ public class Assets implements Disposable {
             walkingLeftAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingLeftFrames, Animation.PlayMode.LOOP_PINGPONG);
         }
 
-        public void load(){
+        public void load() {
             assetManager.load(Constants.STANDING_LEFT, Texture.class);
             assetManager.load(Constants.STANDING_RIGHT, Texture.class);
             assetManager.load(Constants.WALKING_LEFT_1, Texture.class);
@@ -85,6 +85,14 @@ public class Assets implements Disposable {
 
         PersonAssets() {
             person = assetManager.get(Constants.PERSON, Texture.class);
+        }
+    }
+
+    public class SplashAssets {
+        public final Texture splash;
+
+        SplashAssets() {
+            splash = assetManager.get(Constants.SPLASH, Texture.class);
         }
     }
 }

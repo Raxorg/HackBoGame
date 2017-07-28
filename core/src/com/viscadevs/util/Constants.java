@@ -29,6 +29,9 @@ public class Constants {
     // Person
     public static final String PERSON = "other/person.png";
 
+    // Splash
+    public static final String SPLASH = "other/splash.png";
+
     // HUD
     public static final float HUD_VIEWPORT_SIZE = WORLD_WIDTH * 3;
     public static final float HUD_MARGIN = 220;

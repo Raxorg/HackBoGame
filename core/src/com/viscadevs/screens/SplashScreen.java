@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.hackbo.HackBoGame;
 import com.viscadevs.util.Assets;
+import com.viscadevs.util.Assets2;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
@@ -17,7 +18,7 @@ public class SplashScreen extends ScreenAdapter {
 
     private HackBoGame game;
 
-    private Texture black, splash;
+    private Texture black;
     private Enums.SplashState state;
     private float alpha = 0;
 
@@ -28,7 +29,6 @@ public class SplashScreen extends ScreenAdapter {
     @Override
     public void show() {
         state = Enums.SplashState.FADING_IN;
-        splash = new Texture(Gdx.files.internal("other/splash.jpg"));
         black = new Texture(Gdx.files.internal("other/pixel.png"));
     }
 
@@ -38,9 +38,21 @@ public class SplashScreen extends ScreenAdapter {
 
         batch.begin();
         batch.setColor(1, 1, 1, 1);
-        batch.draw(splash, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.draw(
+                Assets2.splash,
+                0,
+                0,
+                Gdx.graphics.getWidth(),
+                Gdx.graphics.getHeight()
+        );
         batch.setColor(0, 0, 0, 1 - alpha);
-        batch.draw(splash, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.draw(
+                black,
+                0,
+                0,
+                Gdx.graphics.getWidth(),
+                Gdx.graphics.getHeight()
+        );
         batch.end();
 
         switch (state) {

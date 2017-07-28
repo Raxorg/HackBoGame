@@ -8,11 +8,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.screens.GameScreen;
 import com.viscadevs.screens.MenuScreen;
 import com.viscadevs.screens.SplashScreen;
+import com.viscadevs.util.Assets2;
 
 public class HackBoGame extends Game {
     public static SpriteBatch batch;
     public static BitmapFont font;
-	public static AssetManager manager;
+    public static AssetManager manager;
 
     public final ScreenAdapter SPLASH, MENU, GAME;
 
@@ -26,7 +27,8 @@ public class HackBoGame extends Game {
     public void create() {
         batch = new SpriteBatch();
         font = new BitmapFont();
-		manager = new AssetManager();
+        manager = new AssetManager();
+        Assets2.load();
         setScreen(SPLASH);
     }
 
@@ -34,7 +36,7 @@ public class HackBoGame extends Game {
     public void dispose() {
         batch.dispose();
         font.dispose();
-		manager.dispose();
+        manager.dispose();
     }
 
     public void endOfSplash() {
