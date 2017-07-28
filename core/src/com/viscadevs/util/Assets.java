@@ -27,11 +27,11 @@ public class Assets implements Disposable {
     }
 
     public class PlayerAssets{
-        Texture standingRight, standingLeft;
-        public final Animation walkingRightAnimation;
+        public final Texture standingRight, standingLeft;
+        public final Animation walkingRightAnimation, walkingLeftAnimation;
 
         public PlayerAssets(){
-            standingRight = new Texture("player/perfil2");
+            standingRight = new Texture(Constants.STANDING_RIGHT);
 
             ArrayList<Texture> walkingRightFrames = new ArrayList<Texture>();
             walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_1));
@@ -39,6 +39,15 @@ public class Assets implements Disposable {
             walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_3));
 
             walkingRightAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingRightFrames, Animation.PlayMode.LOOP_PINGPONG);
+
+            standingLeft = new Texture(Constants.STANDING_LEFT);
+
+            ArrayList<Texture> walkingLeftFrames = new ArrayList<Texture>();
+            walkingRightFrames.add(new Texture(Constants.WALKING_LEFT_1));
+            walkingRightFrames.add(new Texture(Constants.WALKING_LEFT_2));
+            walkingRightFrames.add(new Texture(Constants.WALKING_LEFT_3));
+
+            walkingLeftAnimation = new Animation(Constants.WALK_LOOP_DURATION, walkingLeftFrames, Animation.PlayMode.LOOP_PINGPONG);
         }
     }
 }

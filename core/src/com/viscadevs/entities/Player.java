@@ -1,6 +1,8 @@
 package com.viscadevs.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.TimeUtils;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
@@ -13,6 +15,10 @@ public class Player {
     private int popularity = 0;
     private int happiness = -20;
     private Vector2 position;
+    private Texture texture;
+    private Enums.Facing facing = Enums.Facing.RIGHT;
+    private Enums.WalkState walkState = Enums.WalkState.STANDING;
+    private long walkStartTime;
 
     public Player(String name, int money, Enums.Gender gender, int health, int popularity, int happiness, Vector2 position) {
         this.name = name;
@@ -22,6 +28,52 @@ public class Player {
         this.popularity = popularity;
         this.happiness = happiness;
         this.position = position;
+    }
+
+    private void moveLeft(float delta) {
+        if (walkState != Enums.WalkState.WALKING) {
+            walkStartTime = TimeUtils.nanoTime();
+        }
+        walkState = Enums.WalkState.WALKING;
+        facing = Enums.Facing.LEFT;
+        position.x -= delta * Constants.PLAYER_MOVE_SPEED;
+    }
+
+    private void moveRight(float delta) {
+        if (walkState != Enums.WalkState.WALKING) {
+            walkStartTime = TimeUtils.nanoTime();
+        }
+        walkState = Enums.WalkState.WALKING;
+        facing = Enums.Facing.RIGHT;
+        position.x += delta * Constants.PLAYER_MOVE_SPEED;
+    }
+
+
+    public void update(float delta) {
+
+    }
+
+    public void render(float delta) {
+        Texture region = Assets.getInstance().PlayerAssets.
+
+        if (facing == Direction.RIGHT && jumpState != Enums.JumpState.GROUNDED) {
+            region = Assets.instance.gigaGalAssets.jumpingRight;
+        } else if (facing == Direction.RIGHT && walkState == Enums.WalkState.NOT_WALKING) {
+            region = Assets.instance.gigaGalAssets.standingRight;
+        } else if (facing == Direction.RIGHT && walkState == Enums.WalkState.WALKING) {
+            float walkTimeSeconds = Utils.secondsSince(walkStartTime);
+            region = Assets.instance.gigaGalAssets.walkingRightAnimation.getKeyFrame(walkTimeSeconds);
+        } else if (facing == Direction.LEFT && jumpState != Enums.JumpState.GROUNDED) {
+            region = Assets.instance.gigaGalAssets.jumpingLeft;
+        } else if (facing == Direction.LEFT && walkState == Enums.WalkState.NOT_WALKING) {
+            region = Assets.instance.gigaGalAssets.standingLeft;
+        } else if (facing == Direction.LEFT && walkState == Enums.WalkState.WALKING) {
+            float walkTimeSeconds = Utils.secondsSince(walkStartTime);
+            regio
+    }
+
+    public void dispose() {
+        texture.dispose();
     }
 
     public String getName() {

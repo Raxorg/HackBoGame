@@ -8,13 +8,13 @@ public class Enums {
         WAITING_ASSETS
     }
 
-    public enum WalkingDirection {
+    public enum Facing {
         RIGHT,
         LEFT
     }
 
-    public enum Gender {
-        MALE,
-        FEMALE
+    public enum WalkState {
+        WALKING,
+        STANDING
     }
 }
