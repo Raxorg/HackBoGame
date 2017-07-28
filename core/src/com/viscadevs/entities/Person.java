@@ -30,7 +30,9 @@ public class Person {
         batch.draw(
                 Assets.getInstance().personAssets.person,
                 position.x,
-                position.y
+                position.y,
+                Constants.PLAYER_WIDTH,
+                Constants.PLAYER_HEIGHT
         );
     }
 }

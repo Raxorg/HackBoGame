@@ -8,6 +8,8 @@ import com.viscadevs.util.Constants;
 public class DesktopLauncher {
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.width = (int) Constants.WORLD_WIDTH;
+        config.height = (int) Constants.WORLD_HEIGHT;
         new LwjglApplication(new HackBoGame(), config);
     }
 }
