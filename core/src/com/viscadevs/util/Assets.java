@@ -27,6 +27,8 @@ public class Assets implements Disposable {
         playerAssets.init();
         personAssets = new PersonAssets();
         personAssets.init();
+        barAssets = new BarAssets();
+        barAssets.init();
     }
 
     private void load() {
@@ -47,6 +49,13 @@ public class Assets implements Disposable {
         assetManager.load(Constants.HOMELESS_FRONT, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
+        // Bars
+        assetManager.load(Constants.BAR_LEFT, Texture.class);
+        assetManager.load(Constants.BAR_MID, Texture.class);
+        assetManager.load(Constants.BAR_RIGHT, Texture.class);
+        assetManager.load(Constants.BAR_LEFT_F, Texture.class);
+        assetManager.load(Constants.BAR_MID_F, Texture.class);
+        assetManager.load(Constants.BAR_RIGHT_F, Texture.class);
 
         assetManager.finishLoading();
     }
@@ -110,7 +119,7 @@ public class Assets implements Disposable {
     public class BarAssets {
         public Texture left, mid, right, leftF, midF, rightF;
 
-        public void init(){
+        public void init() {
             left = assetManager.get(Constants.BAR_LEFT);
             mid = assetManager.get(Constants.BAR_MID);
             right = assetManager.get(Constants.BAR_RIGHT);

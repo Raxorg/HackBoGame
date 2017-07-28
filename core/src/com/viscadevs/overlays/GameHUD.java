@@ -8,10 +8,12 @@ import static com.viscadevs.hackbo.HackBoGame.font;
 
 public class GameHUD {
 
-    private Bar healthBar, energyBar;
+    private Bar[] bars;
 
     public GameHUD() {
-        healthBar = new Bar();
+        bars = new Bar[2];
+        bars[0] = new Bar(Color.RED);
+        bars[1] = new Bar(Color.BLUE);
     }
 
     // TODO MONEY
@@ -22,6 +24,10 @@ public class GameHUD {
         font.setColor(Color.WHITE);
         font.getData().setScale(1);
         font.draw(batch, money + "", 0, 0);
+
+        for (Bar bar : bars) {
+            bar.render();
+        }
     }
 
 }

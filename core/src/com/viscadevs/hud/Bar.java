@@ -12,6 +12,10 @@ public class Bar {
     private Vector2 position;
     private float width, height;
 
+    public Bar(Color color) {
+        this.color = color;
+    }
+
     public void setColor(Color color) {
         this.color = color;
     }
@@ -24,32 +28,32 @@ public class Bar {
                 position.y
         );
         batch.draw(
-                Assets.getInstance().barAssets.left,
+                Assets.getInstance().barAssets.mid,
                 position.x + height,
                 position.y,
                 width,
                 height
         );
         batch.draw(
-                Assets.getInstance().barAssets.left,
+                Assets.getInstance().barAssets.right,
                 position.x + height + width,
                 position.y
         );
         batch.setColor(color);
         batch.draw(
-                Assets.getInstance().barAssets.left,
+                Assets.getInstance().barAssets.leftF,
                 position.x,
                 position.y
         );
         batch.draw(
-                Assets.getInstance().barAssets.left,
+                Assets.getInstance().barAssets.midF,
                 position.x + height,
                 position.y,
                 width,
                 height
         );
         batch.draw(
-                Assets.getInstance().barAssets.left,
+                Assets.getInstance().barAssets.rightF,
                 position.x + height + width,
                 position.y
         );
