@@ -10,8 +10,7 @@ import com.viscadevs.util.Button;
  * Created by Joaco99 on 28/07/2017.
  */
 
-public class Upgrade extends Button{
-    GameScreen screen;
+public abstract Upgrade extends Button{
 
     public Upgrade(Texture texture, Vector2 position, Vector2 bounds) {
         super(texture, position, bounds);
