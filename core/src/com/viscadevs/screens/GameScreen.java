@@ -50,7 +50,13 @@ public class GameScreen extends ScreenAdapter {
         }
 
         batch.begin();
-        batch.draw(Assets.getInstance().playerAssets.standingRight, 00, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.draw(
+                Assets.getInstance().playerAssets.standingRight,
+                0,
+                0,
+                Gdx.graphics.getWidth(),
+                Gdx.graphics.getHeight()
+        );
 
         // Update stuff
         for (Person p : people) {
@@ -66,6 +72,7 @@ public class GameScreen extends ScreenAdapter {
         }
 
         player.render(batch);
+        gameHUD.render(player.getMoney());
         // TODO RENDER THE BACKGROUND
         // TODO RENDER THE PLAYER
         // TODO RENDER THE HUD
