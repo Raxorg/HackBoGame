@@ -36,7 +36,9 @@ public class StartScreen extends ScreenAdapter {
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
+        if(Gdx.input.isTouched()){
+            game.setScreen(new MenuScreen(game));
+        }
         batch.begin();
         batch.setColor(1, 1, 1, 1);
         batch.draw(
