@@ -30,8 +30,8 @@ public class Home {
                         Assets.getInstance().upgradeAssets.mediumHome,
                         Constants.HOME_POSITION.x,
                         Constants.HOME_POSITION.y,
-                        Constants.HOME_DIMENTIONS.x,
-                        Constants.HOME_DIMENTIONS.y
+                        Constants.HOME_DIMENTIONS.x + 80,
+                        Constants.HOME_DIMENTIONS.y + 80
                 );
                 break;
             case RICH:
@@ -39,8 +39,8 @@ public class Home {
                         Assets.getInstance().upgradeAssets.richHome,
                         Constants.HOME_POSITION.x,
                         Constants.HOME_POSITION.y,
-                        Constants.HOME_DIMENTIONS.x,
-                        Constants.HOME_DIMENTIONS.y
+                        Constants.HOME_DIMENTIONS.x + 100,
+                        Constants.HOME_DIMENTIONS.y + 200
                 );
                 break;
         }
