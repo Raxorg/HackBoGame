@@ -26,7 +26,7 @@ public class Assets implements Disposable {
     }
 
     private void load() {
-        assetManager.load("other/person.png", Texture.class);
+        assetManager.load(Constants.PERSON, Texture.class);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Assets implements Disposable {
         public final Animation walkingRightAnimation, walkingLeftAnimation;
 
         public PlayerAssets() {
-            standingRight = assetManager.get("other/person.png", Texture.class);
+            standingRight = assetManager.get(Constants.PERSON, Texture.class);
 
             Array<Texture> walkingRightFrames = new Array<Texture>();
             walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_1));

@@ -27,7 +27,7 @@ public class Constants {
     public static final float WALK_LOOP_DURATION = 0.25f;
 
     // Person
-    public static final String PERSON = "/other/person.png";
+    public static final String PERSON = "other/person.png";
 
     // HUD
     public static final float HUD_VIEWPORT_SIZE = WORLD_WIDTH * 3;
