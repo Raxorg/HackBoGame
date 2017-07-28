@@ -39,7 +39,7 @@ public class Assets implements Disposable {
         public final Animation walkingRightAnimation, walkingLeftAnimation;
 
         public PlayerAssets() {
-            standingRight = new Texture(Constants.STANDING_RIGHT);
+            standingRight = assetManager.get("other/person.png", Texture.class);
 
             Array<Texture> walkingRightFrames = new Array<Texture>();
             walkingRightFrames.add(new Texture(Constants.WALKING_RIGHT_1));
