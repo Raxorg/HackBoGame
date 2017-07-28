@@ -7,6 +7,7 @@ import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
+import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
@@ -32,6 +33,7 @@ public class GameHUD {
     }
 
     public void render(int money) {
+        batch.setColor(Color.YELLOW);
         batch.draw(
                 Assets.getInstance().hudAssets.moneyBar,
                 0,
@@ -41,7 +43,7 @@ public class GameHUD {
         );
         font.setColor(Color.BLUE);
         font.getData().setScale(1);
-        font.draw(batch, money + "", 0, 50);
+        font.draw(batch, money + "", 0, 0);
 
         for (Bar bar : bars) {
             bar.render();
