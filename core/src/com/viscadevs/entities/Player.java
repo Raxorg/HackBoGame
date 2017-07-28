@@ -23,10 +23,12 @@ public class Player {
     private Enums.Facing facing = Enums.Facing.RIGHT;
     private Enums.WalkState walkState = Enums.WalkState.STANDING;
     private long walkStartTime = 0;
+    private Enums.State state;
 
     public Player(String name, Enums.Gender gender, int popularity, int happiness, Vector2 position) {
         this.name = name;
         this.gender = gender;
+        this.state = Enums.State.STANDARD;
         money = Constants.INITIAL_MONEY;
         health = Constants.INITIAL_HEALTH;
         this.popularity = popularity;
@@ -137,5 +139,9 @@ public class Player {
 
     public void setPosition(Vector2 position) {
         this.position = position;
+    }
+
+    public Enums.State getState() {
+        return state;
     }
 }

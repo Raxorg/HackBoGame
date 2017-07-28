@@ -23,7 +23,7 @@ public class Enums {
         FEMALE
     }
 
-    public enum PlayerState {
+    public enum State {
         HOMELESS,
         STANDARD,
         RICH
