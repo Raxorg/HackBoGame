@@ -57,12 +57,15 @@ public class Bar {
                 Constants.BAR_WIDTH * porcentage / 100,
                 Constants.BAR_HEIGHT
         );
-        batch.draw(
-                Assets.getInstance().barAssets.rightF,
-                position.x + Constants.BAR_HEIGHT + Constants.BAR_WIDTH,
-                position.y,
-                Constants.BAR_HEIGHT,
-                Constants.BAR_HEIGHT
-        );
+        if(porcentage == 100) {
+            batch.draw(
+                    Assets.getInstance().barAssets.rightF,
+                    position.x + Constants.BAR_HEIGHT + Constants.BAR_WIDTH,
+                    position.y,
+                    Constants.BAR_HEIGHT,
+                    Constants.BAR_HEIGHT
+            );
+        }
+
     }
 }

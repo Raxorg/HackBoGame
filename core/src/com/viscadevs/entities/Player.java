@@ -19,6 +19,7 @@ public class Player {
     private int health;
     private int popularity = 0;
     private int happiness = -20;
+    private int energy = 50;
 
     private Enums.Gender gender;
     private Enums.Facing facing = Enums.Facing.RIGHT;
@@ -148,5 +149,9 @@ public class Player {
 
     public Enums.State getState() {
         return state;
+    }
+
+    public int getEnergy() {
+        return energy;
     }
 }

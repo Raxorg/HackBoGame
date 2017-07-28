@@ -36,7 +36,7 @@ public class GameScreen extends ScreenAdapter {
     public void show() {
         cloudsColor = Color.SALMON;
 
-        gameHUD = new GameHUD();
+        gameHUD = new GameHUD(this);
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", Enums.Gender.MALE, 0, 100);
         people = new DelayedRemovalArray<Person>();

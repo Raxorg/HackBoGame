@@ -5,8 +5,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
+import com.viscadevs.screens.GameScreen;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
+import com.viscadevs.util.ViscaUtils;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
@@ -15,8 +17,10 @@ public class GameHUD {
 
     private Bar[] bars;
     private Upgrade[] upgrades;
+    private GameScreen gameScreen;
 
-    public GameHUD() {
+    public GameHUD(GameScreen gameScreen) {
+        this.gameScreen = gameScreen;
         bars = new Bar[2];
         bars[0] = new Bar(
                 new Vector2(0, 0),
@@ -40,13 +44,11 @@ public class GameHUD {
                 Constants.MONEY_BAR_WIDTH,
                 Constants.MONEY_BAR_HEIGHT
         );
-        font.setColor(Color.BLUE);
-        font.getData().setScale(1);
-        font.draw(batch, money + "", 0, 0);
+        ViscaUtils.drawCenteredFont(font, Constants.MONEY_BAR_WIDTH, Constants.MONEY_BAR_HEIGHT,
+                0, Gdx.graphics.getHeight() - Constants.MONEY_BAR_HEIGHT, money + "", 1, Color.BLACK);
 
-        for (Bar bar : bars) {
-            bar.render(25);
-        }
+        bars[0].render(gameScreen.getPlayer().getEnergy());
+        bars[1].render(gameScreen.getPlayer().getHealth());
     }
 
 }
