@@ -2,12 +2,10 @@ package com.viscadevs.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.entities.Player;
-import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
@@ -19,7 +17,6 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-
         viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
     }
 
@@ -29,6 +26,9 @@ public class GameScreen extends ScreenAdapter {
         batch.setProjectionMatrix(viewport.getCamera().combined);
         viewport.apply();
         batch.begin();
+        // TODO RENDER THE BACKGROUND
+        // TODO RENDER THE PLAYER
+        // TODO RENDER THE HUD
         batch.end();
     }
 
