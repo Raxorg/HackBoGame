@@ -111,6 +111,9 @@ public class Constants {
     // Instructions
     public static final String INSTRUCTIONS = "other/instructions_screen.jpg";
 
+    // Game over
+    public static final String GAME_OVER = "other/gameover.jpg";
+
 
     public static final float WALK_LOOP_DURATION = 0.25f;
 

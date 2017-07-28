@@ -56,6 +56,8 @@ public class Assets implements Disposable {
         assetManager.load(Constants.CREDITS, Texture.class);
         // Instructions
         assetManager.load(Constants.INSTRUCTIONS, Texture.class);
+        // Game over
+        assetManager.load(Constants.GAME_OVER, Texture.class);
         // Player
         //MALE
         assetManager.load(Constants.MALE_MEDIUM_WALKING_LEFT_1, Texture.class);
@@ -291,13 +293,14 @@ public class Assets implements Disposable {
     }
 
     public class LandScapeAssets {
-        public Texture street, clouds, credits, instructions;
+        public Texture street, clouds, credits, instructions, gameover;
 
         public void init() {
             street = assetManager.get(Constants.STREET);
             clouds = assetManager.get(Constants.CLOUDS);
             credits = assetManager.get(Constants.CREDITS);
             instructions = assetManager.get(Constants.INSTRUCTIONS);
+            gameover = assetManager.get(Constants.GAME_OVER);
         }
     }
 
