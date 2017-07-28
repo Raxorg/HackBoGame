@@ -3,7 +3,6 @@ package com.viscadevs.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -15,10 +14,6 @@ import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 
-
-/**
- * Created by Kevin Viscafe on 27/7/17.
- */
 
 public class MenuScreen extends ScreenAdapter {
 
