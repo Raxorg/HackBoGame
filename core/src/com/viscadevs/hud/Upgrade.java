@@ -3,30 +3,25 @@ package com.viscadevs.hud;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.viscadevs.util.Button;
-import com.viscadevs.util.Enums;
 
 
 public abstract class Upgrade extends Button {
-    public Enums.State state = Enums.State.HOMELESS;
 
-    public Upgrade(Texture texture, float x, float y, float width, float height, Color color) {
+    private int moneyRequired, friendsRequired;
+
+    public Upgrade(Texture texture, float x, float y, float width, float height, Color color,
+                   int moneyRequired, int friendsRequired) {
         super(texture, x, y, width, height, color);
+        this.moneyRequired = moneyRequired;
+        this.friendsRequired = friendsRequired;
     }
 
-    public void upgrade() {
-        switch (state) {
-            case HOMELESS:
-                state = Enums.State.STANDARD;
-                break;
-            case STANDARD:
-                state = Enums.State.RICH;
-                break;
-            default:
-                break;
-        }
+    public int getMoneyRequired() {
+        return moneyRequired;
     }
 
-    public Enums.State getState() {
-        return state;
+    public int getFriendsRequired() {
+        return friendsRequired;
     }
+
 }

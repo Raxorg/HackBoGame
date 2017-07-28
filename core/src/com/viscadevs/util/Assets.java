@@ -68,8 +68,8 @@ public class Assets implements Disposable {
         assetManager.load(Constants.BAR_MID_F, Texture.class);
         assetManager.load(Constants.BAR_RIGHT_F, Texture.class);
         //Upgrades
-        assetManager.load(Constants.HOMELESS_HOME, Texture.class);
-        assetManager.load(Constants.STANDARD_HOME, Texture.class);
+        assetManager.load(Constants.POOR_HOME, Texture.class);
+        assetManager.load(Constants.MEDIUM_HOME, Texture.class);
         assetManager.load(Constants.RICH_HOME, Texture.class);
         assetManager.load(Constants.GUN_UPGRADE, Texture.class);
         assetManager.load(Constants.HOME_UPGRADE, Texture.class);
@@ -160,13 +160,13 @@ public class Assets implements Disposable {
     }
 
     public class UpgradeAssets {
-        public Texture homelessHome, standard_home, rich_home;
+        public Texture poorHome, mediumHome, richHome;
         public Texture gunUpgrade, homeUpgrade, moneyUpgrade;
 
         public void init() {
-            homelessHome = assetManager.get(Constants.HOMELESS_HOME);
-            standard_home = assetManager.get(Constants.STANDARD_HOME);
-            rich_home = assetManager.get(Constants.RICH_HOME);
+            poorHome = assetManager.get(Constants.POOR_HOME);
+            mediumHome = assetManager.get(Constants.MEDIUM_HOME);
+            richHome = assetManager.get(Constants.RICH_HOME);
             gunUpgrade = assetManager.get(Constants.GUN_UPGRADE);
             homeUpgrade = assetManager.get(Constants.HOME_UPGRADE);
             moneyUpgrade = assetManager.get(Constants.MONEY_UPGRADE);

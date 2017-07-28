@@ -1,42 +1,48 @@
 package com.viscadevs.entities;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.viscadevs.hud.Upgrade;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
+import com.viscadevs.util.Enums;
 
 public class Home {
-    Upgrade upgrade;
-    Texture homeTexture;
+
+    private Enums.Level level;
 
     public Home() {
-        upgrade = new Upgrade(new Texture("other/pixel.png"), 400, 400, 200, 200, Color.BLUE) {
-            @Override
-            public void onTouch() {
-                upgrade();
-            }
-        };
-
-        homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
+        level = Enums.Level.POOR;
     }
 
     public void render(SpriteBatch batch) {
-        upgrade.render();
-        switch (upgrade.getState()) {
-            case HOMELESS:
-                homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
+
+        switch (level) {
+            case POOR:
+                batch.draw(
+                        Assets.getInstance().upgradeAssets.poorHome,
+                        Constants.HOME_POSITION.x,
+                        Constants.HOME_POSITION.y,
+                        Constants.HOME_DIMENTIONS.x,
+                        Constants.HOME_DIMENTIONS.y
+                );
                 break;
-            case STANDARD:
-                homeTexture = Assets.getInstance().upgradeAssets.standard_home;
+            case MEDIUM:
+                batch.draw(
+                        Assets.getInstance().upgradeAssets.mediumHome,
+                        Constants.HOME_POSITION.x,
+                        Constants.HOME_POSITION.y,
+                        Constants.HOME_DIMENTIONS.x,
+                        Constants.HOME_DIMENTIONS.y
+                );
                 break;
             case RICH:
-                homeTexture = Assets.getInstance().upgradeAssets.rich_home;
+                batch.draw(
+                        Assets.getInstance().upgradeAssets.richHome,
+                        Constants.HOME_POSITION.x,
+                        Constants.HOME_POSITION.y,
+                        Constants.HOME_DIMENTIONS.x,
+                        Constants.HOME_DIMENTIONS.y
+                );
                 break;
         }
-
-        batch.draw(homeTexture, Constants.HOME_POSITION.x, Constants.HOME_POSITION.y,
-                Constants.HOME_DIMENTIONS.x, Constants.HOME_DIMENTIONS.y);
     }
 }

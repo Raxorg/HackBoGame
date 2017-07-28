@@ -28,4 +28,10 @@ public class Enums {
         STANDARD,
         RICH
     }
+
+    public enum Level {
+        POOR,
+        MEDIUM,
+        RICH
+    }
 }
