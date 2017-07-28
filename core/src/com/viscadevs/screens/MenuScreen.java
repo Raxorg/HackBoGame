@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.hackbo.HackBoGame;
@@ -32,7 +33,7 @@ public class MenuScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        viewport = new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
+        viewport = new ExtendViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
 
         Texture button = new Texture(Gdx.files.internal("other/pixel.png"));
 
@@ -114,11 +115,17 @@ public class MenuScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        batch.setProjectionMatrix(viewport.getCamera().combined);
         viewport.apply();
+        batch.setProjectionMatrix(viewport.getCamera().combined);
+
         stage.act();
         stage.draw();
 
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        viewport.update(width, height, true);
     }
 
     @Override
