@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.graphics.Color;
 
@@ -36,4 +37,8 @@ public abstract class Button implements Disposable {
     }
 
     public abstract void onTouch();
+
+    public void updatePosition(Vector2 position) {
+        rectangle.set(position.x, position.y, rectangle.width, rectangle.height);
+    }
 }

@@ -75,6 +75,20 @@ public class Person implements Disposable{
         float playerXPosition = gameScreen.getPlayer().getPosition().x;
         nextToPlayer = position.x + Constants.HUMAN_WIDTH >= playerXPosition &&
                 position.x + Constants.HUMAN_WIDTH <= playerXPosition + 2 * Constants.HUMAN_WIDTH;
+
+
+        buttons[0].updatePosition(
+                new Vector2(
+                        position.x - Constants.BUTTON_SIZE,
+                        position.y + Constants.HUMAN_HEIGHT
+                )
+        );
+        buttons[1].updatePosition(
+                new Vector2(
+                        position.x + Constants.BUTTON_SIZE,
+                        position.y + Constants.HUMAN_HEIGHT
+                )
+        );
     }
 
     public void render() {

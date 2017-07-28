@@ -21,7 +21,7 @@ public class Constants {
     public static final String PERSON2 = "other/person2.png";
     public static final float PERSON_SPEED = 25f;
     public static final float PERSON_MAX_BONUS_SPEED = 150f;
-    public static final float PERSON_SPAWN_RATE = 1f;
+    public static final float PERSON_SPAWN_RATE = 2f;
     public static final String STEAL_BUTTON = "other/stealButton.png";
     public static final String BEG_BUTTON = "other/begButton.png";
     public static final float BUTTON_SIZE = 50f;
