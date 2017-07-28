@@ -4,11 +4,14 @@ public class Constants {
 
     public static final float FADING_SPEED = 1f;
 
+    // Player
     public static final float PLAYER_SPEED = 25f;
     public static final float PERSON_SPEED = 15f;
+    public static final float PLAYER_WIDTH = 45;
+    public static final float PLAYER_HEIGHT = 96;
 
-    public static final float WORLD_WIDTH = 200;
-    public static final float WORLD_HEIGHT = 100;
+    public static final float WORLD_WIDTH = 1000;
+    public static final float WORLD_HEIGHT = 500;
 
     public static final int INITIAL_HEALTH = 100;
     public static final int MAX_BAR_CAPACITY = 100;

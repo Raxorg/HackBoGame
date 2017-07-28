@@ -81,7 +81,7 @@ public class Player {
             region = Assets.getInstance().playerAssets.walkingLeftAnimation.getKeyFrame(walkTimeSeconds);
         }
 
-        batch.draw(region, position.x, position.y);
+        batch.draw(region, position.x, position.y, Constants.PLAYER_WIDTH, Constants.PLAYER_HEIGHT);
     }
 
     public String getName() {
