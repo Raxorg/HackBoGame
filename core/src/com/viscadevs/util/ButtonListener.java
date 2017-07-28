@@ -18,7 +18,6 @@ public class ButtonListener extends InputAdapter {
         for (Button b : buttons) {
             if (b.isTouched(screenX, screenY)) {
                 b.onTouch();
-                b.getSound().play(100);
             }
         }
 
