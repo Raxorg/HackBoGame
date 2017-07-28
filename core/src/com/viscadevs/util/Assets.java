@@ -59,7 +59,7 @@ public class Assets implements Disposable {
         assetManager.load(Constants.MALE_POOR_WALKING_LEFT_1, Texture.class);
         assetManager.load(Constants.MALE_POOR_WALKING_LEFT_2, Texture.class);
         assetManager.load(Constants.MALE_POOR_WALKING_LEFT_3, Texture.class);
-        assetManager.load(Constants.MALE_RICH_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.MALE_POOR_WALKING_RIGHT_1, Texture.class);
         assetManager.load(Constants.MALE_POOR_WALKING_RIGHT_2, Texture.class);
         assetManager.load(Constants.MALE_POOR_WALKING_RIGHT_3, Texture.class);
         assetManager.load(Constants.MALE_POOR__FRONT, Texture.class);
