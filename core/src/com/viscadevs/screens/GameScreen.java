@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.TimeUtils;
@@ -12,6 +13,7 @@ import com.viscadevs.entities.Player;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Assets;
+import com.viscadevs.util.Button;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
@@ -26,7 +28,7 @@ public class GameScreen extends ScreenAdapter {
     private DelayedRemovalArray<Person> people;
     private GameHUD gameHUD;
     private long startTime;
-    private Upgrade home;
+    private Button[] buttons;
 
     @Override
     public void show() {
@@ -35,12 +37,14 @@ public class GameScreen extends ScreenAdapter {
         player = new Player("BOB", Enums.Gender.MALE, 0, 100, new Vector2(0, Constants.PLAYER_Y));
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
-        home = new Upgrade(Assets.getInstance().upgradeAssets.homeless_home, 400, 200); {
+
+        buttons = new Button[1];
+        buttons[0] = new Upgrade(new Texture("lol"), 0, 0, 0, 0) {
             @Override
             public void onTouch() {
-                home.upgrade();
+
             }
-        }
+        };
     }
 
 

@@ -5,8 +5,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.viscadevs.util.Button;
 import com.viscadevs.util.Enums;
 
-import javafx.scene.text.Font;
-
 public abstract class Upgrade extends Button{
     public Enums.State state = Enums.State.HOMELESS;
 
@@ -31,4 +29,5 @@ public abstract class Upgrade extends Button{
     public void render(SpriteBatch batch) {
         super.render(batch);
     }
+
 }
