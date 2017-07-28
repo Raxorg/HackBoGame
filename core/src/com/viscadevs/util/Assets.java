@@ -13,6 +13,7 @@ public class Assets implements Disposable {
     public PlayerAssets playerAssets;
     public PersonAssets personAssets;
     public BarAssets barAssets;
+    public LandScapeAssets landScapeAssets;
 
     public static Assets getInstance() {
         return instance;
@@ -27,11 +28,15 @@ public class Assets implements Disposable {
         playerAssets.init();
         personAssets = new PersonAssets();
         personAssets.init();
+        landScapeAssets = new LandScapeAssets();
+        landScapeAssets.init();
         barAssets = new BarAssets();
         barAssets.init();
     }
 
     private void load() {
+        //LandScape
+        assetManager.load(Constants.STREET, Texture.class);
         // Player
         assetManager.load(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
         assetManager.load(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
@@ -126,6 +131,14 @@ public class Assets implements Disposable {
             leftF = assetManager.get(Constants.BAR_LEFT_F);
             midF = assetManager.get(Constants.BAR_MID_F);
             rightF = assetManager.get(Constants.BAR_RIGHT_F);
+        }
+    }
+
+    public class LandScapeAssets{
+        public Texture street;
+
+        public void init(){
+            street = assetManager.get(Constants.STREET);
         }
     }
 }

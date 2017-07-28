@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
 import com.viscadevs.overlays.GameHUD;
+import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 import com.viscadevs.util.ViscaUtils;
@@ -60,11 +61,12 @@ public class GameScreen extends ScreenAdapter {
             p.render();
         }
 
-        player.render(batch);
-        gameHUD.render(player.getMoney());
         // TODO RENDER THE BACKGROUND
+        batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
         // TODO RENDER THE PLAYER
+        player.render(batch);
         // TODO RENDER THE HUD
+        gameHUD.render(player.getMoney());
         batch.end();
     }
 
