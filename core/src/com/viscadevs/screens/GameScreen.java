@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.TimeUtils;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
 import com.viscadevs.overlays.GameHUD;
@@ -25,12 +23,9 @@ public class GameScreen extends ScreenAdapter {
     private DelayedRemovalArray<Person> people;
     private GameHUD gameHUD;
     private long startTime;
-    private Viewport viewport;
 
     @Override
     public void show() {
-        viewport = new ExtendViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
-        viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
         player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(0, 0));
@@ -38,19 +33,11 @@ public class GameScreen extends ScreenAdapter {
         startTime = TimeUtils.nanoTime();
     }
 
-    @Override
-    public void resize(int width, int height) {
-        viewport.update(width, height, true );
-    }
 
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        viewport.apply();
-        batch.setProjectionMatrix(viewport.getCamera().combined);
-
 
         float timeElapsed = ViscaUtils.secondsSince(startTime);
         if (timeElapsed >= Constants.PERSON_SPAWN_RATE) {
