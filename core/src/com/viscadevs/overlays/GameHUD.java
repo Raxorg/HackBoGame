@@ -19,11 +19,11 @@ public class GameHUD {
     public GameHUD() {
         bars = new Bar[2];
         bars[0] = new Bar(
-                new Vector2(400, Gdx.graphics.getHeight() - Constants.BAR_HEIGHT),
+                new Vector2(0, 0),
                 Color.RED
         );
         bars[1] = new Bar(
-                new Vector2(400, 0),
+                new Vector2(Constants.BAR_WIDTH + Constants.BAR_HEIGHT, 0),
                 Color.BLUE
         );
 
