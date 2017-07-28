@@ -60,8 +60,8 @@ public class GameScreen extends ScreenAdapter {
         for (Person p : people) {
             p.render();
         }
-
-        // TODO RENDER THE BACKGROUND
+        batch.setColor(1, 1, 1, 1);
+        // Draw the city
         batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
         // TODO RENDER THE PLAYER
         player.render(batch);
