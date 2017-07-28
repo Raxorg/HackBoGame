@@ -63,14 +63,14 @@ public class GameScreen extends ScreenAdapter {
         batch.draw(Assets.getInstance().landScapeAssets.street, 0, 0, Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT);
         batch.setColor(1, 1, 1, 1);
 
+        // Draw the player
+        player.render(batch);
+        batch.setColor(1, 1, 1, 1);
+
         // Draw the people
         for (Person p : people) {
             p.render();
         }
-        batch.setColor(1, 1, 1, 1);
-
-        // Draw the player
-        player.render(batch);
         batch.setColor(1, 1, 1, 1);
 
         // Draw the HUD
