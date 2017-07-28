@@ -28,7 +28,7 @@ public class Home {
             case MEDIUM:
                 batch.draw(
                         Assets.getInstance().upgradeAssets.mediumHome,
-                        Constants.HOME_POSITION.x,
+                        Constants.HOME_POSITION.x - 10f,
                         Constants.HOME_POSITION.y,
                         Constants.HOME_DIMENTIONS.x + 80,
                         Constants.HOME_DIMENTIONS.y + 80
@@ -37,7 +37,7 @@ public class Home {
             case RICH:
                 batch.draw(
                         Assets.getInstance().upgradeAssets.richHome,
-                        Constants.HOME_POSITION.x,
+                        Constants.HOME_POSITION.x - 20f,
                         Constants.HOME_POSITION.y,
                         Constants.HOME_DIMENTIONS.x + 100,
                         Constants.HOME_DIMENTIONS.y + 200
