@@ -3,8 +3,13 @@ package com.viscadevs.util;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Disposable;
 
-public abstract class Button {
+/**
+ * Created by Joaco99 on 28/07/2017.
+ */
+
+public abstract class Button implements Disposable{
     Texture texture;
     Rectangle rectangle;
 
@@ -19,6 +24,11 @@ public abstract class Button {
 
     public boolean isTouched(float x, float y) {
         return rectangle.contains(x, y);
+    }
+
+    @Override
+    public void dispose() {
+        texture.dispose();
     }
 
     abstract void onTouch();
