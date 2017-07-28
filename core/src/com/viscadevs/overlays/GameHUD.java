@@ -1,10 +1,12 @@
 package com.viscadevs.overlays;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.viscadevs.hud.Bar;
 import com.viscadevs.hud.Upgrade;
 import com.viscadevs.screens.GameScreen;
+import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 import static com.viscadevs.hackbo.HackBoGame.font;
@@ -18,7 +20,7 @@ public class GameHUD {
     public GameHUD(final GameScreen screen) {
         this.screen = screen;
         bars = new Bar[2];
-        bars[0] = new Bar(new Vector2(0, 0), Color.RED);
+        bars[0] = new Bar(new Vector2(0, Gdx.graphics.getHeight()- Constants.BAR_HEIGHT), Color.RED);
         bars[1] = new Bar(new Vector2(200, 0), Color.BLUE);
 
         upgrades = new Upgrade[1];

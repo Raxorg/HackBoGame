@@ -6,15 +6,11 @@ import com.viscadevs.hud.Upgrade;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
 
-/**
- * Created by Joaco99 on 28/07/2017.
- */
-
 public class Home {
     Upgrade upgrade;
     Texture homeTexture;
 
-    public Home(){
+    public Home() {
         upgrade = new Upgrade(new Texture("other/pixel.png"), 400, 400, 200, 200) {
             @Override
             public void onTouch() {
@@ -25,9 +21,9 @@ public class Home {
         homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
     }
 
-    public void render(SpriteBatch batch){
+    public void render(SpriteBatch batch) {
         upgrade.render(batch);
-        switch (upgrade.getState()){
+        switch (upgrade.getState()) {
             case HOMELESS:
                 homeTexture = Assets.getInstance().upgradeAssets.homelessHome;
                 break;

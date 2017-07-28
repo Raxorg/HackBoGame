@@ -71,6 +71,7 @@ public class Assets implements Disposable {
         assetManager.load(Constants.GUN_UPGRADE, Texture.class);
         assetManager.load(Constants.HOME_UPGRADE, Texture.class);
         assetManager.load(Constants.MONEY_UPGRADE, Texture.class);
+
         assetManager.finishLoading();
     }
 
