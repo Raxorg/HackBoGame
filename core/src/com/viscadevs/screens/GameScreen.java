@@ -36,6 +36,7 @@ public class GameScreen extends ScreenAdapter {
     private Color cloudsColor;
     private Enums.Gender gender;
     private Button upgradeHomeButton;
+    private boolean canUpgrade;
 
     public GameScreen(Enums.Gender gender) {
         this.gender = gender;
@@ -81,15 +82,17 @@ public class GameScreen extends ScreenAdapter {
         ) {
             @Override
             public void onTouch() {
-                if (player.getMoney() >= 1000 && home.getLevel() == POOR) {
+                if (canUpgrade && home.getLevel() == POOR) {
                     home.upgrade();
                     player.setMoney(player.getMoney() - 1000);
-                } else if (player.getMoney() >= 2500 && home.getLevel() == MEDIUM) {
+                } else if (canUpgrade && home.getLevel() == MEDIUM) {
                     home.upgrade();
                     player.setMoney(player.getMoney() - 2500);
                 }
             }
         };
+
+        canUpgrade = false;
     }
 
 
@@ -105,6 +108,8 @@ public class GameScreen extends ScreenAdapter {
 
         player.update(delta);
 
+        updateUpgradeButton();
+
         batch.begin();
 
         drawCity();
@@ -118,6 +123,13 @@ public class GameScreen extends ScreenAdapter {
         }
 
         gameHUD.render(player.getMoney());
+
+        if (canUpgrade) {
+            upgradeHomeButton.render();
+        } else {
+            upgradeHomeButton.setColor(new Color(0.5f, 0.5f, 0.5f, 1));
+            upgradeHomeButton.render();
+        }
 
         batch.setColor(1, 1, 1, 1);
 
@@ -143,6 +155,15 @@ public class GameScreen extends ScreenAdapter {
             p.update(delta);
             people.end();
         }
+    }
+
+    private void updateUpgradeButton() {
+        if (player.getMoney() >= 1000 && home.getLevel() == POOR) {
+            canUpgrade = true;
+        } else if (player.getMoney() >= 2500 && home.getLevel() == MEDIUM) {
+            canUpgrade = true;
+        }
+
     }
 
     private void drawCity() {
