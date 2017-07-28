@@ -12,11 +12,6 @@ import com.viscadevs.util.Constants;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
 
-
-/**
- * Created by Kevin Viscafe on 28/7/17.
- */
-
 public class CreditsScreen extends ScreenAdapter {
 
     private HackBoGame game;

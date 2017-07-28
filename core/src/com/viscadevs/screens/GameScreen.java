@@ -50,7 +50,7 @@ public class GameScreen extends ScreenAdapter {
     @Override
     public void show() {
 
-        cloudsColor = Color.SALMON;
+        cloudsColor = Color.WHITE;
 
         gameHUD = new GameHUD(this);
         // TODO GET THE NAME AND GENDER FROM MENU
@@ -95,6 +95,7 @@ public class GameScreen extends ScreenAdapter {
                     home.upgrade();
                     player.setMoney(player.getMoney() - 2500);
                 }
+                player.setLevel(home.getLevel());
             }
         };
 
@@ -172,14 +173,14 @@ public class GameScreen extends ScreenAdapter {
             if (light <= 0) {
                 light = 0;
                 dayToNight = false;
-                player.setHealth(player.getHealth() - 20);
+                player.setHealth(player.getHealth() - 25);
             }
         } else {
             light += delta * Constants.DAY_SPEED;
             if (light >= 1) {
                 light = 1;
                 dayToNight = true;
-                player.setHealth(player.getHealth() - 20);
+                player.setHealth(player.getHealth() - 25);
             }
         }
         Gdx.gl.glClearColor(Color.SKY.r * light, Color.SKY.g * light, Color.SKY.b * light, 1);

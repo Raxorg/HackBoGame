@@ -52,8 +52,6 @@ public class Person implements Disposable {
                     }
                 }
             }
-
-
         };
         buttons[1] = new Button(
                 Assets.getInstance().personAssets.begButton,
