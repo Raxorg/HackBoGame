@@ -134,6 +134,7 @@ public class Constants {
     public static final String BUTTONS_ARROW_EXIT = "other/arrow.png";
     public static final String MALE_BUTTON = "other/male.png";
     public static final String FEMALE_BUTTON = "other/female.png";
+    public static final String SLEEP_BUTTON = "other/sleep.png";
 
 
     public static final float BUTTON_WIDTH = 200;
@@ -146,6 +147,6 @@ public class Constants {
     public static final float CREDITS_BUTTON_Y = INSTRUCTIONS_BUTTON_Y - BUTTON_HEIGHT * 2;
     public static final float EXIT_BUTTON_X = START_BUTTON_X;
     public static final float EXIT_BUTTON_Y = CREDITS_BUTTON_Y - BUTTON_HEIGHT * 2;
-    public static final float EXIT_ARROW_BUTTON_X =  0;
-    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight()-BUTTON_WIDTH/4;
+    public static final float EXIT_ARROW_BUTTON_X = 0;
+    public static final float EXIT_ARROW_BUTTON_Y = Gdx.graphics.getHeight() - BUTTON_WIDTH / 4;
 }

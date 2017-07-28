@@ -56,7 +56,7 @@ public class Player {
         walkState = Enums.WalkState.WALKING;
         facing = Enums.Facing.LEFT;
         position.x -= delta * Constants.PLAYER_SPEED;
-        if(position.x <= 0){
+        if (position.x <= 0) {
             walkState = Enums.WalkState.STANDING;
             position.x = 0;
         }
@@ -114,7 +114,6 @@ public class Player {
         }
 
     }
-
 
     public void update(float delta) {
         updateDrawing();

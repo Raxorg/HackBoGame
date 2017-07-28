@@ -35,7 +35,7 @@ public class GameScreen extends ScreenAdapter {
     private Home home;
     private Color cloudsColor;
     private Enums.Gender gender;
-    private Button upgradeHomeButton;
+    private Button upgradeHomeButton, sleepButton;
     private boolean canUpgrade;
 
     public GameScreen(Enums.Gender gender) {
@@ -92,6 +92,20 @@ public class GameScreen extends ScreenAdapter {
             }
         };
 
+        sleepButton = new Button(
+                Assets.getInstance().buttonAssets.sleep,
+                Gdx.graphics.getWidth() - 75f * 3,
+                Gdx.graphics.getHeight() - 75f,
+                75f,
+                75f,
+                Color.BLUE
+        ) {
+            @Override
+            public void onTouch() {
+                player.setEnergy(Math.max(100, player.getEnergy() + 20));
+            }
+        };
+
         canUpgrade = false;
     }
 
@@ -129,7 +143,10 @@ public class GameScreen extends ScreenAdapter {
         } else {
             upgradeHomeButton.setColor(new Color(0.5f, 0.5f, 0.5f, 1));
             upgradeHomeButton.render();
+            batch.setColor(1, 1, 1, 1);
         }
+
+        sleepButton.render();
 
         batch.setColor(1, 1, 1, 1);
 
@@ -186,12 +203,13 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void updateButtons() {
-        Button[] buttons = new Button[1 + people.size * 2];
+        Button[] buttons = new Button[2 + people.size * 2];
         for (int i = 0; i < people.size; i++) {
             buttons[2 * i] = people.get(i).getStealButton();
             buttons[2 * i + 1] = people.get(i).getBegButton();
         }
         buttons[people.size * 2] = upgradeHomeButton;
+        buttons[1 + people.size * 2] = sleepButton;
         Gdx.input.setInputProcessor(new ButtonListener(buttons));
     }
 
