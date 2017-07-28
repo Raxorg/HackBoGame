@@ -56,6 +56,10 @@ public class Player {
         walkState = Enums.WalkState.WALKING;
         facing = Enums.Facing.LEFT;
         position.x -= delta * Constants.PLAYER_SPEED;
+        if(position.x <= 0){
+            walkState = Enums.WalkState.STANDING;
+            position.x = 0;
+        }
     }
 
     private void moveRight(float delta) {
@@ -65,6 +69,10 @@ public class Player {
         walkState = Enums.WalkState.WALKING;
         facing = Enums.Facing.RIGHT;
         position.x += delta * Constants.PLAYER_SPEED;
+        if(position.x + standing.getWidth() * 2>= Gdx.graphics.getWidth()){
+            walkState = Enums.WalkState.STANDING;
+            position.x = Gdx.graphics.getWidth() - standing.getWidth() * 2;
+        }
     }
 
     public void updateDrawing() {
