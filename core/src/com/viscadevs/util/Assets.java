@@ -12,13 +12,12 @@ public class Assets implements Disposable {
     private AssetManager assetManager;
     public PlayerAssets playerAssets;
 
-    public static final Assets getInstance() {
+    public static Assets getInstance() {
         return instance;
     }
 
     public void init(AssetManager assetManager) {
         this.assetManager = assetManager;
-        assetManager.finishLoading();
 
         load();
 
@@ -27,6 +26,8 @@ public class Assets implements Disposable {
 
     private void load() {
         assetManager.load(Constants.PERSON, Texture.class);
+
+        assetManager.finishLoading();
     }
 
     @Override
