@@ -11,7 +11,7 @@ import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
-import static com.viscadevs.hackbo.HackBoGame.manager;
+import static com.viscadevs.hackbo.HackBoGame.assetManager;
 
 public class SplashScreen extends ScreenAdapter {
 
@@ -61,7 +61,7 @@ public class SplashScreen extends ScreenAdapter {
                     alpha = 1;
                     state = Enums.SplashState.WAITING_ASSETS;
                     // AQUI QUE SE CARGUEN LOS ASSETS
-                    Assets.getInstance().init(manager);
+                    Assets.getInstance().init(assetManager);
                     // TEMPORALMENTE VAMOS AL FADE OUT (POR AHORA)
                     state = Enums.SplashState.FADING_OUT;
                 }
