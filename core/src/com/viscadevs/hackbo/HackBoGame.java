@@ -27,7 +27,7 @@ public class HackBoGame extends Game {
         batch = new SpriteBatch();
         font = new BitmapFont();
 		manager = new AssetManager();
-        setScreen(SPLASH);
+        setScreen(GAME);
     }
 
     @Override
