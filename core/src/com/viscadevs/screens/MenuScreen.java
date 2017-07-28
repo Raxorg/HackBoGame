@@ -25,7 +25,7 @@ public class MenuScreen extends ScreenAdapter {
     private Image exit_btn;
     private Stage stage;
 
-    public MenuScreen(HackBoGame game){
+    public MenuScreen(HackBoGame game) {
         this.game = game;
 
     }
@@ -36,51 +36,51 @@ public class MenuScreen extends ScreenAdapter {
 
         Texture button = new Texture(Gdx.files.internal("other/pixel.png"));
 
-        stage = new Stage(viewport,batch);
+        stage = new Stage(viewport, batch);
         play_btn = new Image(button);
         play_btn.setBounds(10, 100, 300, 75);
-        play_btn.setPosition(Constants.WORLD_HEIGHT/6, Constants.WORLD_WIDTH/3);
+        play_btn.setPosition(Constants.WORLD_HEIGHT / 6, Constants.WORLD_WIDTH / 3);
         play_btn.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
-                game.setScreen(game.GAME);
+                goToScreen(0);
                 return true;
             }
         });
 
         instructions_btn = new Image(button);
         instructions_btn.setBounds(10, 100, 300, 75);
-        instructions_btn.setPosition(Constants.WORLD_HEIGHT/6, play_btn.getY()-100);
+        instructions_btn.setPosition(Constants.WORLD_HEIGHT / 6, play_btn.getY() - 100);
         instructions_btn.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
-                game.setScreen(game.GAME);
+                goToScreen(1);
                 return true;
             }
         });
 
         credits_btn = new Image(button);
         credits_btn.setBounds(10, 100, 300, 75);
-        credits_btn.setPosition(Constants.WORLD_HEIGHT/6, instructions_btn.getY()-100);
+        credits_btn.setPosition(Constants.WORLD_HEIGHT / 6, instructions_btn.getY() - 100);
         credits_btn.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
-                game.setScreen(game.GAME);
+                goToScreen(2);
                 return true;
             }
         });
 
         exit_btn = new Image(button);
         exit_btn.setBounds(10, 100, 300, 75);
-        exit_btn.setPosition(Constants.WORLD_HEIGHT/6, credits_btn.getY()-100);
+        exit_btn.setPosition(Constants.WORLD_HEIGHT / 6, credits_btn.getY() - 100);
         exit_btn.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
-                game.setScreen(game.GAME);
+                goToScreen(3);
                 return true;
             }
         });
@@ -93,6 +93,25 @@ public class MenuScreen extends ScreenAdapter {
         Gdx.input.setInputProcessor(stage);
     }
 
+    private void goToScreen(int screen) {
+        switch (screen) {
+            case 0:
+                game.setScreen(new GameScreen());
+                break;
+            case 1:
+                game.setScreen(new GameScreen());
+                break;
+            case 2:
+                game.setScreen(new GameScreen());
+                break;
+            case 3:
+                game.setScreen(new GameScreen());
+                break;
+            default:
+                break;
+        }
+    }
+
     @Override
     public void render(float delta) {
         batch.setProjectionMatrix(viewport.getCamera().combined);
@@ -101,6 +120,7 @@ public class MenuScreen extends ScreenAdapter {
         stage.draw();
 
     }
+
     @Override
     public void dispose() {
         super.dispose();

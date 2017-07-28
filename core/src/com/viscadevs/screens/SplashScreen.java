@@ -10,7 +10,6 @@ import com.viscadevs.util.Constants;
 import com.viscadevs.util.Enums;
 
 import static com.viscadevs.hackbo.HackBoGame.batch;
-import static com.viscadevs.hackbo.HackBoGame.manager;
 
 public class SplashScreen extends ScreenAdapter {
 
@@ -20,8 +19,12 @@ public class SplashScreen extends ScreenAdapter {
     private Enums.SplashState state;
     private float alpha = 0;
 
-    public SplashScreen(HackBoGame game) {
+    private AssetManager assetManager;
+
+    public SplashScreen(HackBoGame game, AssetManager assetManager) {
         this.game = game;
+        this.assetManager = assetManager;
+        assetManager.setSplashScreen(this);
     }
 
     @Override
@@ -59,17 +62,14 @@ public class SplashScreen extends ScreenAdapter {
                 if (alpha > 1) {
                     alpha = 1;
                     state = Enums.SplashState.WAITING_ASSETS;
-                    // AQUI QUE SE CARGUEN LOS ASSETS
-                    Assets.getInstance().init(manager);
-                    // TEMPORALMENTE VAMOS AL FADE OUT (POR AHORA)
-                    state = Enums.SplashState.FADING_OUT;
+                    assetManager.load();
                 }
                 break;
             case FADING_OUT:
                 alpha -= Constants.FADING_SPEED * delta;
                 if (alpha < 0) {
                     alpha = 0;
-                    endOfSplash();
+                    game.setScreen(new MenuScreen(game));
                 }
                 break;
             default:
@@ -77,7 +77,8 @@ public class SplashScreen extends ScreenAdapter {
         }
     }
 
-    private void endOfSplash() {
-        game.endOfSplash();
+    public void doneLoadingAssets() {
+        state = Enums.SplashState.FADING_OUT;
     }
+
 }
