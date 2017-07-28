@@ -26,7 +26,8 @@ public class MenuScreen extends ScreenAdapter {
     @Override
     public void show() {
         Assets.getInstance().soundAssets.background.setLooping(true);
-        Assets.getInstance().soundAssets.background.play();
+        Assets.getInstance().soundAssets.background.setVolume(4);
+        //Assets.getInstance().soundAssets.background.play();
         buttons[0] = new Button(
                 Assets.getInstance().buttonAssets.start,
                 Constants.START_BUTTON_X,
