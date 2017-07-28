@@ -14,7 +14,7 @@ public class Person {
 
     public Person(boolean movingRight) {
         this.movingRight = movingRight;
-        position = movingRight ? new Vector2(-10, 0) : new Vector2(Gdx.graphics.getWidth(), 0);
+        position = movingRight ? new Vector2(-10, 90) : new Vector2(Gdx.graphics.getWidth(), 90);
     }
 
     public void update(float delta) {

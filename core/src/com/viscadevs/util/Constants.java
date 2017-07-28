@@ -9,11 +9,11 @@ public class Constants {
     public static final float HUMAN_HEIGHT = 96;
 
     // Player
-    public static final float PLAYER_SPEED = 100f;
+    public static final float PLAYER_SPEED = 150f;
     public static final float PLAYER_Y = 100f;
 
     // Person
-    public static final float PERSON_SPEED = 50f;
+    public static final float PERSON_SPEED = 75f;
 
     // World
     public static final float WORLD_WIDTH = 1000;
