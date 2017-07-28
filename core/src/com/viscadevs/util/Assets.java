@@ -14,6 +14,7 @@ public class Assets implements Disposable {
     public PersonAssets personAssets;
     public BarAssets barAssets;
     public LandScapeAssets landScapeAssets;
+    public UpgradeAssets upgradeAssets;
 
     public static Assets getInstance() {
         return instance;
@@ -32,6 +33,8 @@ public class Assets implements Disposable {
         landScapeAssets.init();
         barAssets = new BarAssets();
         barAssets.init();
+        upgradeAssets = new UpgradeAssets();
+        upgradeAssets.init();
     }
 
     private void load() {
@@ -61,7 +64,10 @@ public class Assets implements Disposable {
         assetManager.load(Constants.BAR_LEFT_F, Texture.class);
         assetManager.load(Constants.BAR_MID_F, Texture.class);
         assetManager.load(Constants.BAR_RIGHT_F, Texture.class);
-
+        //Upgrades
+        assetManager.load(Constants.HOMELESS_HOME, Texture.class);
+        assetManager.load(Constants.STANDARD_HOME, Texture.class);
+        assetManager.load(Constants.RICH_HOME, Texture.class);
         assetManager.finishLoading();
     }
 
@@ -139,6 +145,16 @@ public class Assets implements Disposable {
 
         public void init(){
             street = assetManager.get(Constants.STREET);
+        }
+    }
+
+    public class UpgradeAssets {
+        public Texture homeless_home, standard_home, rich_home;
+
+        public void init(){
+            homeless_home = assetManager.get(Constants.HOMELESS_HOME);
+            standard_home = assetManager.get(Constants.STANDARD_HOME);
+            rich_home = assetManager.get(Constants.RICH_HOME);
         }
     }
 }

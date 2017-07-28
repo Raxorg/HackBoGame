@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.viscadevs.entities.Person;
 import com.viscadevs.entities.Player;
+import com.viscadevs.hud.Upgrade;
 import com.viscadevs.overlays.GameHUD;
 import com.viscadevs.util.Assets;
 import com.viscadevs.util.Constants;
@@ -25,6 +26,7 @@ public class GameScreen extends ScreenAdapter {
     private DelayedRemovalArray<Person> people;
     private GameHUD gameHUD;
     private long startTime;
+    private Upgrade home;
 
     @Override
     public void show() {
@@ -33,6 +35,12 @@ public class GameScreen extends ScreenAdapter {
         player = new Player("BOB", Enums.Gender.MALE, 0, 100, new Vector2(0, Constants.PLAYER_Y));
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
+        home = new Upgrade(Assets.getInstance().upgradeAssets.homeless_home, 400, 200); {
+            @Override
+            public void onTouch() {
+                home.upgrade();
+            }
+        }
     }
 
 

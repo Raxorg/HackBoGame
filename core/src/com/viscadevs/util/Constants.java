@@ -41,6 +41,10 @@ public class Constants {
     public static final String HOMELESS_WALKING_LEFT_3 = "player/homeless_walking_left_3.png";
     public static final String HOMELESS_FRONT = "player/homeless_front.png";
 
+    public static final String HOMELESS_HOME = "upgrades/homeless_home";
+    public static final String STANDARD_HOME = "upgrades/standard_home";
+    public static final String RICH_HOME = "upgrades/rich_home";
+
     public static final String STREET = "scene/street.png";
 
     public static final float WALK_LOOP_DURATION = 0.25f;
