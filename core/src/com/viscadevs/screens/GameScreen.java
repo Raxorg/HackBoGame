@@ -2,6 +2,7 @@ package com.viscadevs.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
@@ -29,7 +30,7 @@ public class GameScreen extends ScreenAdapter {
     public void show() {
         gameHUD = new GameHUD();
         // TODO GET THE NAME AND GENDER FROM MENU
-        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 0, new Vector2(0, 0));
+        player = new Player("BOB", 50, Enums.Gender.MALE, 60, 0, 100, new Vector2(0, 50));
         people = new DelayedRemovalArray<Person>();
         startTime = TimeUtils.nanoTime();
     }
@@ -37,7 +38,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(1, 1, 1, 1);
+        Gdx.gl.glClearColor(Color.SKY.r, Color.SKY.g, Color.SKY.b, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         float timeElapsed = ViscaUtils.secondsSince(startTime);
