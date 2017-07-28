@@ -48,20 +48,50 @@ public class Assets implements Disposable {
         assetManager.load(Constants.STREET, Texture.class);
         assetManager.load(Constants.CLOUDS, Texture.class);
         // Player
-        assetManager.load(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
-        assetManager.load(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
-        assetManager.load(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
-        assetManager.load(Constants.STANDARD_WALKING_RIGHT_1, Texture.class);
-        assetManager.load(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
-        assetManager.load(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
-        assetManager.load(Constants.STANDARD_FRONT, Texture.class);
-        assetManager.load(Constants.HOMELESS_WALKING_LEFT_1, Texture.class);
-        assetManager.load(Constants.HOMELESS_WALKING_LEFT_2, Texture.class);
-        assetManager.load(Constants.HOMELESS_WALKING_LEFT_3, Texture.class);
-        assetManager.load(Constants.HOMELESS_WALKING_RIGHT_1, Texture.class);
-        assetManager.load(Constants.HOMELESS_WALKING_RIGHT_2, Texture.class);
-        assetManager.load(Constants.HOMELESS_WALKING_RIGHT_3, Texture.class);
-        assetManager.load(Constants.HOMELESS_FRONT, Texture.class);
+        //MALE
+        assetManager.load(Constants.MALE_MEDIUM_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.MALE_MEDIUM_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.MALE_MEDIUM_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.MALE_MEDIUM_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.MALE_MEDIUM_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.MALE_MEDIUM_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.MALE_MEDIUM__FRONT, Texture.class);
+        assetManager.load(Constants.MALE_POOR_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.MALE_POOR_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.MALE_POOR_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.MALE_POOR_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.MALE_POOR_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.MALE_POOR__FRONT, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.MALE_RICH_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.MALE_RICH__FRONT, Texture.class);
+        //FEMALE
+        assetManager.load(Constants.FEMALE_MEDIUM_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.FEMALE_MEDIUM_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.FEMALE_MEDIUM_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.FEMALE_MEDIUM_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.FEMALE_MEDIUM_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.FEMALE_MEDIUM_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.FEMALE_MEDIUM__FRONT, Texture.class);
+        assetManager.load(Constants.FEMALE_POOR_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.FEMALE_POOR_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.FEMALE_POOR_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.FEMALE_POOR_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.FEMALE_POOR_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.FEMALE_POOR__FRONT, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH_WALKING_RIGHT_3, Texture.class);
+        assetManager.load(Constants.FEMALE_RICH__FRONT, Texture.class);
         // Person
         assetManager.load(Constants.PERSON, Texture.class);
         assetManager.load(Constants.PERSON2, Texture.class);
@@ -94,45 +124,122 @@ public class Assets implements Disposable {
     }
 
     public class PlayerAssets {
-        public Animation<Texture> standardWalkingRightAnimation;
-        public Animation<Texture> standardWalkingLeftAnimation;
-        public Animation<Texture> homelessWalkingRightAnimation;
-        public Animation<Texture> homelessWalkingLeftAnimation;
+        //MALE
+        public Animation<Texture> maleMediumWalkingRightAnimation;
+        public Animation<Texture> maleMediumWalkingLeftAnimation;
+        public Animation<Texture> malePoorWalkingRightAnimation;
+        public Animation<Texture> malePoorWalkingLeftAnimation;
+        public Animation<Texture> maleRichWalkingRightAnimation;
+        public Animation<Texture> maleRichWalkingLeftAnimation;
 
-        public Texture standardFront, homelessFront;
+        public Texture maleMediumFront, malePoorFront, maleRichFront;
+
+        //FEMALE
+        public Animation<Texture> femaleMediumWalkingRightAnimation;
+        public Animation<Texture> femaleMediumWalkingLeftAnimation;
+        public Animation<Texture> femalePoorWalkingRightAnimation;
+        public Animation<Texture> femalePoorWalkingLeftAnimation;
+        public Animation<Texture> femaleRichWalkingRightAnimation;
+        public Animation<Texture> femaleRichWalkingLeftAnimation;
+
+        public Texture femaleMediumFront, femalePoorFront, femaleRichFront;
 
         public void init() {
-            standardFront = assetManager.get(Constants.STANDARD_FRONT);
-            homelessFront = assetManager.get(Constants.HOMELESS_FRONT);
+            //MALE
+            maleMediumFront = assetManager.get(Constants.MALE_MEDIUM__FRONT);
+            malePoorFront = assetManager.get(Constants.MALE_POOR__FRONT);
+            maleRichFront = assetManager.get(Constants.MALE_RICH__FRONT);
 
-            Texture[] standardWalkingRightFrames = new Texture[3];
-            standardWalkingRightFrames[0] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_1, Texture.class);
-            standardWalkingRightFrames[1] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_2, Texture.class);
-            standardWalkingRightFrames[2] = assetManager.get(Constants.STANDARD_WALKING_RIGHT_3, Texture.class);
-            standardWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, standardWalkingRightFrames);
-            standardWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            Texture[] maleMediumWalkingRightFrames = new Texture[3];
+            maleMediumWalkingRightFrames[0] = assetManager.get(Constants.MALE_MEDIUM_WALKING_RIGHT_1);
+            maleMediumWalkingRightFrames[1] = assetManager.get(Constants.MALE_MEDIUM_WALKING_RIGHT_2);
+            maleMediumWalkingRightFrames[2] = assetManager.get(Constants.MALE_MEDIUM_WALKING_RIGHT_3);
+            maleMediumWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, maleMediumWalkingRightFrames);
+            maleMediumWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
 
-            Texture[] standardWalkingLeftFrames = new Texture[3];
-            standardWalkingLeftFrames[0] = assetManager.get(Constants.STANDARD_WALKING_LEFT_1, Texture.class);
-            standardWalkingLeftFrames[1] = assetManager.get(Constants.STANDARD_WALKING_LEFT_2, Texture.class);
-            standardWalkingLeftFrames[2] = assetManager.get(Constants.STANDARD_WALKING_LEFT_3, Texture.class);
-            standardWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, standardWalkingLeftFrames);
-            standardWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            Texture[] maleMediumWalkingLeftFrames = new Texture[3];
+            maleMediumWalkingLeftFrames[0] = assetManager.get(Constants.MALE_MEDIUM_WALKING_LEFT_1);
+            maleMediumWalkingLeftFrames[1] = assetManager.get(Constants.MALE_MEDIUM_WALKING_LEFT_2);
+            maleMediumWalkingLeftFrames[2] = assetManager.get(Constants.MALE_MEDIUM_WALKING_LEFT_3);
+            maleMediumWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, maleMediumWalkingLeftFrames);
+            maleMediumWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            Texture[] homelessWalkingRightFrames = new Texture[3];
-            homelessWalkingRightFrames[0] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_1, Texture.class);
-            homelessWalkingRightFrames[1] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_2, Texture.class);
-            homelessWalkingRightFrames[2] = assetManager.get(Constants.HOMELESS_WALKING_RIGHT_3, Texture.class);
-            homelessWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingRightFrames);
-            homelessWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            Texture[] malePoorWalkingRightFrames = new Texture[3];
+            malePoorWalkingRightFrames[0] = assetManager.get(Constants.MALE_POOR_WALKING_RIGHT_1);
+            malePoorWalkingRightFrames[1] = assetManager.get(Constants.MALE_POOR_WALKING_RIGHT_2);
+            malePoorWalkingRightFrames[2] = assetManager.get(Constants.MALE_POOR_WALKING_RIGHT_3);
+            malePoorWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, malePoorWalkingRightFrames);
+            malePoorWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
-            Texture[] homelessWalkingLeftFrames = new Texture[3];
-            homelessWalkingLeftFrames[0] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_1, Texture.class);
-            homelessWalkingLeftFrames[1] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_2, Texture.class);
-            homelessWalkingLeftFrames[2] = assetManager.get(Constants.HOMELESS_WALKING_LEFT_3, Texture.class);
-            homelessWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, homelessWalkingLeftFrames);
-            homelessWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+            Texture[] malePoorWalkingLeftFrames = new Texture[3];
+            malePoorWalkingLeftFrames[0] = assetManager.get(Constants.MALE_POOR_WALKING_LEFT_1);
+            malePoorWalkingLeftFrames[1] = assetManager.get(Constants.MALE_POOR_WALKING_LEFT_2);
+            malePoorWalkingLeftFrames[2] = assetManager.get(Constants.MALE_POOR_WALKING_LEFT_3);
+            malePoorWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, malePoorWalkingLeftFrames);
+            malePoorWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            Texture[] maleRichWalkingRightFrames = new Texture[3];
+            maleRichWalkingRightFrames[0] = assetManager.get(Constants.MALE_RICH_WALKING_RIGHT_1);
+            maleRichWalkingRightFrames[1] = assetManager.get(Constants.MALE_RICH_WALKING_RIGHT_2);
+            maleRichWalkingRightFrames[2] = assetManager.get(Constants.MALE_RICH_WALKING_RIGHT_3);
+            maleRichWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, maleRichWalkingRightFrames);
+            maleRichWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            Texture[] maleRichWalkingLeftFrames = new Texture[3];
+            maleRichWalkingLeftFrames[0] = assetManager.get(Constants.MALE_RICH_WALKING_LEFT_1);
+            maleRichWalkingLeftFrames[1] = assetManager.get(Constants.MALE_RICH_WALKING_LEFT_2);
+            maleRichWalkingLeftFrames[2] = assetManager.get(Constants.MALE_RICH_WALKING_LEFT_3);
+            maleRichWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, maleRichWalkingLeftFrames);
+            maleRichWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            //FEMALE
+            femaleMediumFront = assetManager.get(Constants.FEMALE_MEDIUM__FRONT);
+            femalePoorFront = assetManager.get(Constants.FEMALE_POOR__FRONT);
+            femaleRichFront = assetManager.get(Constants.FEMALE_RICH__FRONT);
+
+            Texture[] femaleMediumWalkingRightFrames = new Texture[3];
+            femaleMediumWalkingRightFrames[0] = assetManager.get(Constants.FEMALE_MEDIUM_WALKING_RIGHT_1);
+            femaleMediumWalkingRightFrames[1] = assetManager.get(Constants.FEMALE_MEDIUM_WALKING_RIGHT_2);
+            femaleMediumWalkingRightFrames[2] = assetManager.get(Constants.FEMALE_MEDIUM_WALKING_RIGHT_3);
+            femaleMediumWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femaleMediumWalkingRightFrames);
+            femaleMediumWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+
+            Texture[] femaleMediumWalkingLeftFrames = new Texture[3];
+            femaleMediumWalkingLeftFrames[0] = assetManager.get(Constants.FEMALE_MEDIUM_WALKING_LEFT_1);
+            femaleMediumWalkingLeftFrames[1] = assetManager.get(Constants.FEMALE_MEDIUM_WALKING_LEFT_2);
+            femaleMediumWalkingLeftFrames[2] = assetManager.get(Constants.FEMALE_MEDIUM_WALKING_LEFT_3);
+            femaleMediumWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femaleMediumWalkingLeftFrames);
+            femaleMediumWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            Texture[] femalePoorWalkingRightFrames = new Texture[3];
+            femalePoorWalkingRightFrames[0] = assetManager.get(Constants.FEMALE_POOR_WALKING_RIGHT_1);
+            femalePoorWalkingRightFrames[1] = assetManager.get(Constants.FEMALE_POOR_WALKING_RIGHT_2);
+            femalePoorWalkingRightFrames[2] = assetManager.get(Constants.FEMALE_POOR_WALKING_RIGHT_3);
+            femalePoorWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femalePoorWalkingRightFrames);
+            femalePoorWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            Texture[] femalePoorWalkingLeftFrames = new Texture[3];
+            femalePoorWalkingLeftFrames[0] = assetManager.get(Constants.FEMALE_POOR_WALKING_LEFT_1);
+            femalePoorWalkingLeftFrames[1] = assetManager.get(Constants.FEMALE_POOR_WALKING_LEFT_2);
+            femalePoorWalkingLeftFrames[2] = assetManager.get(Constants.FEMALE_POOR_WALKING_LEFT_3);
+            femalePoorWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femalePoorWalkingLeftFrames);
+            femalePoorWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            Texture[] femaleRichWalkingRightFrames = new Texture[3];
+            femaleRichWalkingRightFrames[0] = assetManager.get(Constants.FEMALE_RICH_WALKING_RIGHT_1);
+            femaleRichWalkingRightFrames[1] = assetManager.get(Constants.FEMALE_RICH_WALKING_RIGHT_2);
+            femaleRichWalkingRightFrames[2] = assetManager.get(Constants.FEMALE_RICH_WALKING_RIGHT_3);
+            femaleRichWalkingRightAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femaleRichWalkingRightFrames);
+            femaleRichWalkingRightAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+
+            Texture[] femaleRichWalkingLeftFrames = new Texture[3];
+            femaleRichWalkingLeftFrames[0] = assetManager.get(Constants.FEMALE_RICH_WALKING_LEFT_1);
+            femaleRichWalkingLeftFrames[1] = assetManager.get(Constants.FEMALE_RICH_WALKING_LEFT_2);
+            femaleRichWalkingLeftFrames[2] = assetManager.get(Constants.FEMALE_RICH_WALKING_LEFT_3);
+            femaleRichWalkingLeftAnimation = new Animation<Texture>(Constants.WALK_LOOP_DURATION, femaleRichWalkingLeftFrames);
+            femaleRichWalkingLeftAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
         }
     }
 

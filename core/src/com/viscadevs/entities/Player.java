@@ -75,16 +75,16 @@ public class Player {
 
     public void render(SpriteBatch batch) {
         batch.setColor(1, 1, 1, 1);
-        Texture region = Assets.getInstance().playerAssets.standardFront;
+        Texture region = Assets.getInstance().playerAssets.mediumFront;
 
         if (walkState == Enums.WalkState.STANDING) {
-            region = Assets.getInstance().playerAssets.standardFront;
+            region = Assets.getInstance().playerAssets.mediumFront;
         } else if (facing == Enums.Facing.RIGHT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = Assets.getInstance().playerAssets.standardWalkingRightAnimation.getKeyFrame(walkTimeSeconds);
+            region = Assets.getInstance().playerAssets.maleMediumWalkingRightAnimation.getKeyFrame(walkTimeSeconds);
         } else if (facing == Enums.Facing.LEFT && walkState == Enums.WalkState.WALKING) {
             float walkTimeSeconds = ViscaUtils.secondsSince(walkStartTime);
-            region = Assets.getInstance().playerAssets.standardWalkingLeftAnimation.getKeyFrame(walkTimeSeconds);
+            region = Assets.getInstance().playerAssets.maleMediumWalkingLeftAnimation.getKeyFrame(walkTimeSeconds);
         }
 
         batch.draw(region, position.x, position.y, Constants.HUMAN_WIDTH, Constants.HUMAN_HEIGHT);

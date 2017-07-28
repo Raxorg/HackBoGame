@@ -31,23 +31,61 @@ public class Constants {
     public static final int MAX_BAR_CAPACITY = 100;
     public static final int INITIAL_MONEY = 100;
 
-    public static final String STANDARD_WALKING_RIGHT_1 = "player/standard_walking_right_1.png";
-    public static final String STANDARD_WALKING_RIGHT_2 = "player/standard_walking_right_2.png";
-    public static final String STANDARD_WALKING_RIGHT_3 = "player/standard_walking_right_3.png";
+    //MALE
+    public static final String MALE_MEDIUM_WALKING_RIGHT_1 = "player/m_medium_walking_right_1.png";
+    public static final String MALE_MEDIUM_WALKING_RIGHT_2 = "player/m_medium_walking_right_2.png";
+    public static final String MALE_MEDIUM_WALKING_RIGHT_3 = "player/m_medium_walking_right_3.png";
 
-    public static final String STANDARD_WALKING_LEFT_1 = "player/standard_walking_left_1.png";
-    public static final String STANDARD_WALKING_LEFT_2 = "player/standard_walking_left_2.png";
-    public static final String STANDARD_WALKING_LEFT_3 = "player/standard_walking_left_3.png";
-    public static final String STANDARD_FRONT = "player/standard_front.png";
+    public static final String MALE_MEDIUM_WALKING_LEFT_1 = "player/m_medium_walking_left_1.png";
+    public static final String MALE_MEDIUM_WALKING_LEFT_2 = "player/m_medium_walking_left_2.png";
+    public static final String MALE_MEDIUM_WALKING_LEFT_3 = "player/m_medium_walking_left_3.png";
+    public static final String MALE_MEDIUM__FRONT = "player/m_medium_front.png";
 
-    public static final String HOMELESS_WALKING_RIGHT_1 = "player/homeless_walking_right_1.png";
-    public static final String HOMELESS_WALKING_RIGHT_2 = "player/homeless_walking_right_2.png";
-    public static final String HOMELESS_WALKING_RIGHT_3 = "player/homeless_walking_right_3.png";
+    public static final String MALE_POOR_WALKING_RIGHT_1 = "player/m_poor_walking_right_1.png";
+    public static final String MALE_POOR_WALKING_RIGHT_2 = "player/m_poor_walking_right_2.png";
+    public static final String MALE_POOR_WALKING_RIGHT_3 = "player/m_poor_walking_right_3.png";
 
-    public static final String HOMELESS_WALKING_LEFT_1 = "player/homeless_walking_left_1.png";
-    public static final String HOMELESS_WALKING_LEFT_2 = "player/homeless_walking_left_2.png";
-    public static final String HOMELESS_WALKING_LEFT_3 = "player/homeless_walking_left_3.png";
-    public static final String HOMELESS_FRONT = "player/homeless_front.png";
+    public static final String MALE_POOR_WALKING_LEFT_1 = "player/m_poor_walking_left_1.png";
+    public static final String MALE_POOR_WALKING_LEFT_2 = "player/m_poor_walking_left_2.png";
+    public static final String MALE_POOR_WALKING_LEFT_3 = "player/m_poor_walking_left_3.png";
+    public static final String MALE_POOR__FRONT = "player/m_poor_front.png";
+
+    public static final String MALE_RICH_WALKING_RIGHT_1 = "player/m_rich_walking_right_1.png";
+    public static final String MALE_RICH_WALKING_RIGHT_2 = "player/m_rich_walking_right_2.png";
+    public static final String MALE_RICH_WALKING_RIGHT_3 = "player/m_rich_walking_right_3.png";
+
+    public static final String MALE_RICH_WALKING_LEFT_1 = "player/m_rich_walking_left_1.png";
+    public static final String MALE_RICH_WALKING_LEFT_2 = "player/m_rich_walking_left_2.png";
+    public static final String MALE_RICH_WALKING_LEFT_3 = "player/m_rich_walking_left_3.png";
+    public static final String MALE_RICH__FRONT = "player/m_rich_front.png";
+
+    //FEMALE
+    public static final String FEMALE_MEDIUM_WALKING_RIGHT_1 = "player/f_medium_walking_right_1.png";
+    public static final String FEMALE_MEDIUM_WALKING_RIGHT_2 = "player/f_medium_walking_right_2.png";
+    public static final String FEMALE_MEDIUM_WALKING_RIGHT_3 = "player/f_medium_walking_right_3.png";
+
+    public static final String FEMALE_MEDIUM_WALKING_LEFT_1 = "player/f_medium_walking_left_1.png";
+    public static final String FEMALE_MEDIUM_WALKING_LEFT_2 = "player/f_medium_walking_left_2.png";
+    public static final String FEMALE_MEDIUM_WALKING_LEFT_3 = "player/f_medium_walking_left_3.png";
+    public static final String FEMALE_MEDIUM__FRONT = "player/f_medium_front.png";
+
+    public static final String FEMALE_POOR_WALKING_RIGHT_1 = "player/f_poor_walking_right_1.png";
+    public static final String FEMALE_POOR_WALKING_RIGHT_2 = "player/f_poor_walking_right_2.png";
+    public static final String FEMALE_POOR_WALKING_RIGHT_3 = "player/f_poor_walking_right_3.png";
+
+    public static final String FEMALE_POOR_WALKING_LEFT_1 = "player/f_poor_walking_left_1.png";
+    public static final String FEMALE_POOR_WALKING_LEFT_2 = "player/f_poor_walking_left_2.png";
+    public static final String FEMALE_POOR_WALKING_LEFT_3 = "player/f_poor_walking_left_3.png";
+    public static final String FEMALE_POOR__FRONT = "player/f_poor_front.png";
+
+    public static final String FEMALE_RICH_WALKING_RIGHT_1 = "player/f_rich_walking_right_1.png";
+    public static final String FEMALE_RICH_WALKING_RIGHT_2 = "player/f_rich_walking_right_2.png";
+    public static final String FEMALE_RICH_WALKING_RIGHT_3 = "player/f_rich_walking_right_3.png";
+
+    public static final String FEMALE_RICH_WALKING_LEFT_1 = "player/f_rich_walking_left_1.png";
+    public static final String FEMALE_RICH_WALKING_LEFT_2 = "player/f_rich_walking_left_2.png";
+    public static final String FEMALE_RICH_WALKING_LEFT_3 = "player/f_rich_walking_left_3.png";
+    public static final String FEMALE_RICH__FRONT = "player/f_rich_front.png";
 
     public static final String POOR_HOME = "upgrades/poorHome.png";
     public static final String MEDIUM_HOME = "upgrades/mediumHome.png";
