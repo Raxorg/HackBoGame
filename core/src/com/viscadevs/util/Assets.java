@@ -18,15 +18,22 @@ public class Assets implements Disposable {
 
     public void init(AssetManager assetManager) {
         this.assetManager = assetManager;
-
-        playerAssets = new PlayerAssets();
         load();
+        playerAssets = new PlayerAssets();
+
         assetManager.finishLoading();
     }
 
     private void load() {
         assetManager.load(Constants.PERSON, Texture.class);
-        playerAssets.load();
+        assetManager.load(Constants.STANDING_LEFT, Texture.class);
+        assetManager.load(Constants.STANDING_RIGHT, Texture.class);
+        assetManager.load(Constants.WALKING_LEFT_1, Texture.class);
+        assetManager.load(Constants.WALKING_LEFT_2, Texture.class);
+        assetManager.load(Constants.WALKING_LEFT_3, Texture.class);
+        assetManager.load(Constants.WALKING_RIGHT_1, Texture.class);
+        assetManager.load(Constants.WALKING_RIGHT_2, Texture.class);
+        assetManager.load(Constants.WALKING_RIGHT_3, Texture.class);
         assetManager.finishLoading();
     }
 
