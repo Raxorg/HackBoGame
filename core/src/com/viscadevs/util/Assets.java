@@ -23,6 +23,10 @@ public class Assets implements Disposable {
         playerAssets = new PlayerAssets();
     }
 
+    private void load() {
+        assetManager.load("other/person.png", Texture.class);
+    }
+
     @Override
     public void dispose() {
         assetManager.dispose();
