@@ -142,7 +142,7 @@ public class Constants {
 
     public static final String BACKGROUND_MUSIC = "audio/background.mp3";
     public static final String DISASTER_MUSIC = "audio/disaster.mp3";
-    public static final String COIN_SOUND = "audio/coin.mp3";
+    public static final String COIN_SOUND = "audio/coin.wav";
     public static final String CLICK_SOUND = "audio/click.mp3";
 
 

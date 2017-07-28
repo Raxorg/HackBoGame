@@ -28,6 +28,8 @@ public class StartScreen extends ScreenAdapter {
 
     @Override
     public void show() {
+
+        Assets.getInstance().soundAssets.disaster.play();
         state = Enums.SplashState.FADING_IN;
         black = new Texture(Gdx.files.internal("other/pixel.png"));
         splash = new Texture(Gdx.files.internal("other/start_screen.jpg"));

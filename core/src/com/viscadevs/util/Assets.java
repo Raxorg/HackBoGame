@@ -135,6 +135,7 @@ public class Assets implements Disposable {
         assetManager.load(Constants.BACKGROUND_MUSIC, Music.class);
         assetManager.load(Constants.CLICK_SOUND, Sound.class);
         assetManager.load(Constants.COIN_SOUND, Sound.class);
+        assetManager.load(Constants.DISASTER_MUSIC, Sound.class);
 
         assetManager.finishLoading();
     }
@@ -338,13 +339,14 @@ public class Assets implements Disposable {
     }
 
     public class SoundAssets{
-        public Sound coin, click;
+        public Sound coin, click, disaster;
         public Music background;
 
         public void init(){
             coin = assetManager.get(Constants.COIN_SOUND);
             click = assetManager.get(Constants.CLICK_SOUND);
             background = assetManager.get(Constants.BACKGROUND_MUSIC);
+            disaster = assetManager.get(Constants.DISASTER_MUSIC);
         }
     }
 }
