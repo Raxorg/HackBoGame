@@ -102,7 +102,7 @@ public class GameScreen extends ScreenAdapter {
         ) {
             @Override
             public void onTouch() {
-                player.setEnergy(Math.max(100, player.getEnergy() + 20));
+                player.setEnergy(Math.min(100, player.getEnergy() + 20));
             }
         };
 
